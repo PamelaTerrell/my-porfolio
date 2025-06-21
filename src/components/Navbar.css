@@ -1,0 +1,126 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #ff6f61, #ff9e45); /* Gradient background */
+    color: #fff;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .navbar.dark {
+    background: #1a1a1a;
+  }
+  
+  .navbar .logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .navbar .nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .navbar .nav-links li {
+    list-style: none;
+  }
+  
+  .navbar .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 25px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .navbar .nav-links a:hover {
+    background-color: #ff9e45;
+    transform: translateY(-3px); /* Hover effect with slight elevation */
+  }
+  
+  /* Mobile Navbar (Hamburger) */
+  .navbar .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+  }
+  
+  .navbar .hamburger .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar .hamburger:hover .bar {
+    background-color: #ff9e45; /* Accent color on hover */
+  }
+  
+  /* Active state for mobile menu */
+  .navbar .nav-links.active {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background: linear-gradient(135deg, #ff6f61, #ff9e45);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    transition: right 0.3s ease-in-out;
+  }
+  
+  /* Dark Mode Toggle Button */
+  .dark-mode-toggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+  
+  .dark-mode-toggle:hover {
+    color: #ff9e45;
+  }
+  
+  /* Media Queries for Mobile */
+  @media (max-width: 768px) {
+    .navbar .nav-links {
+      display: none; /* Hide links by default on mobile */
+    }
+  
+    .navbar .hamburger {
+      display: flex;
+    }
+  
+    .navbar .nav-links.active {
+      display: flex;
+    }
+  }
+  

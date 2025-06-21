@@ -1,0 +1,241 @@
+/* General Styles for the Home Page */
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f7f7f7;
+  color: #333;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background: linear-gradient(135deg, #5e72e4, #825ee4);
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  text-align: center;
+  padding: 0 20px;
+  overflow: hidden;
+  animation: slideInBackground 15s infinite alternate; /* Animated background */
+  padding-top: 10%; /* Adjust vertical spacing from top */
+}
+
+.hero-content {
+  max-width: 900px; /* Limit the width of content */
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeIn 1s 1s forwards; /* Fade in effect */
+}
+
+.hero-subtitle {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 1.5s 1.5s forwards; /* Fade in effect */
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center; /* Ensures button is centered */
+  margin-top: 30px; /* Adjust space between subtitle and button */
+  opacity: 0;
+  animation: fadeIn 2s 2s forwards; /* Buttons fade-in */
+}
+
+.cta-btn {
+  background: linear-gradient(135deg, #ff7c1e, #ff6f61); /* Gradient background */
+  color: white;
+  padding: 15px 40px;
+  text-decoration: none;
+  border-radius: 30px; /* Smooth rounded corners */
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s, background-color 0.3s ease, box-shadow 0.4s ease;
+  box-shadow: 0 5px 20px rgba(255, 111, 97, 0.5); /* Soft shadow for depth */
+}
+
+.cta-btn:hover {
+  transform: translateY(-5px); /* Subtle lift on hover */
+  background: linear-gradient(135deg, #e66c00, #e64a19); /* Slightly darker gradient */
+  box-shadow: 0 8px 25px rgba(255, 111, 97, 0.7); /* Enhanced glow effect */
+}
+
+/* Scroll Down Indicator */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  font-size: 1.5rem;
+  color: white;
+  animation: bounce 1.5s infinite;
+}
+
+.arrow {
+  font-size: 2rem;
+  animation: bounce 1.5s infinite;
+}
+
+/* About Section */
+.about {
+  padding: 50px;
+  background-color: #fff;
+  color: #333;
+  width: 100%;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Portfolio Section */
+.portfolio {
+  padding: 50px;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.portfolio h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.project {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.project p {
+  font-size: 1rem;
+  color: #777;
+}
+
+/* Contact Section */
+.contact {
+  padding: 50px;
+  background-color: #fff;
+  color: #333;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact button {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  background-color: #ff7c1e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact button:hover {
+  background-color: #e66c00;
+}
+
+/* Email Link */
+.email-link {
+  color: #ff6f61;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.email-link:hover {
+  color: #e66c00; /* Slightly darker shade of the accent color */
+}
+
+/* Animation for Fade In */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Background Slide Animation */
+@keyframes slideInBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}

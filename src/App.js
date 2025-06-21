@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom'; // Keep only the routing components
+import Home from './pages/Home';  // Import the Home component
+import Navbar from './components/Navbar';  // If you have a Navbar component
+import Footer from './components/Footer';  // If you have a Footer component
+import './App.css'; // Global styles (if needed)
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {/* Navbar (Can be included globally) */}
+      <Navbar />
+      
+      {/* Routes for pages */}
+      <Routes>
+        {/* Home route */}
+        <Route path="/" element={<Home />} />
+        {/* Add more routes here for other sections, like Portfolio, About, etc. */}
+      </Routes>
+      
+      {/* Footer (optional, could be on every page) */}
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
