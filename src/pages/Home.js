@@ -6,6 +6,8 @@ import pairings from '../assets/pairings.png'
 import cosmic from '../assets/cosmic.png'
 import psych from '../assets/psych.png'
 import pace from '../assets/pace.png'
+import deskImage from '../assets/desk.jpg'; 
+
 
 const Home = () => {
   return (
@@ -36,15 +38,26 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Section */}
       <section id="about" className="about">
-        <h2>About Me</h2>
-        <p>
-          I specialize in creating responsive, user-friendly websites that work seamlessly across all devices.
-          With a passion for both design and development, I bring creative solutions to complex challenges.
-          I work with the latest web technologies to build modern, high-performance sites that scale well and provide an outstanding user experience.
-        </p>
-      </section>
+  <div className="about-content">
+    <img src={deskImage} alt="Desk Setup" className="about-img" />
+    <div className="about-text">
+      <h2>About Me</h2>
+      <p>
+  I’m a web developer and UI/UX designer, dedicated to creating responsive, user-friendly websites that deliver both 
+  excellent functionality and a seamless user experience. With a strong focus on design and usability, I craft websites 
+  that are not only visually appealing but also intuitive and easy to navigate.
+</p>
+<p>
+  I specialize in designing clean, modern interfaces and developing high-performance websites that work flawlessly across 
+  all devices. Whether you need a sleek design, optimized performance, or both, I’m here to bring your digital projects to life.
+</p>
+
+
+    </div>
+  </div>
+</section>
+
 
       <section id="portfolio" className="portfolio">
         <h2>Portfolio</h2>

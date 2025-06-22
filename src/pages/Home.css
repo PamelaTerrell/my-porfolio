@@ -99,25 +99,64 @@
   animation: bounce 1.5s infinite;
 }
 
-/* About Section */
+/* About Section Layout */
 .about {
   padding: 50px;
-  background-color: white;
+  background-color: #fff;
   color: #333;
-  width: 100%;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.about-img {
+  width: 40%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  width: 55%;
 }
 
 .about h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
-  color: var(--sapphire);
 }
 
 .about p {
   font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
+  line-height: 1.6;
 }
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+}
+
+
 
 /* Portfolio Section */
 .portfolio {
