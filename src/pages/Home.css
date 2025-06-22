@@ -1,12 +1,20 @@
-/* General Styles for the Home Page */
+:root {
+  --emerald: #2ecc71;
+  --sapphire: #0f52ba;
+  --deep-navy: #0a192f;
+  --text-light: #f4f4f4;
+  --light-gray: #e0e0e0;
+}
+
+/* General */
 .home {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f7f7f7;
-  color: #333;
+  background-color: var(--deep-navy);
+  color: var(--text-light);
   text-align: center;
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -20,66 +28,64 @@
   justify-content: center;
   align-items: center;
   height: 80vh;
-  background: linear-gradient(135deg, #5e72e4, #825ee4);
+  background: linear-gradient(135deg, var(--sapphire), var(--emerald));
   color: white;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   position: relative;
-  text-align: center;
+  padding-top: 10%;
   padding: 0 20px;
   overflow: hidden;
-  animation: slideInBackground 15s infinite alternate; /* Animated background */
-  padding-top: 10%; /* Adjust vertical spacing from top */
+  animation: slideInBackground 15s infinite alternate;
 }
 
 .hero-content {
-  max-width: 900px; /* Limit the width of content */
+  max-width: 900px;
 }
 
 .hero-title {
   font-size: 3.5rem;
   margin-bottom: 10px;
   opacity: 0;
-  animation: fadeIn 1s 1s forwards; /* Fade in effect */
+  animation: fadeIn 1s 1s forwards;
 }
 
 .hero-subtitle {
   font-size: 1.6rem;
   margin-bottom: 20px;
   opacity: 0;
-  animation: fadeIn 1.5s 1.5s forwards; /* Fade in effect */
+  animation: fadeIn 1.5s 1.5s forwards;
 }
 
 .cta-buttons {
   display: flex;
   gap: 20px;
-  justify-content: center; /* Ensures button is centered */
-  margin-top: 30px; /* Adjust space between subtitle and button */
+  justify-content: center;
+  margin-top: 30px;
   opacity: 0;
-  animation: fadeIn 2s 2s forwards; /* Buttons fade-in */
+  animation: fadeIn 2s 2s forwards;
 }
 
 .cta-btn {
-  background: linear-gradient(135deg, #ff7c1e, #ff6f61); /* Gradient background */
+  background: linear-gradient(135deg, var(--emerald), var(--sapphire));
   color: white;
   padding: 15px 40px;
   text-decoration: none;
-  border-radius: 30px; /* Smooth rounded corners */
+  border-radius: 30px;
   font-size: 1.4rem;
   font-weight: 600;
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
-  transition: transform 0.4s, background-color 0.3s ease, box-shadow 0.4s ease;
-  box-shadow: 0 5px 20px rgba(255, 111, 97, 0.5); /* Soft shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 20px rgba(46, 204, 113, 0.3);
 }
 
 .cta-btn:hover {
-  transform: translateY(-5px); /* Subtle lift on hover */
-  background: linear-gradient(135deg, #e66c00, #e64a19); /* Slightly darker gradient */
-  box-shadow: 0 8px 25px rgba(255, 111, 97, 0.7); /* Enhanced glow effect */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(15, 82, 186, 0.5);
 }
 
-/* Scroll Down Indicator */
+/* Scroll Down */
 .scroll-down {
   position: absolute;
   bottom: 20px;
@@ -96,7 +102,7 @@
 /* About Section */
 .about {
   padding: 50px;
-  background-color: #fff;
+  background-color: white;
   color: #333;
   width: 100%;
 }
@@ -104,6 +110,7 @@
 .about h2 {
   font-size: 2rem;
   margin-bottom: 20px;
+  color: var(--sapphire);
 }
 
 .about p {
@@ -122,22 +129,28 @@
 .portfolio h2 {
   font-size: 2rem;
   margin-bottom: 20px;
+  color: var(--sapphire);
 }
 
 .project-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px;
+  justify-content: center;
+  gap: 30px;
 }
 
 .project {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 250px;
-  text-align: center;
+  width: 260px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(15, 82, 186, 0.25);
 }
 
 .project img {
@@ -149,23 +162,38 @@
 .project h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
+  color: var(--sapphire);
 }
 
 .project p {
   font-size: 1rem;
-  color: #777;
+  color: #666;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: var(--emerald);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project-link:hover {
+  color: var(--sapphire);
 }
 
 /* Contact Section */
 .contact {
   padding: 50px;
-  background-color: #fff;
+  background-color: white;
   color: #333;
 }
 
 .contact h2 {
   font-size: 2rem;
   margin-bottom: 20px;
+  color: var(--sapphire);
 }
 
 .contact form {
@@ -178,16 +206,16 @@
 
 .contact input,
 .contact textarea {
-  padding: 10px;
+  padding: 12px;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--light-gray);
   border-radius: 5px;
 }
 
 .contact button {
-  padding: 10px 20px;
+  padding: 12px 20px;
   font-size: 1.1rem;
-  background-color: #ff7c1e;
+  background: linear-gradient(135deg, var(--emerald), var(--sapphire));
   color: white;
   border: none;
   border-radius: 5px;
@@ -196,46 +224,32 @@
 }
 
 .contact button:hover {
-  background-color: #e66c00;
+  background: linear-gradient(135deg, var(--sapphire), var(--emerald));
 }
 
 /* Email Link */
 .email-link {
-  color: #ff6f61;
+  color: var(--emerald);
   text-decoration: none;
   font-weight: bold;
 }
 
 .email-link:hover {
-  color: #e66c00; /* Slightly darker shade of the accent color */
+  color: var(--sapphire);
 }
 
-/* Animation for Fade In */
+/* Animations */
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* Bounce Animation */
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-/* Background Slide Animation */
 @keyframes slideInBackground {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 100% 100%;
-  }
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
 }
