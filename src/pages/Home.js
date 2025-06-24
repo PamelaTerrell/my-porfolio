@@ -61,7 +61,7 @@ const Home = () => {
 
       <section id="portfolio" className="portfolio">
         <h2>Portfolio</h2>
-        <p>Here's a selection of some of the projects I've worked on:</p>
+        <p>Here's a selection of some of the projects I've created:</p>
         <div className="project-list">
           {/* Project 1 - Vinopairings */}
           <div className="project">
