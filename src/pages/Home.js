@@ -1,16 +1,31 @@
 import React from "react";
 import { Link } from "react-scroll"; 
+import { Helmet } from "react-helmet";  // react-helmet import
 import "./Home.css";
 import pwImage from '../assets/PW.jpg'; 
-import pairings from '../assets/pairings.png'
-import cosmic from '../assets/cosmic.png'
-import psych from '../assets/psych.png'
-import pace from '../assets/pace.png'
+import pairings from '../assets/pairings.png';
+import cosmic from '../assets/cosmic.png';
+import psych from '../assets/psych.png';
+import pace from '../assets/pace.png';
 import deskImage from '../assets/desk.jpg'; 
 
 const Home = () => {
   return (
     <div className="home">
+      <Helmet>
+        <title>Pamela Terrell - Web Developer | Augusta, GA</title>
+        <meta 
+          name="description" 
+          content="Professional web developer creating elegant, responsive websites for businesses and entrepreneurs in Augusta, Georgia." 
+        />
+        <meta 
+          name="keywords" 
+          content="web developer Augusta GA, website design Augusta, responsive web design, UI/UX designer Augusta" 
+        />
+        <meta name="author" content="Pamela Terrell" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Helmet>
+
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
@@ -110,7 +125,7 @@ const Home = () => {
         </p>
         <p>
           Let’s bring your ideas to life →{" "}
-          <a href="mailto:agentpamelajterrell.com" className="email-link">agentpamelajterrell.com</a>
+          <a href="mailto:agentpamelajterrell@gmail.com" className="email-link">agentpamelajterrell@gmail.com</a>
         </p>
       </section>
 
@@ -120,7 +135,7 @@ const Home = () => {
         <p>If you'd like to work with me or have any questions, feel free to reach out!</p>
 
         <p>Or reach me directly at: 
-          <a href="mailto:agentpamelajterrell.com" className="email-link">agentpamelajterrell.com</a>
+          <a href="mailto:agentpamelajterrell@gmail.com" className="email-link">agentpamelajterrell@gmail.com</a>
         </p>
 
         <form className="contact-form">
