@@ -8,7 +8,6 @@ import psych from '../assets/psych.png'
 import pace from '../assets/pace.png'
 import deskImage from '../assets/desk.jpg'; 
 
-
 const Home = () => {
   return (
     <div className="home">
@@ -38,32 +37,30 @@ const Home = () => {
         </div>
       </section>
 
+      {/* About Section */}
       <section id="about" className="about">
-  <div className="about-content">
-    <img src={deskImage} alt="Desk Setup" className="about-img" />
-    <div className="about-text">
-      <h2>About Me</h2>
-      <p>
-  I’m a web developer and UI/UX designer, dedicated to creating responsive, user-friendly websites that deliver both 
-  excellent functionality and a seamless user experience. With a strong focus on design and usability, I craft websites 
-  that are not only visually appealing but also intuitive and easy to navigate.
-</p>
-<p>
-  I specialize in designing clean, modern interfaces and developing high-performance websites that work flawlessly across 
-  all devices. Whether you need a sleek design, optimized performance, or both, I’m here to bring your digital projects to life.
-</p>
+        <div className="about-content">
+          <img src={deskImage} alt="Desk Setup" className="about-img" />
+          <div className="about-text">
+            <h2>About Me</h2>
+            <p>
+              I’m a web developer and UI/UX designer, dedicated to creating responsive, user-friendly websites that deliver both 
+              excellent functionality and a seamless user experience. With a strong focus on design and usability, I craft websites 
+              that are not only visually appealing but also intuitive and easy to navigate.
+            </p>
+            <p>
+              I specialize in designing clean, modern interfaces and developing high-performance websites that work flawlessly across 
+              all devices. Whether you need a sleek design, optimized performance, or both, I’m here to bring your digital projects to life.
+            </p>
+          </div>
+        </div>
+      </section>
 
-
-    </div>
-  </div>
-</section>
-
-
+      {/* Portfolio Section */}
       <section id="portfolio" className="portfolio">
         <h2>Portfolio</h2>
         <p>Here's a selection of some of the projects I've created:</p>
         <div className="project-list">
-          {/* Project 1 - Vinopairings */}
           <div className="project">
             <img src={pairings} alt="VinoPairings" />
             <h3>VinoPairings</h3>
@@ -71,7 +68,6 @@ const Home = () => {
             <a href="https://vinopairings.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
-          {/* Project 2 - CosmicZodiacAstrology */}
           <div className="project">
             <img src={cosmic} alt="Cosmic Zodiac Astrology" />
             <h3>Cosmic Zodiac Astrology</h3>
@@ -79,7 +75,6 @@ const Home = () => {
             <a href="https://cosmiczodiacastrology.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
-          {/* Project 3 - Psychological Manipulation */}
           <div className="project">
             <img src={psych} alt="Psychological Manipulation" />
             <h3>Psychological Manipulation</h3>
@@ -87,7 +82,6 @@ const Home = () => {
             <a href="https://psychological-manipulation.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
-          {/* Project 4 - Big Pace Barber Shop and Beauty Salon */}
           <div className="project">
             <img src={pace} alt="Big Pace Barbershop and Beauty Salon 2" />
             <h3>Big Pace Barbershop and Beauty Salon 2</h3>
@@ -95,9 +89,8 @@ const Home = () => {
             <a href="https://bigpacebarbershopandbeautysalon2.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
-          {/* Project 5 - Pinkerton Williams */}
           <div className="project">
-            <img src={pwImage} alt="Pinkerton Williams" /> {/* Use imported image */}
+            <img src={pwImage} alt="Pinkerton Williams" />
             <h3>Pinkerton Williams DAV Chapter 18</h3>
             <p>A website for a chapter of the Disabled American Veterans (DAV) organization.</p>
             <a href="https://pinkertonwilliams.org" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
@@ -105,17 +98,31 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Work With Me Section */}
+      <section id="work" className="work-with-me">
+        <h2>💼 Work With Me</h2>
+        <p>
+          Need a beautiful, functional website that feels uniquely <em>you</em>?
+          Whether you're a small business, nonprofit, or creative entrepreneur, I build modern, responsive websites that make an impact.
+        </p>
+        <p>
+          I blend aesthetics with strategy — from concept to launch — so your online presence not only looks amazing, but works beautifully too.
+        </p>
+        <p>
+          Let’s bring your ideas to life →{" "}
+          <a href="mailto:agentpamelajterrell.com" className="email-link">agentpamelajterrell.com</a>
+        </p>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="contact">
         <h2>Contact Me</h2>
         <p>If you'd like to work with me or have any questions, feel free to reach out!</p>
 
-        {/* Displaying Email */}
         <p>Or reach me directly at: 
-          <a href="mailto:pammyhoney@yahoo.com" className="email-link">pammyhoney@yahoo.com</a>
+          <a href="mailto:agentpamelajterrell.com" className="email-link">agentpamelajterrell.com</a>
         </p>
 
-        {/* You can implement a contact form here */}
         <form className="contact-form">
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
