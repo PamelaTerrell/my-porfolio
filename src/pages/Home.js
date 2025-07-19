@@ -112,7 +112,13 @@ const Home = () => {
           Let’s bring your ideas to life →{" "}
           <a href="mailto:agentpamelajterrell@gmail.com" className="email-link">agentpamelajterrell@gmail.com</a>
         </p>
-        <p>Or call/text: <a href="tel:+17069106188" className="phone-link">(706) 910-6188</a></p>
+        <p>
+          Or call/text: <a href="tel:+17069106188">(706) 910-6188</a>
+          <br />
+          <em style={{ fontSize: "0.9rem", color: "#888" }}>
+            Note: On Mac or iPhone, clicking this may open FaceTime by default. Please call or text directly using your phone.
+          </em>
+        </p>
       </section>
 
       {/* Why Choose Me Section */}
@@ -138,8 +144,16 @@ const Home = () => {
         <h2>Contact Me</h2>
         <p>If you'd like to work with me or have any questions, feel free to reach out!</p>
 
-        <p>Or reach me directly at: 
-          <a href="mailto:agentpamelajterrell@gmail.com" className="email-link">agentpamelajterrell@gmail.com</a>
+        <p>
+          Or reach me directly at: 
+          <a href="mailto:agentpamelajterrell@gmail.com" className="email-link"> agentpamelajterrell@gmail.com</a>
+        </p>
+
+        <p>
+          Call or text: <a href="tel:+17069106188">(706) 910-6188</a><br />
+          <em style={{ fontSize: "0.9rem", color: "#888" }}>
+           Call or text.
+          </em>
         </p>
 
         <form className="contact-form">
