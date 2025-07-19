@@ -343,6 +343,63 @@
   box-shadow: 0 0 10px var(--emerald);
 }
 
+.why-choose-me {
+  background-color: #f9fafb;
+  color: #1a1a1a;
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.why-choose-me h2 {
+  font-size: 2.4rem;
+  color: #0f52ba; /* sapphire */
+  margin-bottom: 20px;
+}
+
+.why-choose-me p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.why-choose-me ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.why-choose-me ul li {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.why-choose-me ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #2ecc71; /* emerald green check */
+  font-weight: bold;
+}
+
+.why-choose-me a.email-link {
+  font-weight: 700;
+  color: #2ecc71;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.why-choose-me a.email-link:hover {
+  color: #0f52ba;
+  text-decoration: none;
+}
+
+
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }

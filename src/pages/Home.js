@@ -1,31 +1,16 @@
 import React from "react";
 import { Link } from "react-scroll"; 
-import { Helmet } from "react-helmet";  // react-helmet import
 import "./Home.css";
 import pwImage from '../assets/PW.jpg'; 
-import pairings from '../assets/pairings.png';
-import cosmic from '../assets/cosmic.png';
-import psych from '../assets/psych.png';
-import pace from '../assets/pace.png';
+import pairings from '../assets/pairings.png'
+import cosmic from '../assets/cosmic.png'
+import psych from '../assets/psych.png'
+import pace from '../assets/pace.png'
 import deskImage from '../assets/desk.jpg'; 
 
 const Home = () => {
   return (
     <div className="home">
-      <Helmet>
-        <title>Pamela Terrell - Web Developer | Augusta, GA</title>
-        <meta 
-          name="description" 
-          content="Professional web developer creating elegant, responsive websites for businesses and entrepreneurs in Augusta, Georgia." 
-        />
-        <meta 
-          name="keywords" 
-          content="web developer Augusta GA, website design Augusta, responsive web design, UI/UX designer Augusta" 
-        />
-        <meta name="author" content="Pamela Terrell" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Helmet>
-
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
@@ -126,6 +111,25 @@ const Home = () => {
         <p>
           Let’s bring your ideas to life →{" "}
           <a href="mailto:agentpamelajterrell@gmail.com" className="email-link">agentpamelajterrell@gmail.com</a>
+        </p>
+        <p>Or call/text: <a href="tel:+17069106188" className="phone-link">(706) 910-6188</a></p>
+      </section>
+
+      {/* Why Choose Me Section */}
+      <section id="why-choose-me" className="why-choose-me">
+        <h2>Why Choose Me?</h2>
+        <p>
+          I provide the same high-quality, professional web design and development services as larger agencies — but with a personalized touch and at a fraction of the cost.
+        </p>
+        <ul>
+          <li><strong>Affordable pricing:</strong> No huge agency fees or hidden costs.</li>
+          <li><strong>Personalized service:</strong> Direct communication with me throughout your project.</li>
+          <li><strong>Fast turnaround:</strong> I work efficiently to get your site live quickly.</li>
+          <li><strong>Custom solutions:</strong> Tailored designs that fit your unique brand and goals.</li>
+        </ul>
+        <p>
+          Ready to get started on a website that looks amazing without breaking the bank? 
+          <a href="mailto:agentpamelajterrell@gmail.com" className="email-link"> Let’s chat!</a>
         </p>
       </section>
 
