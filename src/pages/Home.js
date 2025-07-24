@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-scroll"; 
+import { Link } from "react-scroll";
 
 import "./Home.css";
 import pwImage from '../assets/PW.jpg'; 
@@ -7,53 +7,53 @@ import pairings from '../assets/pairings.png';
 import cosmic from '../assets/cosmic.png';
 import psych from '../assets/psych.png';
 import pace from '../assets/pace.png';
-import deskImage from '../assets/desk.jpg';
-import lifeStories from '../assets/LifeStories.png';
-import customDreamz from '../assets/CustomDreamz.png';
+import lifestories from '../assets/LifeStories.png';
+import customdreamz from '../assets/CustomDreamz.png';
+import deskImage from '../assets/desk.jpg'; 
+import pjtImage from '../assets/PJT.jpg';  // <-- new import
 
 const Home = () => {
   return (
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
-  <div className="hero-content">
-    <h1 className="hero-title">Need a Website That Stands Out?</h1>
-    <p className="hero-subtitle">
-      I'm Pamela — a web developer and UX designer who builds beautiful, high-performing websites for small businesses, nonprofits, and creatives.
-    </p>
-    <p className="hero-subtitle secondary">
-      Whether you're starting fresh or need a revamp, I deliver custom sites that look amazing and work perfectly across devices.
-    </p>
-    <div className="cta-buttons">
-      <Link
-        to="portfolio"
-        spy={true}
-        smooth={true}
-        offset={-70}
-        duration={500}
-        className="cta-btn"
-      >
-        View My Work
-      </Link>
-      <a
-        href="mailto:agentpamelajterrell@gmail.com"
-        className="cta-btn secondary-btn"
-      >
-        Let's Talk
-      </a>
-    </div>
-  </div>
-  <div className="scroll-down">
-    <span>Scroll Down</span>
-    <div className="arrow">↓</div>
-  </div>
-</section>
-
+        <div className="hero-content">
+          <h1 className="hero-title">Need a Website That Stands Out?</h1>
+          <p className="hero-subtitle">
+            I'm Pamela — a web developer and UX designer who builds beautiful, high-performing websites for small businesses, nonprofits, and creatives.
+          </p>
+          <p className="hero-subtitle secondary">
+            Whether you're starting fresh or need a revamp, I deliver custom sites that look amazing and work perfectly across devices.
+          </p>
+          <div className="cta-buttons">
+            <Link
+              to="portfolio"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className="cta-btn"
+            >
+              View My Work
+            </Link>
+            <a
+              href="mailto:agentpamelajterrell@gmail.com"
+              className="cta-btn secondary-btn"
+            >
+              Let's Talk
+            </a>
+          </div>
+        </div>
+        <div className="scroll-down">
+          <span>Scroll Down</span>
+          <div className="arrow">↓</div>
+        </div>
+      </section>
 
       {/* About Section */}
       <section id="about" className="about">
         <div className="about-content">
-          <img src={deskImage} alt="Desk Setup" className="about-img" />
+          <img src={pjtImage} alt="Pamela Terrell" className="about-img personal-photo" /> {/* Added photo */}
           <div className="about-text">
             <h2>About Me</h2>
             <p>
@@ -74,19 +74,17 @@ const Home = () => {
         <h2>Portfolio</h2>
         <p>Here's a selection of some of the projects I've created:</p>
         <div className="project-list">
-
-          {/* New Projects First */}
           <div className="project">
-            <img src={lifeStories} alt="Life Stories Now" />
+            <img src={lifestories} alt="Life Stories Now" />
             <h3>Life Stories Now</h3>
-            <p>An anonymous story-sharing platform for real, unfiltered life experiences.</p>
+            <p>A storytelling platform where people anonymously share meaningful life experiences.</p>
             <a href="https://lifestoriesnow.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
           <div className="project">
-            <img src={customDreamz} alt="Custom Dreamz Motorsports" />
+            <img src={customdreamz} alt="Custom Dreamz Motorsports" />
             <h3>Custom Dreamz Motorsports</h3>
-            <p>A bold, high-impact website showcasing custom builds and motorsports services.</p>
+            <p>A bold, high-energy site for a motorsports brand that builds custom cars and bikes.</p>
             <a href="https://customdreamzmotorsports.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
