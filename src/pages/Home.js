@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-scroll";
+import Footer from "../components/Footer";
 
 import "./Home.css";
 import pwImage from '../assets/PW.jpg'; 
