@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-scroll";
-import Footer from "../components/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 import "./Home.css";
 import pwImage from '../assets/PW.jpg'; 
@@ -11,9 +13,13 @@ import pace from '../assets/pace.png';
 import lifestories from '../assets/LifeStories.png';
 import customdreamz from '../assets/CustomDreamz.png';
 import deskImage from '../assets/desk.jpg'; 
-import pjtImage from '../assets/PJT.jpg';  // <-- new import
+import pjtImage from '../assets/PJT.jpg';  // personal photo
 
 const Home = () => {
+  useEffect(() => {
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+  }, []);
+
   return (
     <div className="home">
       {/* Hero Section */}
@@ -54,8 +60,13 @@ const Home = () => {
       {/* About Section */}
       <section id="about" className="about">
         <div className="about-content">
-          <img src={pjtImage} alt="Pamela Terrell" className="about-img personal-photo" /> {/* Added photo */}
-          <div className="about-text">
+          <img
+            src={pjtImage}
+            alt="Pamela Terrell"
+            className="about-img personal-photo"
+            data-aos="fade-left"
+          />
+          <div className="about-text" data-aos="fade-up">
             <h2>About Me</h2>
             <p>
               I’m a web developer and UI/UX designer, dedicated to creating responsive, user-friendly websites that deliver both 
@@ -72,52 +83,52 @@ const Home = () => {
 
       {/* Portfolio Section */}
       <section id="portfolio" className="portfolio">
-        <h2>Portfolio</h2>
-        <p>Here's a selection of some of the projects I've created:</p>
+        <h2 data-aos="fade-up">Portfolio</h2>
+        <p data-aos="fade-up">Here's a selection of some of the projects I've created:</p>
         <div className="project-list">
-          <div className="project">
+          <div className="project" data-aos="fade-up">
             <img src={lifestories} alt="Life Stories Now" />
             <h3>Life Stories Now</h3>
             <p>A storytelling platform where people anonymously share meaningful life experiences.</p>
             <a href="https://lifestoriesnow.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
-          <div className="project">
+          <div className="project" data-aos="fade-up">
             <img src={customdreamz} alt="Custom Dreamz Motorsports" />
             <h3>Custom Dreamz Motorsports</h3>
             <p>A bold, high-energy site for a motorsports brand that builds custom cars and bikes.</p>
             <a href="https://customdreamzmotorsports.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
-          <div className="project">
+          <div className="project" data-aos="fade-up">
             <img src={pairings} alt="VinoPairings" />
             <h3>VinoPairings</h3>
             <p>A website dedicated to wine pairing recommendations.</p>
             <a href="https://vinopairings.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
-          <div className="project">
+          <div className="project" data-aos="fade-up">
             <img src={cosmic} alt="Cosmic Zodiac Astrology" />
             <h3>Cosmic Zodiac Astrology</h3>
             <p>A platform offering astrology insights and content.</p>
             <a href="https://cosmiczodiacastrology.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
-          <div className="project">
+          <div className="project" data-aos="fade-up">
             <img src={psych} alt="Psychological Manipulation" />
             <h3>Psychological Manipulation</h3>
             <p>A scholarly resource on psychological manipulation and emotional control.</p>
             <a href="https://psychological-manipulation.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
-          <div className="project">
+          <div className="project" data-aos="fade-up">
             <img src={pace} alt="Big Pace Barbershop and Beauty Salon 2" />
             <h3>Big Pace Barbershop and Beauty Salon 2</h3>
             <p>A site for a local barbershop and beauty salon.</p>
             <a href="https://bigpacebarbershopandbeautysalon2.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
-          <div className="project">
+          <div className="project" data-aos="fade-up">
             <img src={pwImage} alt="Pinkerton Williams" />
             <h3>Pinkerton Williams DAV Chapter 18</h3>
             <p>A website for a chapter of the Disabled American Veterans (DAV) organization.</p>
@@ -127,7 +138,7 @@ const Home = () => {
       </section>
 
       {/* Work With Me Section */}
-      <section id="work" className="work-with-me">
+      <section id="work" className="work-with-me" data-aos="fade-up">
         <h2>💼 Work With Me</h2>
         <p>
           Need a beautiful, functional website that feels uniquely <em>you</em>?
@@ -150,7 +161,7 @@ const Home = () => {
       </section>
 
       {/* Why Choose Me Section */}
-      <section id="why-choose-me" className="why-choose-me">
+      <section id="why-choose-me" className="why-choose-me" data-aos="fade-up">
         <h2>Why Choose Me?</h2>
         <p>
           I provide the same high-quality, professional web design and development services as larger agencies — but with a personalized touch and at a fraction of the cost.
@@ -168,7 +179,7 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="contact">
+      <section id="contact" className="contact" data-aos="fade-up">
         <h2>Contact Me</h2>
         <p>If you'd like to work with me or have any questions, feel free to reach out!</p>
 
@@ -191,6 +202,8 @@ const Home = () => {
           <button type="submit" className="cta-btn">Send Message</button>
         </form>
       </section>
+
+      
     </div>
   );
 };
