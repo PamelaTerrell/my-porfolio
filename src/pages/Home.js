@@ -1,41 +1,54 @@
 import React from "react";
 import { Link } from "react-scroll"; 
+
 import "./Home.css";
 import pwImage from '../assets/PW.jpg'; 
-import pairings from '../assets/pairings.png'
-import cosmic from '../assets/cosmic.png'
-import psych from '../assets/psych.png'
-import pace from '../assets/pace.png'
-import deskImage from '../assets/desk.jpg'; 
+import pairings from '../assets/pairings.png';
+import cosmic from '../assets/cosmic.png';
+import psych from '../assets/psych.png';
+import pace from '../assets/pace.png';
+import deskImage from '../assets/desk.jpg';
+import lifeStories from '../assets/LifeStories.png';
+import customDreamz from '../assets/CustomDreamz.png';
 
 const Home = () => {
   return (
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
-        <div className="hero-content">
-          <h1 className="hero-title">Hi, I'm Pamela</h1>
-          <p className="hero-subtitle">
-            A passionate web developer crafting beautiful and functional websites
-          </p>
-          <div className="cta-buttons">
-            <Link
-              to="portfolio"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              className="cta-btn"
-            >
-              View My Work
-            </Link>
-          </div>
-        </div>
-        <div className="scroll-down">
-          <span>Scroll Down</span>
-          <div className="arrow">↓</div>
-        </div>
-      </section>
+  <div className="hero-content">
+    <h1 className="hero-title">Need a Website That Stands Out?</h1>
+    <p className="hero-subtitle">
+      I'm Pamela — a web developer and UX designer who builds beautiful, high-performing websites for small businesses, nonprofits, and creatives.
+    </p>
+    <p className="hero-subtitle secondary">
+      Whether you're starting fresh or need a revamp, I deliver custom sites that look amazing and work perfectly across devices.
+    </p>
+    <div className="cta-buttons">
+      <Link
+        to="portfolio"
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+        className="cta-btn"
+      >
+        View My Work
+      </Link>
+      <a
+        href="mailto:agentpamelajterrell@gmail.com"
+        className="cta-btn secondary-btn"
+      >
+        Let's Talk
+      </a>
+    </div>
+  </div>
+  <div className="scroll-down">
+    <span>Scroll Down</span>
+    <div className="arrow">↓</div>
+  </div>
+</section>
+
 
       {/* About Section */}
       <section id="about" className="about">
@@ -61,6 +74,22 @@ const Home = () => {
         <h2>Portfolio</h2>
         <p>Here's a selection of some of the projects I've created:</p>
         <div className="project-list">
+
+          {/* New Projects First */}
+          <div className="project">
+            <img src={lifeStories} alt="Life Stories Now" />
+            <h3>Life Stories Now</h3>
+            <p>An anonymous story-sharing platform for real, unfiltered life experiences.</p>
+            <a href="https://lifestoriesnow.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
+          </div>
+
+          <div className="project">
+            <img src={customDreamz} alt="Custom Dreamz Motorsports" />
+            <h3>Custom Dreamz Motorsports</h3>
+            <p>A bold, high-impact website showcasing custom builds and motorsports services.</p>
+            <a href="https://customdreamzmotorsports.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
+          </div>
+
           <div className="project">
             <img src={pairings} alt="VinoPairings" />
             <h3>VinoPairings</h3>
