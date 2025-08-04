@@ -13,7 +13,9 @@ import pace from '../assets/pace.png';
 import lifestories from '../assets/LifeStories.png';
 import customdreamz from '../assets/CustomDreamz.png';
 import deskImage from '../assets/desk.jpg'; 
-import pjtImage from '../assets/PJT.jpg';  // personal photo
+import getvabuddy from '../assets/getvabuddy.jpg';
+import pjtImage from '../assets/PJT.jpg';
+import desire from '../assets/desire.jpg';
 
 const Home = () => {
   useEffect(() => {
@@ -101,6 +103,13 @@ const Home = () => {
           </div>
 
           <div className="project" data-aos="fade-up">
+            <img src={desire} alt="The Man Women Desire" />
+            <h3>The Man Women Desire</h3>
+            <p>An AI-powered self-assessment quiz built by a woman to challenge men on whether they embody the traits women truly desire — confidence, care, character, and more..</p>
+            <a href="https://themanwomendesire.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
+          </div>
+
+          <div className="project" data-aos="fade-up">
             <img src={pairings} alt="VinoPairings" />
             <h3>VinoPairings</h3>
             <p>A website dedicated to wine pairing recommendations.</p>
@@ -127,6 +136,14 @@ const Home = () => {
             <p>A site for a local barbershop and beauty salon.</p>
             <a href="https://bigpacebarbershopandbeautysalon2.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
+
+          <div className="project" data-aos="fade-up">
+            <img src={getvabuddy} alt="Get VA Buddy" />
+            <h3>Get VA Buddy</h3>
+            <p>A simple tool that helps veterans access commonly used VA forms and mail them in — no login or complex online portals required.</p>
+            <a href="https://getvabuddy.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
+          </div>
+
 
           <div className="project" data-aos="fade-up">
             <img src={pwImage} alt="Pinkerton Williams" />
