@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+'use client';
+
+import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 
 import "./Home.css";
 import pwImage from '../assets/PW.jpg'; 
@@ -12,7 +13,7 @@ import psych from '../assets/psych.png';
 import pace from '../assets/pace.png';
 import lifestories from '../assets/LifeStories.png';
 import customdreamz from '../assets/CustomDreamz.png';
-import deskImage from '../assets/desk.jpg'; 
+ 
 import getvabuddy from '../assets/getvabuddy.jpg';
 import pjtImage from '../assets/PJT.jpg';
 import desire from '../assets/desire.jpg';
@@ -21,6 +22,29 @@ const Home = () => {
   useEffect(() => {
     AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
   }, []);
+
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch("https://formspree.io/f/xzzvqbpw", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setStatus("✅ Your message has been sent! I will get back to you shortly.");
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      setStatus("⚠️ Oops! Something went wrong. Please try again.");
+    }
+  };
 
   return (
     <div className="home">
@@ -88,6 +112,7 @@ const Home = () => {
         <h2 data-aos="fade-up">Portfolio</h2>
         <p data-aos="fade-up">Here's a selection of some of the projects I've created:</p>
         <div className="project-list">
+          {/* Repeat project cards */}
           <div className="project" data-aos="fade-up">
             <img src={lifestories} alt="Life Stories Now" />
             <h3>Life Stories Now</h3>
@@ -105,7 +130,7 @@ const Home = () => {
           <div className="project" data-aos="fade-up">
             <img src={desire} alt="The Man Women Desire" />
             <h3>The Man Women Desire</h3>
-            <p>An AI-powered self-assessment quiz built by a woman to challenge men on whether they embody the traits women truly desire — confidence, care, character, and more..</p>
+            <p>An AI-powered self-assessment quiz built by a woman to challenge men on whether they embody the traits women truly desire — confidence, care, character, and more.</p>
             <a href="https://themanwomendesire.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
@@ -143,7 +168,6 @@ const Home = () => {
             <p>A simple tool that helps veterans access commonly used VA forms and mail them in — no login or complex online portals required.</p>
             <a href="https://getvabuddy.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
-
 
           <div className="project" data-aos="fade-up">
             <img src={pwImage} alt="Pinkerton Williams" />
@@ -199,28 +223,50 @@ const Home = () => {
       <section id="contact" className="contact" data-aos="fade-up">
         <h2>Contact Me</h2>
         <p>If you'd like to work with me or have any questions, feel free to reach out!</p>
-
         <p>
-          Or reach me directly at: 
-          <a href="mailto:agentpamelajterrell@gmail.com" className="email-link"> agentpamelajterrell@gmail.com</a>
+          Or reach me directly at:{" "}
+          <a href="mailto:agentpamelajterrell@gmail.com" className="email-link">
+            agentpamelajterrell@gmail.com
+          </a>
+        </p>
+        <p>
+          Call or text: <a href="tel:+17069106188">(706) 910-6188</a>
+        </p>
+        <p className="italic text-gray-600">
+          Note: The site is currently under construction. If you tried submitting before, please try again. Thank you!
         </p>
 
-        <p>
-          Call or text: <a href="tel:+17069106188">(706) 910-6188</a><br />
-          <em style={{ fontSize: "0.9rem", color: "#888" }}>
-           Call or text.
-          </em>
-        </p>
-
-        <form className="contact-form">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea name="message" placeholder="Your Message" required></textarea>
-          <button type="submit" className="cta-btn">Send Message</button>
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
+          <button type="submit" className="cta-btn">
+            Send Message
+          </button>
         </form>
-      </section>
 
-      
+        {status && <p className="mt-4 text-green-600 font-semibold">{status}</p>}
+      </section>
     </div>
   );
 };
