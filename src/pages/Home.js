@@ -25,6 +25,17 @@ const Home = () => {
     AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
   }, []);
 
+  // Rotating word in the H1
+  const rotatingWords = ["Stands Out", "Converts", "Inspires", "Feels Custom"];
+  const [wordIndex, setWordIndex] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => {
+      setWordIndex((i) => (i + 1) % rotatingWords.length);
+    }, 2200);
+    return () => clearInterval(t);
+  }, []);
+
+  // Contact form state
   const [formData, setFormData] = useState({ name: "", email: "", message: "", _gotcha: "" });
   const [status, setStatus] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -38,9 +49,8 @@ const Home = () => {
       const response = await fetch("https://formspree.io/f/xzzvqbpw", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData), // includes honeypot _gotcha
+        body: JSON.stringify(formData), // includes honeypot
       });
-
       if (response.ok) {
         setStatus("✅ Your message has been sent! I will get back to you shortly.");
         setFormData({ name: "", email: "", message: "", _gotcha: "" });
@@ -56,7 +66,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      {/* SEO: Person + Offer (JSON-LD) */}
+      {/* SEO Schema */}
       <script
         type="application/ld+json"
         aria-hidden="true"
@@ -69,61 +79,65 @@ const Home = () => {
             "url": "https://pamelajterrell.com",
             "email": "mailto:agentpamelajterrell@gmail.com",
             "telephone": "+1-706-910-6188",
-            "sameAs": [
-              "https://www.linkedin.com/in/pamela-j-terrell"
-            ],
+            "sameAs": ["https://www.linkedin.com/in/pamela-j-terrell"],
             "makesOffer": [{
               "@type": "Offer",
               "name": "Starter Website",
               "price": "399",
               "priceCurrency": "USD",
-              "description": "1–3 page custom, mobile‑friendly site with contact form and basic SEO."
+              "description": "1–3 page custom, mobile-friendly site with contact form and basic SEO."
             }]
           })
         }}
       />
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="hero">
-        <div className="hero-content">
-          <h1 className="hero-title">Need a Website That Stands Out?</h1>
-          <p className="hero-subtitle">
-            I'm Pamela — a web developer and UX designer who builds beautiful, high-performing websites for small businesses, nonprofits, and creatives.
-          </p>
-          <p className="hero-subtitle secondary">
-            Whether you're starting fresh or need a revamp, I deliver custom sites that look amazing and work perfectly across devices.
-          </p>
-          <div className="cta-buttons">
-            <Link to="portfolio" spy={true} smooth={true} offset={-70} duration={500} className="cta-btn">
-              View My Work
-            </Link>
-            <Link to="pricing" spy={true} smooth={true} offset={-70} duration={500} className="cta-btn secondary-btn">
-              See Pricing
-            </Link>
-            <a
-              href="mailto:agentpamelajterrell@gmail.com"
-              className="cta-btn tertiary-btn"
-              aria-label="Email Pamela to discuss your project"
-            >
-              Let's Talk
-            </a>
+        {/* Glass card wrapper */}
+        <div className="hero-glass" data-aos="fade-up">
+          <div className="hero-content">
+            <h1 className="hero-title">
+              Need a Website That <span className="hero-rotate">{rotatingWords[wordIndex]}</span>?
+            </h1>
+
+            <p className="hero-subtitle">
+              I'm Pamela — a web developer and UX designer who builds beautiful, high-performing websites
+              for small businesses, nonprofits, and creatives.
+            </p>
+            <p className="hero-subtitle secondary">
+              Whether you're starting fresh or need a revamp, I deliver custom sites that look amazing and
+              work perfectly across devices.
+            </p>
+
+            <div className="cta-buttons">
+              <Link to="portfolio" spy smooth offset={-70} duration={500} className="cta-btn">View My Work</Link>
+              <Link to="pricing" spy smooth offset={-70} duration={500} className="cta-btn secondary-btn">See Pricing</Link>
+              <a href="mailto:agentpamelajterrell@gmail.com" className="cta-btn tertiary-btn" aria-label="Email Pamela">Let's Talk</a>
+            </div>
+
+            <p className="hero-microcopy">2 spots open this month • Free 15‑min consult</p>
           </div>
         </div>
-       <div className="scroll-down" aria-hidden="true">
-  <span>Scroll Down</span>
-  <svg className="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 5v14m0 0l-6-6m6 6l6-6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-</div>
 
+        {/* Fancy scroll down with SVG */}
+        <div className="scroll-down" aria-hidden="true">
+          <span>Scroll Down</span>
+          <svg className="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+               xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5v14m0 0l-6-6m6 6l6-6"
+                  stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
+
+        
       </section>
 
-      {/* About Section */}
+      {/* About */}
       <section id="about" className="about">
         <div className="about-content">
           <img
             src={pjtImage}
-            alt="Portrait of Pamela Terrell, Web Developer and UX Designer"
+            alt="Portrait of Pamela Terrell"
             className="about-img personal-photo"
             data-aos="fade-left"
             loading="lazy"
@@ -131,19 +145,18 @@ const Home = () => {
           <div className="about-text" data-aos="fade-up">
             <h2>About Me</h2>
             <p>
-              I’m a web developer and UI/UX designer, dedicated to creating responsive, user-friendly websites that deliver both
-              excellent functionality and a seamless user experience. With a strong focus on design and usability, I craft websites
-              that are not only visually appealing but also intuitive and easy to navigate.
+              I’m a web developer and UI/UX designer, dedicated to creating responsive, user-friendly websites
+              that deliver both excellent functionality and a seamless user experience.
             </p>
             <p>
-              I specialize in designing clean, modern interfaces and developing high-performance websites that work flawlessly across
-              all devices. Whether you need a sleek design, optimized performance, or both, I’m here to bring your digital projects to life.
+              I specialize in clean, modern interfaces and high-performance websites that work flawlessly across all devices.
+              Whether you need a sleek design, optimized performance, or both, I can bring your digital projects to life.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Portfolio Section */}
+      {/* Portfolio */}
       <section id="portfolio" className="portfolio">
         <h2 data-aos="fade-up">Portfolio</h2>
         <p data-aos="fade-up">Here's a selection of some of the projects I've created:</p>
@@ -152,75 +165,75 @@ const Home = () => {
             <img src={lifestories} alt="Life Stories Now — anonymous life experiences platform" loading="lazy" />
             <h3>Life Stories Now</h3>
             <p>A storytelling platform where people anonymously share meaningful life experiences.</p>
-            <a href="https://lifestoriesnow.com" target="_blank" rel="noopener noreferrer" className="project-link" aria-label="Visit LifeStoriesNow.com">Visit Site</a>
+            <a href="https://lifestoriesnow.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
           <div className="project" data-aos="fade-up">
             <img src={beforeandafter} alt="BeforeAndAfterVault — upload and share before/after images" loading="lazy" />
             <h3>Before And After Vault</h3>
             <p>A platform for uploading and sharing before-and-after photos, built with user authentication to support personal image vaults and a community showcase.</p>
-            <a href="https://beforeandaftervault.com" target="_blank" rel="noopener noreferrer" className="project-link" aria-label="Visit BeforeAndAfterVault.com">Visit Site</a>
+            <a href="https://beforeandaftervault.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
           <div className="project" data-aos="fade-up">
             <img src={customdreamz} alt="Custom Dreamz Motorsports — bold, high-energy site" loading="lazy" />
             <h3>Custom Dreamz Motorsports</h3>
             <p>A bold, high-energy site for a motorsports brand that builds custom cars and bikes.</p>
-            <a href="https://customdreamzmotorsports.com" target="_blank" rel="noopener noreferrer" className="project-link" aria-label="Visit CustomDreamzMotorsports.com">Visit Site</a>
+            <a href="https://customdreamzmotorsports.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
           <div className="project" data-aos="fade-up">
             <img src={desire} alt="The Man Women Desire — AI-powered self-assessment" loading="lazy" />
             <h3>The Man Women Desire</h3>
-            <p>An AI-powered self-assessment quiz built by a woman to challenge men on whether they embody the traits women truly desire — confidence, care, character, and more.</p>
-            <a href="https://themanwomendesire.com" target="_blank" rel="noopener noreferrer" className="project-link" aria-label="Visit TheManWomenDesire.com">Visit Site</a>
+            <p>An AI-powered self-assessment quiz built by a woman to challenge men on whether they embody the traits women truly desire.</p>
+            <a href="https://themanwomendesire.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
           <div className="project" data-aos="fade-up">
             <img src={pairings} alt="VinoPairings — wine pairing recommendations" loading="lazy" />
             <h3>VinoPairings</h3>
             <p>A website dedicated to wine pairing recommendations.</p>
-            <a href="https://vinopairings.com" target="_blank" rel="noopener noreferrer" className="project-link" aria-label="Visit VinoPairings.com">Visit Site</a>
+            <a href="https://vinopairings.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
           <div className="project" data-aos="fade-up">
             <img src={cosmic} alt="Cosmic Zodiac Astrology — astrology insights" loading="lazy" />
             <h3>Cosmic Zodiac Astrology</h3>
             <p>A platform offering astrology insights and content.</p>
-            <a href="https://cosmiczodiacastrology.com" target="_blank" rel="noopener noreferrer" className="project-link" aria-label="Visit CosmicZodiacAstrology.com">Visit Site</a>
+            <a href="https://cosmiczodiacastrology.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
           <div className="project" data-aos="fade-up">
             <img src={psych} alt="Psychological Manipulation — scholarly resource" loading="lazy" />
             <h3>Psychological Manipulation</h3>
             <p>A scholarly resource on psychological manipulation and emotional control.</p>
-            <a href="https://psychological-manipulation.com" target="_blank" rel="noopener noreferrer" className="project-link" aria-label="Visit Psychological-Manipulation.com">Visit Site</a>
+            <a href="https://psychological-manipulation.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
           <div className="project" data-aos="fade-up">
             <img src={pace} alt="Big Pace Barbershop and Beauty Salon 2 — local business site" loading="lazy" />
             <h3>Big Pace Barbershop and Beauty Salon 2</h3>
             <p>A site for a local barbershop and beauty salon.</p>
-            <a href="https://bigpacebarbershopandbeautysalon2.com" target="_blank" rel="noopener noreferrer" className="project-link" aria-label="Visit BigPaceBarbershopAndBeautySalon2.com">Visit Site</a>
+            <a href="https://bigpacebarbershopandbeautysalon2.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
           <div className="project" data-aos="fade-up">
             <img src={getvabuddy} alt="Get VA Buddy — VA forms helper tool" loading="lazy" />
             <h3>Get VA Buddy</h3>
             <p>A simple tool that helps veterans access commonly used VA forms and mail them in — no login or complex online portals required.</p>
-            <a href="https://getvabuddy.com" target="_blank" rel="noopener noreferrer" className="project-link" aria-label="Visit GetVABuddy.com">Visit Site</a>
+            <a href="https://getvabuddy.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
           <div className="project" data-aos="fade-up">
             <img src={pwImage} alt="Pinkerton Williams DAV Chapter 18 — veterans nonprofit site" loading="lazy" />
             <h3>Pinkerton Williams DAV Chapter 18</h3>
             <p>A website for a chapter of the Disabled American Veterans (DAV) organization.</p>
-            <a href="https://pinkertonwilliams.org" target="_blank" rel="noopener noreferrer" className="project-link" aria-label="Visit PinkertonWilliams.org">Visit Site</a>
+            <a href="https://pinkertonwilliams.org" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
         </div>
       </section>
 
-      {/* Work With Me Section */}
+      {/* Work With Me */}
       <section id="work" className="work-with-me" data-aos="fade-up">
         <h2>💼 Work With Me</h2>
         <p>
@@ -246,7 +259,7 @@ const Home = () => {
         </p>
       </section>
 
-      {/* Pricing Section */}
+      {/* Pricing */}
       <section id="pricing" className="pricing" data-aos="fade-up">
         <h2>Packages & Pricing</h2>
         <p className="pricing-intro">
@@ -267,7 +280,6 @@ const Home = () => {
             <a
               href="mailto:agentpamelajterrell@gmail.com?subject=Starter%20Website%20($399)"
               className="cta-btn plan-btn"
-              aria-label="Start the $399 Starter plan"
             >
               Start for $399
             </a>
@@ -312,7 +324,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* FAQ */}
       <section id="faq" className="faq" data-aos="fade-up">
         <h2>FAQs</h2>
         <details>
@@ -329,7 +341,7 @@ const Home = () => {
         </details>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact */}
       <section id="contact" className="contact" data-aos="fade-up">
         <h2>Contact Me</h2>
         <p>If you'd like to work with me or have any questions, feel free to reach out!</p>
@@ -347,7 +359,7 @@ const Home = () => {
         </p>
 
         <form className="contact-form" onSubmit={handleSubmit}>
-          {/* Honeypot field (hidden) */}
+          {/* Honeypot field */}
           <input
             type="text"
             name="_gotcha"
