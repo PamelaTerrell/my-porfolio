@@ -109,10 +109,13 @@ const Home = () => {
             </a>
           </div>
         </div>
-        <div className="scroll-down" aria-hidden="true">
-          <span>Scroll Down</span>
-          <div className="arrow">↓</div>
-        </div>
+       <div className="scroll-down" aria-hidden="true">
+  <span>Scroll Down</span>
+  <svg className="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5v14m0 0l-6-6m6 6l6-6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+</div>
+
       </section>
 
       {/* About Section */}

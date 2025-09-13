@@ -669,3 +669,22 @@
     margin-top: 0;
   }
 }
+
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 100px; /* NEW: ensure space for scroll-down */
+  }
+
+  .scroll-down {
+    bottom: 20px;   /* reset to avoid overlap */
+    transform: translateY(40px);  /* push it lower visually */
+  }
+
+  .arrow-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
