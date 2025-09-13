@@ -127,7 +127,6 @@
 
 .about-img {
   width: 25%;
-  
   border-radius: 15px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
   object-fit: cover;
@@ -400,7 +399,6 @@
   text-decoration: none;
 }
 
-
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -429,4 +427,235 @@
     font-size: 1.1rem;
     padding: 12px 30px;
   }
+}
+
+/* =========================
+   New Sections & Tweaks
+   ========================= */
+
+/* Button variants */
+.secondary-btn {
+  background: transparent;
+  border: 2px solid var(--text-light);
+  color: var(--text-light);
+  box-shadow: none;
+}
+.secondary-btn:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-3px);
+}
+
+.tertiary-btn {
+  background: #ffffff;
+  color: var(--deep-navy);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+.tertiary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.25);
+}
+
+/* Focus outlines */
+:focus-visible {
+  outline: 3px solid var(--emerald);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Screen-reader only */
+.sr-only {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; border: 0; padding: 0; margin: -1px;
+}
+
+/* Trust strip under Work With Me */
+.trust-strip {
+  margin-top: .75rem;
+  opacity: .9;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   Pricing Section
+   ========================= */
+.pricing {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  padding: 50px 20px;
+  background: linear-gradient(180deg, rgba(10,25,47,0.96), rgba(10,25,47,0.86));
+  color: var(--text-light);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  text-align: center;
+}
+
+.pricing h2 {
+  font-size: 2.2rem;
+  color: var(--text-light);
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.pricing-intro {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: #d9e2ef;
+  font-size: 1.1rem;
+}
+
+.pricing-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: stretch;
+  margin-top: 10px;
+}
+
+.plan {
+  background: #0f1e38;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 22px 18px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.25);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.plan:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.35);
+}
+
+.plan h3 {
+  font-size: 1.25rem;
+  margin: 0 0 .35rem;
+  color: var(--text-light);
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin: 0 0 1rem;
+  background: linear-gradient(135deg, var(--emerald), var(--sapphire));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+}
+.features li {
+  padding: .45rem 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.12);
+  color: #d6e3f3;
+}
+.features li:last-child { border-bottom: none; }
+
+.plan .plan-btn {
+  display: inline-block;
+  text-align: center;
+  margin-top: auto;
+  background: linear-gradient(135deg, var(--emerald), var(--sapphire));
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform .2s ease, box-shadow .2s ease;
+  box-shadow: 0 6px 18px rgba(15,82,186,0.25);
+}
+.plan .plan-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(46,204,113,0.35);
+}
+
+.plan.recommended {
+  position: relative;
+  border-color: rgba(46,204,113,0.35);
+  box-shadow: 0 14px 36px rgba(46,204,113,0.2);
+}
+
+.plan.recommended .badge {
+  position: absolute;
+  top: -10px;
+  right: 14px;
+  background: linear-gradient(135deg, var(--emerald), var(--sapphire));
+  color: #fff;
+  padding: .3rem .55rem;
+  border-radius: .5rem;
+  font-size: .75rem;
+  letter-spacing: .02em;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* =========================
+   FAQ
+   ========================= */
+.faq {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  padding: 40px 20px;
+  background: #ffffff;
+  color: var(--dark-gray);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+.faq h2 {
+  font-size: 2rem;
+  margin-bottom: 14px;
+  color: var(--sapphire);
+  text-align: center;
+}
+.faq details {
+  background: #f8fafc;
+  border: 1px solid #e6e9ef;
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  margin: .75rem 0;
+  transition: box-shadow .2s ease, border-color .2s ease;
+}
+.faq details:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  border-color: #dbe2ee;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--sapphire);
+  list-style: none;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq p {
+  margin: .5rem 0 0;
+  color: #444;
+}
+
+/* =========================
+   Anchor scroll harmony
+   ========================= */
+.portfolio,
+.work-with-me,
+.contact,
+.why-choose-me,
+.faq,
+.pricing {
+  scroll-margin-top: 80px;
+}
+
+/* Mobile tuning for new sections */
+@media (max-width: 768px) {
+  .pricing { padding: 36px 16px; }
+  .price { font-size: 1.75rem; }
+  .plan { padding: 18px 14px; }
+  .faq { padding: 32px 16px; }
 }
