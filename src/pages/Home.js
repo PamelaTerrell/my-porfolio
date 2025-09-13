@@ -13,6 +13,7 @@ import psych from '../assets/psych.png';
 import pace from '../assets/pace.png';
 import lifestories from '../assets/LifeStories.png';
 import customdreamz from '../assets/CustomDreamz.png';
+import beforeandafter from '../assets/beforeandafter.png';
  
 import getvabuddy from '../assets/getvabuddy.jpg';
 import pjtImage from '../assets/PJT.jpg';
@@ -118,6 +119,13 @@ const Home = () => {
             <h3>Life Stories Now</h3>
             <p>A storytelling platform where people anonymously share meaningful life experiences.</p>
             <a href="https://lifestoriesnow.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
+          </div>
+
+           <div className="project" data-aos="fade-up">
+            <img src={beforeandafter} alt="Before And After Vault" />
+            <h3>Before And After Vault</h3>
+            <p>A platform for uploading and sharing before-and-after photos, built with user authentication to support personal image vaults and a community showcase.</p>
+            <a href="https://beforeandaftervault.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site</a>
           </div>
 
           <div className="project" data-aos="fade-up">
