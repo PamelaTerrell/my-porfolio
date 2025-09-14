@@ -22,7 +22,16 @@ import desire from '../assets/desire.jpg';
 
 const Home = () => {
   useEffect(() => {
-    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+    const prefersReduced =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    AOS.init({
+      duration: prefersReduced ? 0 : 800,
+      easing: "ease-in-out",
+      once: true,
+      disable: prefersReduced,
+    });
   }, []);
 
   // Rotating word in the H1
@@ -112,24 +121,24 @@ const Home = () => {
             <div className="cta-buttons">
               <Link to="portfolio" spy smooth offset={-70} duration={500} className="cta-btn">View My Work</Link>
               <Link to="pricing" spy smooth offset={-70} duration={500} className="cta-btn secondary-btn">See Pricing</Link>
-              <a href="mailto:agentpamelajterrell@gmail.com" className="cta-btn tertiary-btn" aria-label="Email Pamela">Let's Talk</a>
+              <Link to="contact" spy smooth offset={-70} duration={500} className="cta-btn tertiary-btn" aria-label="Request a call">
+                Request a Call
+              </Link>
             </div>
 
-            <p className="hero-microcopy">2 spots open this month • Free 15‑min consult</p>
+            <p className="hero-microcopy">2 spots open this month • Free 15-min consult</p>
           </div>
         </div>
 
-        {/* Fancy scroll down with SVG */}
-        <div className="scroll-down" aria-hidden="true">
+        {/* Fancy scroll down with SVG (clicks to About) */}
+        <Link to="about" spy smooth offset={-70} duration={500} className="scroll-down" aria-label="Scroll to About">
           <span>Scroll Down</span>
           <svg className="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <path d="M12 5v14m0 0l-6-6m6 6l6-6"
                   stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-        </div>
-
-        
+        </Link>
       </section>
 
       {/* About */}
@@ -255,8 +264,39 @@ const Home = () => {
           </em>
         </p>
         <p className="trust-strip" aria-label="Trust indicators">
-          Launches include: performance tuning, basic SEO, analytics setup, and post‑launch support options.
+          Launches include: performance tuning, basic SEO, analytics setup, and post-launch support options.
         </p>
+      </section>
+
+      {/* ⭐ Testimonials */}
+      <section id="testimonials" className="testimonials" data-aos="fade-up">
+        <h2>What Clients Say</h2>
+        <div className="testimonials-grid">
+          <figure className="testimonial-card">
+            <blockquote className="testimonial-quote">
+              “Pamela delivered exactly what we needed — fast, clean, and on-brand. Our site finally feels legit.”
+            </blockquote>
+            <figcaption className="testimonial-author">— Alex M., Small Business Owner</figcaption>
+          </figure>
+
+          <figure className="testimonial-card">
+            <blockquote className="testimonial-quote">
+              “The process was simple and the results were beautiful. Mobile performance is night-and-day better.”
+            </blockquote>
+            <figcaption className="testimonial-author">— Dana S., Nonprofit Director</figcaption>
+          </figure>
+
+          <figure className="testimonial-card">
+            <blockquote className="testimonial-quote">
+              “Clear communication, great UX instincts, and thoughtful polish. Highly recommend working with Pamela.”
+            </blockquote>
+            <figcaption className="testimonial-author">— Chris P., Small Business Owner</figcaption>
+          </figure>
+        </div>
+
+        <Link to="contact" spy smooth offset={-70} duration={500} className="cta-btn tertiary-btn testimonial-cta" aria-label="Go to contact form">
+          Get a Free Quote
+        </Link>
       </section>
 
       {/* Pricing */}
@@ -272,7 +312,7 @@ const Home = () => {
             <div className="price" aria-label="Starter price">$399</div>
             <ul className="features">
               <li>1–3 page custom site</li>
-              <li>Mobile‑friendly & fast</li>
+              <li>Mobile-friendly & fast</li>
               <li>Contact form & basic SEO</li>
               <li>1 round of revisions</li>
               <li>Launch assistance</li>
@@ -292,7 +332,7 @@ const Home = () => {
             <ul className="features">
               <li>Up to 6 pages</li>
               <li>Brand styling & icons</li>
-              <li>On‑page SEO & analytics</li>
+              <li>On-page SEO & analytics</li>
               <li>2 rounds of revisions</li>
               <li>Basic CMS or blog option</li>
             </ul>
@@ -329,7 +369,7 @@ const Home = () => {
         <h2>FAQs</h2>
         <details>
           <summary>What’s included in the $399 Starter site?</summary>
-          <p>Up to 3 pages, mobile‑friendly design, contact form, basic SEO, and help launching your site.</p>
+          <p>Up to 3 pages, mobile-friendly design, contact form, basic SEO, and help launching your site.</p>
         </details>
         <details>
           <summary>How long does a typical project take?</summary>
@@ -353,9 +393,6 @@ const Home = () => {
         </p>
         <p>
           Call or text: <a href="tel:+17069106188">(706) 910-6188</a>
-        </p>
-        <p className="italic text-gray-600">
-          Note: The site is currently under construction. If you tried submitting before, please try again. Thank you!
         </p>
 
         <form className="contact-form" onSubmit={handleSubmit}>
@@ -396,7 +433,7 @@ const Home = () => {
           <textarea
             id="message"
             name="message"
-            placeholder="Your Message"
+            placeholder="Your Message (feel free to suggest a few times for a quick call)"
             value={formData.message}
             onChange={handleChange}
             required
@@ -410,6 +447,19 @@ const Home = () => {
 
         {status && <p className="mt-4 text-green-600 font-semibold" role="status">{status}</p>}
       </section>
+
+      {/* Footer */}
+      <footer className="site-footer">
+        <p>© {new Date().getFullYear()} Pamela Terrell. All rights reserved.</p>
+        <nav aria-label="Footer">
+          <a href="mailto:agentpamelajterrell@gmail.com">Email</a>
+          <a href="tel:+17069106188">Call/Text</a>
+          <a href="#work">Work With Me</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+          <a href="/privacy" rel="nofollow">Privacy</a>
+        </nav>
+      </footer>
     </div>
   );
 };
