@@ -1,0 +1,31 @@
+:root{
+  /* core brand */
+  --pjt-navy: #0b1018;         /* deep night */
+  --pjt-navy-2: #111827;       /* slightly lighter */
+  --pjt-ink: #d9e2ff;          /* muted ice text */
+  --pjt-body: #cbd5e1;         /* body text */
+  --pjt-gold: #d9b86a;         /* soft gold */
+  --pjt-ember: #ff914d;        /* ember highlight */
+  --pjt-ember-2: #ffb066;
+  --pjt-cool: #6fb0d6;         /* cool flame */
+  --pjt-warm: #ff9c4a;         /* warm flame */
+
+  /* surfaces */
+  --pjt-bg: var(--pjt-navy);
+  --pjt-card: rgba(17, 24, 39, 0.6);   /* glass */
+  --pjt-card-border: rgba(217, 184, 106, 0.18);
+
+  /* effects */
+  --pjt-glow: 0 10px 30px rgba(255, 160, 90, 0.25);
+  --pjt-ring: 0 0 0 2px rgba(217, 184, 106, 0.35);
+
+  /* typography */
+  --pjt-h1: clamp(2rem, 2.4rem + 2vw, 3.5rem);
+  --pjt-h2: clamp(1.5rem, 1.2rem + 1.2vw, 2.2rem);
+  --pjt-h3: clamp(1.1rem, 1rem + .6vw, 1.4rem);
+  --pjt-text: clamp(1rem, 0.95rem + .2vw, 1.1rem);
+
+  /* spacing */
+  --pjt-grid: min(1120px, 92vw);
+  --pjt-radius: 22px;
+}

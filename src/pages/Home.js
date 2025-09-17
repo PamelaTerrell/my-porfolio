@@ -457,7 +457,7 @@ const Home = () => {
           <a href="#work">Work With Me</a>
           <a href="#pricing">Pricing</a>
           <a href="#contact">Contact</a>
-          <a href="/privacy" rel="nofollow">Privacy</a>
+          
         </nav>
       </footer>
     </div>
