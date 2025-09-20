@@ -471,7 +471,7 @@ const Home = () => {
           <a href="tel:+17069106188">Call/Text</a>
           <a href="#work">Work With Me</a>
           <a href="#pricing">Pricing</a>
-          <a href="#contact">Contact</a>
+          
         </nav>
       </footer>
     </div>
