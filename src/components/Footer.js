@@ -61,29 +61,7 @@ const Footer = () => {
             </svg>
           </a>
 
-          {/* LinkedIn */}
-          <a
-            href="https://www.linkedin.com/in/pamela-stabile-terrell-893b19234"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn profile"
-            style={{ color: "#d0f0e8", transition: "color 0.3s" }}
-            className="social-link"
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#8ee0c1")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#d0f0e8")}
-          >
-            {/* LinkedIn SVG Icon */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="28"
-              height="28"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path d="M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.224.792 24 1.771 24h20.451C23.2 24 24 23.224 24 22.271V1.729C24 .774 23.2 0 22.225 0zM7.12 20.452H3.56V9h3.56v11.452zM5.34 7.557a2.062 2.062 0 110-4.125 2.062 2.062 0 010 4.125zM20.452 20.452h-3.56v-5.844c0-1.393-.028-3.18-1.938-3.18-1.94 0-2.236 1.515-2.236 3.078v5.946h-3.56V9h3.418v1.561h.05c.476-.9 1.636-1.85 3.368-1.85 3.6 0 4.265 2.37 4.265 5.45v6.291z" />
-            </svg>
-          </a>
+        
         </div>
 
         <p
