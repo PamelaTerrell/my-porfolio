@@ -465,7 +465,7 @@ const Home = () => {
 
       {/* Footer */}
       <footer className="site-footer">
-        <p>© {new Date().getFullYear()} Pamela Terrell. All rights reserved.</p>
+        
         <nav aria-label="Footer">
           <a href="mailto:agentpamelajterrell@gmail.com">Email</a>
           <a href="tel:+17069106188">Call/Text</a>
