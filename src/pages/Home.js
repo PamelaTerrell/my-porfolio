@@ -17,7 +17,7 @@ import lifestories from '../assets/LifeStories.png';
 import customdreamz from '../assets/CustomDreamz.png';
 import beforeandafter from '../assets/beforeandafter.png';
 import getvabuddy from '../assets/getvabuddy.jpg';
-import pjtImage from '../assets/PJT.jpg';
+import pjtImage from '../assets/PJT.jpg'; // used in About (not in Hero)
 import desire from '../assets/desire.jpg';
 
 const Home = () => {
@@ -32,16 +32,6 @@ const Home = () => {
       once: true,
       disable: prefersReduced,
     });
-  }, []);
-
-  // Rotating word in the H1
-  const rotatingWords = ["Stands Out", "Converts", "Inspires", "Feels Custom"];
-  const [wordIndex, setWordIndex] = useState(0);
-  useEffect(() => {
-    const t = setInterval(() => {
-      setWordIndex((i) => (i + 1) % rotatingWords.length);
-    }, 2200);
-    return () => clearInterval(t);
   }, []);
 
   // Contact form state
@@ -100,44 +90,69 @@ const Home = () => {
         }}
       />
 
-      {/* Hero */}
-      <section className="hero">
-        {/* Glass card wrapper */}
-        <div className="hero-glass" data-aos="fade-up">
-          <div className="hero-content">
+      {/* Hero (Polished, small-biz friendly, no image) */}
+      <section className="hero hero-corporate">
+        <div className="hero-shell hero-single" data-aos="fade-up">
+          <div className="hero-left">
+            <p className="eyebrow">For small teams &amp; solo founders</p>
+
             <h1 className="hero-title">
-              Need a Website That <span className="hero-rotate">{rotatingWords[wordIndex]}</span>?
+              A clean, credible website—without the agency overhead
             </h1>
 
             <p className="hero-subtitle">
-              I'm Pamela — a web developer and UX designer who builds beautiful, high-performing websites
-              for small businesses, nonprofits, and creatives.
-            </p>
-            <p className="hero-subtitle secondary">
-              Whether you're starting fresh or need a revamp, I deliver custom sites that look amazing and
-              work perfectly across devices.
+              I build accessible, fast sites that help local businesses, creators, and early startups
+              look professional and win trust online.
             </p>
 
-            <div className="cta-buttons">
-              <Link to="portfolio" spy smooth offset={-70} duration={500} className="cta-btn">View My Work</Link>
-              <Link to="pricing" spy smooth offset={-70} duration={500} className="cta-btn secondary-btn">See Pricing</Link>
-              <Link to="contact" spy smooth offset={-70} duration={500} className="cta-btn tertiary-btn" aria-label="Request a call">
-                Request a Call
+            <ul className="hero-points" role="list" aria-label="What you can expect">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                Transparent pricing &amp; scope
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                Fast turnaround, clear comms
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                Mobile, SEO &amp; accessibility basics built in
+              </li>
+            </ul>
+
+            <div className="cta-row">
+              <Link to="contact" spy smooth offset={-70} duration={500} className="btn btn-primary" aria-label="Request a quote">
+                Get a Free Quote
+              </Link>
+              <Link to="portfolio" spy smooth offset={-70} duration={500} className="btn btn-muted">
+                See Recent Work
+              </Link>
+              <Link to="pricing" spy smooth offset={-70} duration={500} className="btn btn-link">
+                View Pricing
               </Link>
             </div>
 
-            <p className="hero-microcopy">2 spots open this month • Free 15-min consult</p>
+            <div className="trust-inline" aria-label="Trust indicators">
+              <span>Local-friendly</span>
+              <span>Creator-ready</span>
+              <span>Straightforward</span>
+            </div>
+
+            <p className="micro-note">Friendly 1:1 process • No retainers required</p>
           </div>
         </div>
 
-        {/* Fancy scroll down with SVG (clicks to About) */}
-        <Link to="about" spy smooth offset={-70} duration={500} className="scroll-down" aria-label="Scroll to About">
-          <span>Scroll Down</span>
-          <svg className="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 5v14m0 0l-6-6m6 6l6-6"
-                  stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <Link to="about" spy smooth offset={-70} duration={500} className="scroll-down corporate" aria-label="Scroll to About">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 4v16m0 0l-6-6m6 6l6-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
+          <span>Learn more</span>
         </Link>
       </section>
 
@@ -301,7 +316,7 @@ const Home = () => {
 
       {/* Pricing */}
       <section id="pricing" className="pricing" data-aos="fade-up">
-        <h2>Packages & Pricing</h2>
+        <h2>Packages &amp; Pricing</h2>
         <p className="pricing-intro">
           Clear, simple pricing. No hidden fees. Need something custom? I’ll tailor a plan to your goals.
         </p>
@@ -312,8 +327,8 @@ const Home = () => {
             <div className="price" aria-label="Starter price">$399</div>
             <ul className="features">
               <li>1–3 page custom site</li>
-              <li>Mobile-friendly & fast</li>
-              <li>Contact form & basic SEO</li>
+              <li>Mobile-friendly &amp; fast</li>
+              <li>Contact form &amp; basic SEO</li>
               <li>1 round of revisions</li>
               <li>Launch assistance</li>
             </ul>
@@ -331,8 +346,8 @@ const Home = () => {
             <div className="price" aria-label="Plus price">$699</div>
             <ul className="features">
               <li>Up to 6 pages</li>
-              <li>Brand styling & icons</li>
-              <li>On-page SEO & analytics</li>
+              <li>Brand styling &amp; icons</li>
+              <li>On-page SEO &amp; analytics</li>
               <li>2 rounds of revisions</li>
               <li>Basic CMS or blog option</li>
             </ul>
@@ -349,8 +364,8 @@ const Home = () => {
             <div className="price" aria-label="Pro price">$1299+</div>
             <ul className="features">
               <li>Custom features / integrations</li>
-              <li>Advanced SEO & performance</li>
-              <li>Content help & strategy</li>
+              <li>Advanced SEO &amp; performance</li>
+              <li>Content help &amp; strategy</li>
               <li>3+ rounds of revisions</li>
               <li>Ongoing support options</li>
             </ul>
@@ -457,7 +472,6 @@ const Home = () => {
           <a href="#work">Work With Me</a>
           <a href="#pricing">Pricing</a>
           <a href="#contact">Contact</a>
-          
         </nav>
       </footer>
     </div>
