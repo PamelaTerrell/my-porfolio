@@ -1,24 +1,19 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom'; 
-import Home from './pages/Home';  
- 
- 
-import './App.css'; 
-import { Analytics } from "@vercel/analytics/react"
+// src/App.js
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
+
+import Home from "./pages/Home";
+import Work from "./pages/Work"; // the new portfolio page
+import "./App.css";
 
 const App = () => {
   return (
     <div className="app">
-      
-      
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* add more routes as needed */}
+        <Route path="/projects" element={<Work />} />
       </Routes>
-      
-    
-
-      {/* Add Analytics at the root level */}
       <Analytics />
     </div>
   );

@@ -38,12 +38,7 @@ export default function HomeBlack() {
           </svg>
         </a>
 
-        {/* Optional quick links — remove if you want just the single CTA */}
-        <nav className="links" aria-label="Quick links">
-          <a className="pill" href="/about">About</a>
-          <a className="pill" href="/contact">Contact</a>
-          <a className="pill" href="/pricing">Pricing</a>
-        </nav>
+        
       </div>
     </main>
   );
