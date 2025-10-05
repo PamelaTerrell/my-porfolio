@@ -136,6 +136,21 @@
 
 .pill:hover { background: rgba(255, 255, 255, 0.08); }
 
+.landing-logo {
+  display: block;
+  margin: 1.5rem auto 0;
+  width: 110px;      /* adjust for size you like */
+  height: auto;
+  opacity: 0.9;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.landing-logo:hover {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+
 /* Accessibility / small screens */
 @media (prefers-reduced-motion: reduce) {
   .portal, .chev { transition: none !important; }

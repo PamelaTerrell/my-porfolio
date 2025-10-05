@@ -38,6 +38,12 @@ export default function HomeBlack() {
           </svg>
         </a>
 
+        <img
+  src="/ptlogo.png"
+  alt="PT logo"
+  className="landing-logo"
+/>
+
         
       </div>
     </main>
