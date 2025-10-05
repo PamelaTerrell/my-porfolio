@@ -20,7 +20,7 @@ export default function HomeBlack() {
         </div>
 
         {/* Name + Tag */}
-        <h1 className="title">Pamela Terrell</h1>
+        <h1 className="title">Pamela J Terrell</h1>
         <p className="tag">Web Developer · Digital Entrepreneur</p>
 
         {/* Primary CTA */}
