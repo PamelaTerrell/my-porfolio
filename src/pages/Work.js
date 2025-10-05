@@ -13,6 +13,7 @@ import psych from "../assets/psych.png";
 import pace from "../assets/pace.png";
 import getvabuddy from "../assets/getvabuddy.jpg";
 import pwimage from "../assets/PW.jpg";
+import ptlogo from "../assets/ptlogo.png";
 
 export default function Work() {
   // Contact form state
@@ -50,7 +51,8 @@ export default function Work() {
       {/* Minimal header */}
       <header className="mini-header">
         <a href="/" className="crumb" aria-label="Back to landing">← Home</a>
-        <div className="brand-dot" aria-hidden />
+       <img src={ptlogo} alt="PT logo" className="brand-logo" />
+
       </header>
 
       {/* Hero */}
