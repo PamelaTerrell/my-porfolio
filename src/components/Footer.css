@@ -1,6 +1,6 @@
 /* Footer Container */
 .footer {
-  background: linear-gradient(135deg, #0a6e8c, #3caf82); /* Deep blue → fresh green */
+  background-color: black;
   color: #f0f9f8;
   padding: 2rem 1.5rem;
   text-align: center;
@@ -71,6 +71,7 @@
 
 /* PT Logo */
 .footer-logo {
+ 
   display: block;
   margin: 1.2rem auto 0;
   width: 48px;

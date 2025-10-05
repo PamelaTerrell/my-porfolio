@@ -7,7 +7,7 @@ const Footer = () => {
     <footer
       className="footer"
       style={{
-        background: "linear-gradient(135deg, #0a6e8c, #3caf82)",
+        background: "black",
         color: "#f0f9f8",
         padding: "2rem 1.5rem",
         textAlign: "center",
@@ -93,9 +93,9 @@ const Footer = () => {
             style={{
               display: "block",
               margin: "1.2rem auto 0",
-              width: "48px",
+              width: "52px",
               height: "auto",
-              opacity: "0.9",
+             
               transition: "opacity 0.3s ease, transform 0.3s ease",
             }}
             onMouseEnter={(e) => {
