@@ -80,7 +80,7 @@ export default function Work() {
           <h2>About Me</h2>
           <p>
             I’m a web developer and UI/UX designer focused on clean, fast, accessible websites that
-            help small businesses and creators look credible and convert.
+            help small businesses and creators look credible and professional.
           </p>
           <p>
             I build with modern tooling, thoughtful content structure, and performance in mind—so your site
