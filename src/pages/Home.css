@@ -6,26 +6,31 @@
   --fill: rgba(255, 255, 255, 0.06);
 
   --radius-full: 999px;
-  --shadow-card: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 20px 80px rgba(0, 0, 0, 0.6);
 
-  --space-1: 6px;
-  --space-2: 10px;
   --space-3: 12px;
-  --space-4: 16px;
   --space-5: 18px;
-  --space-6: 24px;
   --space-7: 40px;
 }
 
 /* Root layout */
 .black-landing {
-  min-height: 100dvh;
+  /* Viewport-safe heights for all browsers */
+  min-height: 100vh;   /* fallback */
+  min-height: 100dvh;  /* modern dynamic viewport: accounts for mobile UI */
+  min-height: 100svh;  /* iOS small viewport unit */
+
   background: var(--bg);
   color: var(--fg);
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* Prevent tiny overflows that cause a white strip */
+  overflow: hidden;
+
+  /* Respect iPhone bottom safe area (so content doesn't force extra height) */
   padding: var(--space-7);
+  padding-bottom: calc(var(--space-7) + env(safe-area-inset-bottom, 0px));
 }
 
 .stack {
@@ -37,37 +42,25 @@
 }
 
 /* Portrait */
-.portrait-wrap {
-  position: relative;
-}
+.portrait-wrap { position: relative; }
 
-.portrait-glow {
-  position: absolute;
-  inset: -22px;
-  border-radius: var(--radius-full);
-  filter: blur(28px);
-  opacity: 0.35;
-  background:
-    conic-gradient(
-      from 200deg at 50% 50%,
-      rgba(255, 255, 255, 0.15),
-      rgba(255, 255, 255, 0.02),
-      rgba(255, 255, 255, 0.15)
-    );
-}
+/* Turn off glow ring for a truly seamless edge on black */
+.portrait-glow { display: none; }
 
 .portrait {
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: 240px;
+  height: 240px;
   border-radius: var(--radius-full);
-  object-fit: contain;
-  object-position: center top;
-  box-shadow: none;         
-  border: none;             
-  background: #000; 
-}
 
+  /* Use 'contain' if you want absolutely zero crop, otherwise 'cover' + object-position */
+  object-fit: contain;
+  object-position: center top; /* keep the top of your head in frame */
+
+  box-shadow: none;   /* no halo */
+  border: none;       /* no ring */
+  background: #000;   /* merges with page */
+}
 
 /* Typography */
 .title {
@@ -85,7 +78,6 @@
 
 /* Primary CTA */
 .portal {
-  --hover-fill: rgba(255, 255, 255, 0.1);
   display: inline-flex;
   align-items: center;
   gap: var(--space-3);
@@ -96,17 +88,14 @@
   background: var(--fill);
   border: 1px solid var(--ring);
   backdrop-filter: blur(6px);
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    background 180ms ease;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
   will-change: transform;
 }
 
 .portal:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
-  background: var(--hover-fill);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .dot {
@@ -125,9 +114,7 @@
   transition: transform 180ms ease;
 }
 
-.portal:hover .chev {
-  transform: translateX(3px);
-}
+.portal:hover .chev { transform: translateX(3px); }
 
 /* Optional quick links */
 .links {
@@ -147,14 +134,46 @@
   transition: background 160ms ease;
 }
 
-.pill:hover {
-  background: rgba(255, 255, 255, 0.08);
+.pill:hover { background: rgba(255, 255, 255, 0.08); }
+
+/* Accessibility / small screens */
+@media (prefers-reduced-motion: reduce) {
+  .portal, .chev { transition: none !important; }
 }
 
-/* Accessibility: respect motion prefs */
+@media (max-width: 420px) {
+  .portrait { width: 220px; height: 220px; }
+  .stack { gap: 14px; }
+}
+
+/* Belt-and-suspenders: prefer 100svh where supported */
+@supports (height: 100svh) {
+  .black-landing { min-height: 100svh; }
+}
+
+/* --- Subtle fade-in animation --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animate main stack only once on load */
+.black-landing .stack {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* Respect user preferences for reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .portal,
-  .chev {
-    transition: none !important;
+  .black-landing .stack {
+    animation: none;
+    opacity: 1;
   }
 }

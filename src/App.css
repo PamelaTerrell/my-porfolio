@@ -1,15 +1,24 @@
 /* App.css */
+html, body, #root {
+  height: 100%;
+  background: #000;         /* ensures no white canvas peeks through */
+}
+
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
+  -webkit-text-size-adjust: 100%; /* avoids iOS zoom quirks */
+  overflow-x: hidden;             /* prevents sneaky horizontal scroll */
 }
 
 .app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100dvh;       /* dynamic viewport for mobile URL bar changes */
+  background: #000;         /* keep the whole app black behind pages */
 }
 
+/* (Optional) If you use a site-wide footer somewhere else */
 footer {
   padding: 20px;
   background-color: #333;
