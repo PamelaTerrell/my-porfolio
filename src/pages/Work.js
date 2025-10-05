@@ -12,6 +12,7 @@ import cosmic from "../assets/cosmic.png";
 import psych from "../assets/psych.png";
 import pace from "../assets/pace.png";
 import getvabuddy from "../assets/getvabuddy.jpg";
+import pwimage from "../assets/PW.jpg";
 
 export default function Work() {
   // Contact form state
@@ -147,6 +148,13 @@ export default function Work() {
             desc="A no-login helper for common VA forms—print and mail with ease."
             href="https://getvabuddy.com"
           />
+
+           <Card
+      img={pwimage}
+      title="Pinkerton Williams DAV Chapter 18"
+      desc="A veterans’ organization site serving the community through the Disabled American Veterans program."
+      href="https://pinkertonwilliams.org"
+    />
         </div>
       </section>
 
