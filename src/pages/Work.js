@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Work.css";
 
-/* Assets (use the same ones you already have) */
+/* Assets */
 import pjtImage from "../assets/PJT.jpg";
 import lifestories from "../assets/LifeStories.png";
 import beforeandafter from "../assets/beforeandafter.png";
@@ -13,17 +13,8 @@ import psych from "../assets/psych.png";
 import pace from "../assets/pace.png";
 import getvabuddy from "../assets/getvabuddy.jpg";
 
-/* Optional: restore AOS fade-ins (kept subtle) */
-// import AOS from "aos";
-// import "aos/dist/aos.css";
-
 export default function Work() {
-  // AOS optional
-  // useEffect(() => {
-  //   AOS.init({ duration: 500, easing: "ease-out", once: true });
-  // }, []);
-
-  // Contact form state (Formspree)
+  // Contact form state
   const [formData, setFormData] = useState({ name: "", email: "", message: "", _gotcha: "" });
   const [status, setStatus] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -55,7 +46,7 @@ export default function Work() {
 
   return (
     <div className="work-root">
-      {/* Minimal header (no navbar) */}
+      {/* Minimal header */}
       <header className="mini-header">
         <a href="/" className="crumb" aria-label="Back to landing">← Home</a>
         <div className="brand-dot" aria-hidden />
@@ -231,9 +222,25 @@ export default function Work() {
       {/* Contact */}
       <section id="contact" className="contact">
         <h2>Contact</h2>
-        <p className="muted">
-          Email <a href="mailto:agentpamelajterrell@gmail.com">agentpamelajterrell@gmail.com</a> or use the form.
-        </p>
+        <p className="muted">Prefer email or text? Use either — or the form below.</p>
+
+        {/* Polished callouts */}
+        <div className="contact-callouts" role="group" aria-label="Direct contact options">
+          <a href="mailto:agentpamelajterrell@gmail.com" className="contact-callout" aria-label="Email Pamela Terrell">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6h16a2 2 0 0 1 2 2v.3l-10 6.25L2 8.3V8a2 2 0 0 1 2-2Z" />
+              <path d="M22 9.7V16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.7l10 6.25 10-6.25Z" />
+            </svg>
+            agentpamelajterrell@gmail.com
+          </a>
+
+          <a href="tel:+17069106188" className="contact-callout" aria-label="Call or text Pamela Terrell">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 16.92v2a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.48 19.48 0 0 1-6-6A19.8 19.8 0 0 1 2.1 3.16 2 2 0 0 1 4.11 1h2a2 2 0 0 1 2 1.72c.12.9.33 1.77.63 2.61a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.84.3 1.71.51 2.61.63A2 2 0 0 1 22 16.92Z" />
+            </svg>
+            (706) 910-6188
+          </a>
+        </div>
 
         <form className="contact-form" onSubmit={handleSubmit}>
           {/* Honeypot */}
