@@ -13,7 +13,24 @@ const App = () => {
     if (sessionStorage.getItem("ipLogged")) return;
     sessionStorage.setItem("ipLogged", "1");
 
-    fetch("/api/log-ip").catch(() => {});
+    // 🔹 Log only real browser visits
+    const logVisit = async () => {
+      try {
+        await fetch("/api/log-ip", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            // This matches the key in your .env.local file
+            "x-visit-key": process.env.REACT_APP_VISIT_KEY || ""
+          },
+          body: JSON.stringify({ event: "pageview" })
+        });
+      } catch (err) {
+        console.error("Log visit failed:", err);
+      }
+    };
+
+    logVisit();
   }, []);
 
   return (
