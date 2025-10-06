@@ -1,7 +1,19 @@
+<!-- public/index.html -->
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google Analytics 4 + Google Ads (single loader, multiple configs) -->
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+
+    <title>Pamela J Terrell | Web Designer & Developer</title>
+    <meta name="description" content="Pamela J Terrell creates accessible, modern websites for small businesses, nonprofits, and community organizations—combining design precision with practical coding expertise." />
+    <meta name="keywords" content="Pamela J Terrell, web design, web development, frontend, UX, small business websites, Georgia web developer, accessible websites, custom websites, Pamela J Stabile Terrell, Pamela Stabile, Pamela Stabile Terrell" />
+    <meta name="author" content="Pamela J Terrell" />
+    <link rel="canonical" href="https://pamelajterrell.com/" />
+
+    <!-- GA4 + Google Ads -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2X41C4709G"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -11,29 +23,6 @@
       gtag('config', 'AW-17383889339');    // Google Ads
     </script>
 
-    <!-- Basic Meta -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Pamela J Terrell creates accessible, modern websites for small businesses, nonprofits, and community organizations—combining design precision with practical coding expertise." />
-    <meta name="keywords" content="Pamela J Terrell, web design, web development, frontend, UX, small business websites, Georgia web developer, accessible websites, custom websites, Pamela J Stabile Terrell, Pamela Stabile, Pamela Stabile Terrell" />
-    <meta name="author" content="Pamela J Terrell" />
-    <link rel="canonical" href="https://pamelajterrell.com/" />
-    <title>Pamela J Terrell | Web Designer & Developer</title>
-
-    <!-- Icons (place files in /public) -->
-    <!-- Modern PNG favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <!-- iOS Home Screen icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <!-- PWA / Android high-res -->
-    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
-    <!-- Optional legacy .ico (include only if you generate one) -->
-    <!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /> -->
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="/manifest.json" />
-
-
     <!-- Open Graph -->
     <meta property="og:title" content="Pamela J Terrell | Web Designer & Developer" />
     <meta property="og:description" content="Modern, accessible websites built for impact. Serving small businesses, nonprofits, and creative professionals." />
@@ -41,13 +30,16 @@
     <meta property="og:url" content="https://pamelajterrell.com" />
     <meta property="og:type" content="website" />
 
-    <!-- Twitter Card -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Pamela J Terrell | Web Designer & Developer" />
     <meta name="twitter:description" content="Custom websites and user experiences crafted with clarity, creativity, and care." />
     <meta name="twitter:image" content="https://pamelajterrell.com/PJT2.jpg" />
 
-    <!-- Structured Data (Schema.org JSON-LD) -->
+    <!-- Manifest (CRA looks here) -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -56,24 +48,13 @@
       "url": "https://pamelajterrell.com",
       "image": "https://pamelajterrell.com/PJT2.jpg",
       "jobTitle": "Web Designer & Developer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Pamela J Terrell Web Design",
-        "url": "https://pamelajterrell.com"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/pamelajterrell",
-        "https://github.com/PamelaTerrell"
-      ]
+      "worksFor": { "@type": "Organization", "name": "Pamela J Terrell Web Design", "url": "https://pamelajterrell.com" },
+      "sameAs": ["https://www.linkedin.com/in/pamelajterrell","https://github.com/PamelaTerrell"]
     }
     </script>
   </head>
-
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-
-    <!-- Vite entry (adjust path if your entry is different) -->
-    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
