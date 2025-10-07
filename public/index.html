@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
 
     <title>Pamela J Terrell | Web Designer & Developer</title>
     <meta name="description" content="Pamela J Terrell creates accessible, modern websites for small businesses, nonprofits, and community organizations—combining design precision with practical coding expertise." />
@@ -11,21 +12,22 @@
     <meta name="author" content="Pamela J Terrell" />
     <link rel="canonical" href="https://pamelajterrell.com/" />
 
-    <!-- Icons -->
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon-16x16.png" sizes="16x16" type="image/png" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon-32x32.png" sizes="32x32" type="image/png" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" sizes="180x180" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- Favicon (stable URLs) -->
+    <!-- Ensure /public/favicon.ico is a real .ico. If not, remove the first line temporarily. -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <!-- Open Graph -->
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="Pamela J Terrell | Web Designer & Developer" />
     <meta property="og:description" content="Modern, accessible websites built for impact. Serving small businesses, nonprofits, and creative professionals." />
+    <meta property="og:url" content="https://pamelajterrell.com/" />
     <meta property="og:image" content="https://pamelajterrell.com/PJT2.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:url" content="https://pamelajterrell.com" />
-    <meta property="og:type" content="website" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -33,17 +35,21 @@
     <meta name="twitter:description" content="Custom websites and user experiences crafted with clarity, creativity, and care." />
     <meta name="twitter:image" content="https://pamelajterrell.com/PJT2.jpg" />
 
+    <!-- Performance (optional but nice) -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+
     <!-- GA4 + Google Ads -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2X41C4709G"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){ dataLayer.push(arguments); }
       gtag('js', new Date());
-      gtag('config', 'G-2X41C4709G');      // GA4
-      gtag('config', 'AW-17383889339');    // Google Ads
+      gtag('config', 'G-2X41C4709G');   // GA4
+      gtag('config', 'AW-17383889339'); // Google Ads
     </script>
 
-    <!-- JSON-LD -->
+    <!-- JSON-LD (Person) — LinkedIn removed -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -52,8 +58,14 @@
       "url": "https://pamelajterrell.com",
       "image": "https://pamelajterrell.com/PJT2.jpg",
       "jobTitle": "Web Designer & Developer",
-      "worksFor": { "@type": "Organization", "name": "Pamela J Terrell Web Design", "url": "https://pamelajterrell.com" },
-      "sameAs": ["https://www.linkedin.com/in/pamelajterrell","https://github.com/PamelaTerrell"]
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Pamela J Terrell Web Design",
+        "url": "https://pamelajterrell.com"
+      },
+      "sameAs": [
+        "https://github.com/PamelaTerrell"
+      ]
     }
     </script>
   </head>
