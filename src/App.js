@@ -1,28 +1,15 @@
+// src/App.js
 import React, { useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 
 import Home from "./pages/Home";
 import Work from "./pages/Work";
 import "./App.css";
 
-function useGaPageviews() {
-  const loc = useLocation();
+const App = () => {
   useEffect(() => {
-    if (!window.gtag) return;
-    window.gtag("event", "page_view", {
-      page_location: window.location.href,
-      page_path: loc.pathname + loc.search,
-      page_title: document.title
-    });
-  }, [loc]);
-}
-
-export default function App() {
-  useGaPageviews();
-
-  useEffect(() => {
-    // Avoid double-logging in dev (React StrictMode)
+    // Avoid double-logging in dev (React StrictMode) and per-tab
     if (sessionStorage.getItem("ipLogged")) return;
     sessionStorage.setItem("ipLogged", "1");
 
@@ -36,11 +23,10 @@ export default function App() {
           },
           body: JSON.stringify({ event: "pageview" })
         });
-      } catch (err) {
-        console.error("Log visit failed:", err);
+      } catch (e) {
+        // swallow
       }
     };
-
     logVisit();
   }, []);
 
@@ -50,8 +36,9 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Work />} />
       </Routes>
-
       <Analytics />
     </div>
   );
-}
+};
+
+export default App;

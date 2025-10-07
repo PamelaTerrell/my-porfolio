@@ -1,55 +1,50 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google Analytics 4 + Google Ads (single loader, multiple configs) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2X41C4709G"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2X41C4709G');      // GA4
+      gtag('config', 'AW-17383889339');    // Google Ads
+    </script>
+
+    <!-- Basic Meta -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
-
-    <title>Pamela J Terrell | Web Designer & Developer</title>
     <meta name="description" content="Pamela J Terrell creates accessible, modern websites for small businesses, nonprofits, and community organizations—combining design precision with practical coding expertise." />
     <meta name="keywords" content="Pamela J Terrell, web design, web development, frontend, UX, small business websites, Georgia web developer, accessible websites, custom websites, Pamela J Stabile Terrell, Pamela Stabile, Pamela Stabile Terrell" />
     <meta name="author" content="Pamela J Terrell" />
     <link rel="canonical" href="https://pamelajterrell.com/" />
+    <title>Pamela J Terrell | Web Designer & Developer</title>
 
-    <!-- Favicon (stable URLs) -->
-    <!-- Ensure /public/favicon.ico is a real .ico. If not, remove the first line temporarily. -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <!-- Icons (place files in /public) -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
     <meta property="og:title" content="Pamela J Terrell | Web Designer & Developer" />
     <meta property="og:description" content="Modern, accessible websites built for impact. Serving small businesses, nonprofits, and creative professionals." />
-    <meta property="og:url" content="https://pamelajterrell.com/" />
     <meta property="og:image" content="https://pamelajterrell.com/PJT2.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://pamelajterrell.com" />
+    <meta property="og:type" content="website" />
 
-    <!-- Twitter -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Pamela J Terrell | Web Designer & Developer" />
     <meta name="twitter:description" content="Custom websites and user experiences crafted with clarity, creativity, and care." />
     <meta name="twitter:image" content="https://pamelajterrell.com/PJT2.jpg" />
 
-    <!-- Performance (optional but nice) -->
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
-
-    <!-- GA4 + Google Ads -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2X41C4709G"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){ dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-2X41C4709G');   // GA4
-      gtag('config', 'AW-17383889339'); // Google Ads
-    </script>
-
-    <!-- JSON-LD (Person) — LinkedIn removed -->
+    <!-- Structured Data (no LinkedIn) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -69,8 +64,10 @@
     }
     </script>
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!-- CRA will inject built JS; do not add /src/*.jsx here -->
   </body>
 </html>
