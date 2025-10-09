@@ -49,8 +49,8 @@
 
 .portrait {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   border-radius: var(--radius-full);
 
   /* Use 'contain' if you want absolutely zero crop, otherwise 'cover' + object-position */
@@ -215,7 +215,7 @@
 }
 
 @media (max-width: 420px) {
-  .portrait { width: 260px; height: 260px; }
+  .portrait { width: 270px; height: 270px; }
   .stack { gap: 14px; }
 }
 
