@@ -49,8 +49,8 @@
 
 .portrait {
   position: relative;
-  width: 360px;
-  height: 360px;
+  width: 380px;
+  height: 380px;
   border-radius: var(--radius-full);
 
   /* Use 'contain' if you want absolutely zero crop, otherwise 'cover' + object-position */

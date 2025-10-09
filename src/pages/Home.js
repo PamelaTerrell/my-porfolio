@@ -13,8 +13,8 @@ export default function HomeBlack() {
             src={pjtImage}
             alt="Pamela Terrell portrait"
             className="portrait"
-            width={220}
-            height={220}
+            width={280}
+            height={280}
             loading="eager"
           />
         </div>
