@@ -215,7 +215,7 @@
 }
 
 @media (max-width: 420px) {
-  .portrait { width: 220px; height: 220px; }
+  .portrait { width: 250px; height: 250px; }
   .stack { gap: 14px; }
 }
 
