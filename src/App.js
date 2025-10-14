@@ -5,13 +5,13 @@ import { Analytics } from "@vercel/analytics/react";
 
 import Home from "./pages/Home";
 import Work from "./pages/Work";
-import "./App.css";
+import Mixer from "./pages/Mixer";   // ✅ matches Mixer.jsx
+import "./App.css";                  // ✅ keep your global styles only
 
 const App = () => {
-  const ranRef = useRef(false); // helps with StrictMode double-invoke in dev
+  const ranRef = useRef(false);
 
   useEffect(() => {
-    // Guard against StrictMode re-run (dev) + per-tab duplicate logging
     if (ranRef.current) return;
     ranRef.current = true;
     if (sessionStorage.getItem("ipLogged")) return;
@@ -19,13 +19,9 @@ const App = () => {
 
     const shouldLog =
       process.env.NODE_ENV === "production" ||
-      String(process.env.REACT_APP_LOG_VISITS_IN_DEV || "").toLowerCase() ===
-        "true";
+      String(process.env.REACT_APP_LOG_VISITS_IN_DEV || "").toLowerCase() === "true";
 
-    if (!shouldLog) {
-      // Dev default is "don't send"; opt-in via REACT_APP_LOG_VISITS_IN_DEV=true
-      return;
-    }
+    if (!shouldLog) return;
 
     const buildPayload = () => ({
       event: "pageview",
@@ -46,7 +42,7 @@ const App = () => {
     };
 
     const logVisit = async () => {
-      const maxAttempts = 2; // 1 try + 1 retry
+      const maxAttempts = 2;
       let attempt = 0;
       let lastErr;
 
@@ -65,20 +61,11 @@ const App = () => {
             signal: controller.signal,
           });
           cancel();
-          // Accept 2xx only; anything else we treat as a soft fail
-          if (res.ok) {
-            if (process.env.NODE_ENV !== "production") {
-              console.log("[visit] logged");
-            }
-            return;
-          } else {
-            lastErr = new Error(`HTTP ${res.status}`);
-          }
+          if (res.ok) return;
+          lastErr = new Error(`HTTP ${res.status}`);
         } catch (e) {
           lastErr = e;
         }
-
-        // small backoff before retry
         await new Promise((r) => setTimeout(r, 250 * attempt));
       }
 
@@ -95,6 +82,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Work />} />
+        <Route path="/mixer" element={<Mixer />} />  {/* ✅ new route */}
       </Routes>
       <Analytics />
     </div>

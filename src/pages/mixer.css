@@ -1,0 +1,152 @@
+:root{
+  --bg:#0a0b10;
+  --ink:#e9eefb;
+  --muted:#a6b0c9;
+  --panel:#0f1323cc;
+  --ring:#243261;
+  --accent:#7aa8ff;
+}
+
+.mixer-wrap{
+  min-height:100svh;
+  color:var(--ink);
+  background:
+    radial-gradient(1400px 800px at 70% -200px, #26335b55, transparent 60%),
+    radial-gradient(1200px 900px at -200px 20%, #4b2a6f44, transparent 60%),
+    linear-gradient(180deg, #090b12 0%, #0b0f1a 100%);
+  padding:28px 20px 40px;
+}
+
+.bg-sheen{
+  position:fixed; inset:-20% -20% auto -20%;
+  height:40%;
+  background:radial-gradient(closest-side, #ffffff08, transparent);
+  pointer-events:none;
+  filter:blur(12px);
+  animation:float 18s ease-in-out infinite alternate;
+}
+@keyframes float { 50%{ transform:translateY(10px) } }
+
+.mixer-head{
+  max-width:1100px; margin:0 auto 16px auto; padding:0 6px;
+}
+.mixer-head h1{
+  margin:0 0 6px 0; font-weight:700; letter-spacing:.3px;
+  font-size: clamp(22px, 3.5vw, 34px);
+}
+.mixer-head .dot{ color:#7aa8ff }
+.mixer-head .com{ color:#b7c6ff; opacity:.85 }
+.mixer-head p{ margin:0; color:var(--muted) }
+
+.stage{
+  max-width:1100px; margin:16px auto 0; display:grid; gap:24px;
+  grid-template-columns: minmax(300px, 520px) minmax(320px, 1fr);
+  align-items:center;
+}
+@media (max-width: 900px){
+  .stage{ grid-template-columns:1fr; }
+}
+
+/* Glass */
+.glass{
+  position:relative; aspect-ratio: 4 / 5; width:100%;
+  display:grid; place-items:center;
+  filter: drop-shadow(0 24px 50px #0009);
+}
+.glass-svg{ width:100%; height:auto; }
+
+.stem rect{ fill:#dfe6ff0d; }
+.stem ellipse{ fill:#dfe6ff10; }
+
+.bowl{
+  fill:none;
+  stroke:#aab8ff33;
+  stroke-width:2;
+  filter: drop-shadow(0 0 8px #ffffff11);
+}
+.rim{
+  stroke:#ffffff44;
+  stroke-width:2;
+}
+
+.sheen{
+  mix-blend-mode: screen;
+}
+
+.liquid{
+  transition: y .5s ease, height .5s ease, fill .35s ease;
+  filter: saturate(1.05);
+}
+.sparkles .sp{
+  animation: twinkle 3s infinite ease-in-out;
+  opacity:.85;
+}
+@keyframes twinkle{
+  0%,100%{ opacity:.1 }
+  30%{ opacity:.9 }
+  60%{ opacity:.35 }
+}
+
+/* Shake animation */
+.glass.shake{ animation: shake .9s cubic-bezier(.2,.8,.2,1); }
+@keyframes shake{
+  0%{ transform:translateX(0) rotate(0deg) }
+  20%{ transform:translateX(-6px) rotate(-1deg) }
+  40%{ transform:translateX(6px) rotate(1deg) }
+  60%{ transform:translateX(-4px) rotate(-.6deg) }
+  80%{ transform:translateX(3px) rotate(.4deg) }
+  100%{ transform:translateX(0) rotate(0deg) }
+}
+
+/* Garnishes (rim positions) */
+.garnish-layer{ position:absolute; inset:0; pointer-events:none; }
+.gar{ position:absolute; font-size:28px; filter: drop-shadow(0 6px 12px #0008); }
+.gar-lemon{ left:22%; top:6% }
+.gar-olive{ right:20%; top:8% }
+.gar-cherry{ left:48%; top:10% }
+.gar-cuke{ right:36%; top:12% }
+
+/* Controls */
+.controls{ padding:8px }
+.panel{
+  border:1px solid var(--ring);
+  background:var(--panel);
+  border-radius:16px;
+  padding:14px;
+  margin-bottom:12px;
+  box-shadow: 0 14px 40px #0008, inset 0 0 0 1px #1f2a4a;
+  backdrop-filter: blur(8px);
+}
+.panel legend{
+  padding:0 6px; color:#cfe2ff; opacity:.85; font-weight:600;
+}
+.grid{ display:grid; gap:10px; grid-template-columns: repeat(2,minmax(0,1fr)); }
+@media (max-width:420px){ .grid{ grid-template-columns: 1fr } }
+
+.chip{
+  border:1px solid #2c3a62; background:#0f152d; color:#dfe6ff;
+  padding:12px 14px; border-radius:12px; cursor:pointer; font-weight:600;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease, background .15s ease;
+}
+.chip:hover{ transform:translateY(-2px); box-shadow:0 10px 24px #0008; border-color:#4f66a3 }
+.chip.active{
+  background:linear-gradient(180deg, #16214a, #121b34);
+  border-color:#6e8cff;
+  box-shadow:0 12px 28px #000a, 0 0 0 1px #6e8cff33 inset;
+}
+.chip .ic{ margin-right:8px }
+
+.actions{ display:flex; gap:10px; margin-top:6px }
+.btn{
+  background:linear-gradient(90deg,#6b7bff,#68d6ff);
+  color:#0a0f1e; border:0; padding:12px 16px; border-radius:12px; font-weight:800;
+  box-shadow:0 12px 28px #0009; cursor:pointer; transition: transform .15s ease, filter .15s ease;
+}
+.btn:hover{ transform:translateY(-2px); filter:brightness(1.06) }
+.btn.ghost{
+  background: transparent; color:#dbe6ff; border:1px solid #3a4b79;
+}
+
+.signature{
+  color:#cfe2ff; margin-top:12px; font-weight:600; letter-spacing:.2px;
+}
