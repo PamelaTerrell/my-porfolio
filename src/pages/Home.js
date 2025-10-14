@@ -1,6 +1,6 @@
 import React from "react";
-import "./Home.css";          // <-- import the CSS file
-import pjtImage from "../assets/PJT.jpg";  // <-- put PJT.jpg in src/assets (exact name)
+import "./Home.css";                   // landing styles
+import pjtImage from "../assets/PJT.jpg";  // ensure PJT.jpg lives in src/assets
 
 export default function HomeBlack() {
   return (
@@ -13,8 +13,6 @@ export default function HomeBlack() {
             src={pjtImage}
             alt="Pamela Terrell portrait"
             className="portrait"
-            width={280}
-            height={280}
             loading="eager"
           />
         </div>
@@ -23,28 +21,44 @@ export default function HomeBlack() {
         <h1 className="title">Pamela J Terrell</h1>
         <p className="tag">Web Developer · Digital Entrepreneur</p>
 
-        {/* Primary CTA */}
-        <a className="portal" href="/projects" aria-label="Enter portfolio to view projects">
-          <span className="dot" aria-hidden />
-          Enter Portfolio
-          <svg className="chev" viewBox="0 0 24 24" fill="none" aria-hidden>
-            <path
-              d="M9 18l6-6-6-6"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </a>
+        {/* Actions grouped to control stacking/spacing */}
+        <div className="actions">
+          {/* Primary CTA */}
+          <a className="portal" href="/projects" aria-label="Enter portfolio to view projects">
+            <span className="dot" aria-hidden />
+            Enter Portfolio
+            <svg className="chev" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <path
+                d="M9 18l6-6-6-6"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
 
-        <img
-  src="/ptlogo.png"
-  alt="PT logo"
-  className="landing-logo"
-/>
+          {/* Secondary CTA — Play ColorQuest */}
+          <a
+            href="https://play.pamelajterrell.com"
+            className="btn-play"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              if (window.gtag) {
+                window.gtag("event", "click_play_colorquest", {
+                  event_category: "engagement",
+                  event_label: "Play ColorQuest",
+                });
+              }
+            }}
+          >
+            🎨 Play ColorQuest
+          </a>
+        </div>
 
-        
+        {/* Logo */}
+        <img src="/ptlogo.png" alt="PT logo" className="landing-logo" />
       </div>
     </main>
   );

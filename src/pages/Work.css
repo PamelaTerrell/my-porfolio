@@ -229,3 +229,22 @@
   .about-photo { justify-self: center; }
   .contact-callouts { grid-template-columns: 1fr; }
 }
+
+.btn-play {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6366f1, #22d3ee);
+  color: #0b1220;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 10px 26px #0006;
+  transition: all 0.25s ease;
+}
+.btn-play:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 14px 36px #0009, 0 0 18px #6ea8ff55;
+}
