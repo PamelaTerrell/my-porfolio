@@ -1,6 +1,6 @@
 import React from "react";
-import "./Home.css";                   // landing styles
-import pjtImage from "../assets/PJT.jpg";  // ensure PJT.jpg lives in src/assets
+import "./Home.css";
+import pjtImage from "../assets/PJT.jpg";
 
 export default function HomeBlack() {
   return (
@@ -13,6 +13,8 @@ export default function HomeBlack() {
             src={pjtImage}
             alt="Pamela Terrell portrait"
             className="portrait"
+            width={280}
+            height={280}
             loading="eager"
           />
         </div>
@@ -21,10 +23,13 @@ export default function HomeBlack() {
         <h1 className="title">Pamela J Terrell</h1>
         <p className="tag">Web Developer · Digital Entrepreneur</p>
 
-        {/* Actions grouped to control stacking/spacing */}
+        {/* Actions */}
         <div className="actions">
-          {/* Primary CTA */}
-          <a className="portal" href="/projects" aria-label="Enter portfolio to view projects">
+          <a
+            className="portal"
+            href="/projects"
+            aria-label="Enter portfolio to view projects"
+          >
             <span className="dot" aria-hidden />
             Enter Portfolio
             <svg className="chev" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -38,22 +43,15 @@ export default function HomeBlack() {
             </svg>
           </a>
 
-          {/* Secondary CTA — Play ColorQuest */}
+          {/* Redirect to live Mixer */}
           <a
-            href="https://play.pamelajterrell.com"
+            href="https://mixer.pamelajterrell.com"
             className="btn-play"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => {
-              if (window.gtag) {
-                window.gtag("event", "click_play_colorquest", {
-                  event_category: "engagement",
-                  event_label: "Play ColorQuest",
-                });
-              }
-            }}
+            aria-label="Open Mixer by Pamela J Terrell"
           >
-            🎨 Play ColorQuest
+            🍸 Visit Mixer
           </a>
         </div>
 
