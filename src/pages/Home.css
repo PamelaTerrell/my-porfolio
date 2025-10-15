@@ -36,12 +36,12 @@
 
 /* ---------------------------------------
    Portrait — seamless blend into black
-   Uses CSS mask (with -webkit- prefix) to
-   feather edges so image melts into bg.
+   Uses CSS mask to feather edges so the
+   image melts into the background.
 ---------------------------------------- */
 .portrait-wrap { position: relative; }
 
-/* Disable any old glow ring for a true black edge */
+/* Disable any halo/glow for pure black edge */
 .portrait-glow { display: none; }
 
 /* Base portrait styling */
@@ -58,7 +58,6 @@
 
 /* Soft feather with mask (modern) */
 .portrait {
-  /* circular-ish feather centered slightly above middle to preserve face */
   -webkit-mask-image: radial-gradient(
     circle at 50% 38%,
     #000 68%,
@@ -71,7 +70,7 @@
   );
 }
 
-/* Fallback when mask-image isn’t supported: gentle vignette container */
+/* Fallback when mask-image isn’t supported */
 @supports not (mask-image: radial-gradient(circle, #000 50%, transparent)) {
   .portrait-wrap::after {
     content: "";
@@ -82,8 +81,7 @@
     filter: blur(18px);
   }
   .portrait {
-    /* tiny rounding to avoid harsh corners in fallback */
-    border-radius: 18px;
+    border-radius: 18px; /* subtle, prevents hard corners */
   }
 }
 
@@ -141,7 +139,7 @@
 
 .portal:hover .chev { transform: translateX(3px); }
 
-/* Secondary CTA: Visit Mixer */
+/* Actions (Enter Portfolio + Visit Mixer) */
 .actions{
   display:flex;
   flex-direction:column;
@@ -152,6 +150,7 @@
   z-index:2;
 }
 
+/* Secondary CTA: Visit Mixer */
 .btn-play{
   display:inline-block;
   padding:12px 28px;
@@ -201,13 +200,56 @@
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .portal, .chev, .black-landing .stack { transition: none !important; animation: none !important; opacity: 1; }
+  .portal, .chev, .black-landing .stack { 
+    transition: none !important; 
+    animation: none !important; 
+    opacity: 1; 
+  }
 }
 
-/* Small screens */
-@media (max-width: 420px) {
-  .portrait { width: 200px; }
-  .stack { gap: 14px; }
+/* --- Responsive refinements for small screens --- */
+@media (max-width: 680px) {
+  /* slightly reduce portrait size so the CTA appears on first load */
+  .portrait {
+    width: clamp(160px, 48vw, 240px);
+    height: auto;
+  }
+
+  /* tighten vertical spacing */
+  .stack {
+    gap: 12px;
+  }
+
+  .actions {
+    margin-top: 10px;
+    gap: 12px;
+  }
+
+  /* title/tag scaling */
+  .title {
+    font-size: clamp(18px, 6vw, 24px);
+  }
+  .tag {
+    font-size: clamp(12px, 3vw, 14px);
+  }
+
+  /* logo smaller to avoid overflow */
+  .landing-logo {
+    width: 90px;
+    margin-top: 10px;
+  }
+}
+
+/* extra-small viewports (narrow phones) */
+@media (max-width: 400px) {
+  .portrait {
+    width: clamp(140px, 52vw, 200px);
+  }
+  .btn-play,
+  .portal {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
 }
 
 /* Prefer 100svh when supported */
