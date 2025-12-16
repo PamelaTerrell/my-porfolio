@@ -121,6 +121,45 @@
 .visit { justify-self: center; border: 1px solid var(--line); border-radius: 999px; padding: 8px 12px; color: var(--ink); text-decoration: none; background: rgba(255,255,255,0.04); transition: background 0.2s ease; }
 .visit:hover { background: rgba(255,255,255,0.08); }
 
+
+
+.featured-project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.16);
+}
+
+.featured-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.featured-wrapper {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.featured-link {
+  display: inline-block;
+  margin-top: 0.4rem;          /* closer to image */
+  font-size: 0.95rem;          /* slightly clearer */
+  font-weight: 500;
+  color: var(--accent-1);      /* intentional, not loud */
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.featured-link:hover,
+.featured-link:focus-visible {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+
+
+
 /* Pricing */
 .pricing {
   max-width: 1100px; margin: 40px auto; padding: var(--s5) var(--s4);
