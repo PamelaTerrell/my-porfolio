@@ -135,19 +135,26 @@
   object-fit: cover;
 }
 
-.featured-wrapper {
-  position: relative;
-  margin-bottom: 3rem;
+.featured-meta {
+  margin-top: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.featured-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+  opacity: 0.9;
 }
 
 .featured-link {
-  display: inline-block;
-  margin-top: 0.4rem;          /* closer to image */
-  font-size: 0.95rem;          /* slightly clearer */
+  font-size: 0.9rem;
   font-weight: 500;
-  color: var(--accent-1);      /* intentional, not loud */
+  color: var(--accent-1);
   text-decoration: none;
-  opacity: 0.85;
+  opacity: 0.8;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
@@ -156,6 +163,7 @@
   opacity: 1;
   transform: translateX(3px);
 }
+
 
 
 
