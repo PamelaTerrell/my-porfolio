@@ -17,6 +17,7 @@ import getvabuddy from "../assets/getvabuddy.jpg";
 import pwimage from "../assets/PW.jpg";
 import ptlogo from "../assets/ptlogo.png";
 import patrickandjean from "../assets/patrickandjean.jpg";
+import senses from "../assets/senses.png";
 
 export default function Work() {
   const [formData, setFormData] = useState({
@@ -161,6 +162,7 @@ export default function Work() {
           <Card img={pace} title="Big Pace Barbershop & Beauty Salon 2" desc="Local barbershop + beauty salon website." href="https://bigpacebarbershopandbeautysalon2.com" />
           <Card img={getvabuddy} title="Get VA Buddy" desc="A no-login helper for common VA forms—print and mail with ease." href="https://getvabuddy.com" />
           <Card img={pwimage} title="Pinkerton Williams DAV Chapter 18" desc="A veterans’ organization site serving the community through the Disabled American Veterans program." href="https://pinkertonwilliams.org" />
+          <Card img={senses} title="Sensuality Quiz" desc="A sensuality and connection quiz" href="https://sensualityquiz.com" />
         </div>
       </section>
 
