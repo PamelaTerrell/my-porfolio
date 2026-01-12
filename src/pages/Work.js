@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import pjtImage from "../assets/PJT.jpg";
 import lifestories from "../assets/LifeStories.png";
 import beforeandafter from "../assets/beforeandafter.png";
+import carepathwell from "../assets/carepath.png";
 import customdreamz from "../assets/CustomDreamz.png";
 import desire from "../assets/desire.jpg";
 import pairings from "../assets/pairings.png";
@@ -147,6 +148,11 @@ export default function Work() {
         <div className="grid">
           <Card img={lifestories} title="Life Stories Now" desc="A storytelling platform for sharing meaningful life experiences anonymously." href="https://lifestoriesnow.com" />
           <Card img={beforeandafter} title="Before And After Vault" desc="Upload and share before-after photos with a personal vault and community showcase." href="https://beforeandaftervault.com" />
+          
+          <Card
+          img={carepathwell} title="CarePathWell" desc="A secure intake and scheduling workflow for behavioral health practices, designed to centralize client inquiries and streamline coordination."
+          href="https://carepathwell.com"/>
+
           <Card img={customdreamz} title="Custom Dreamz Motorsports" desc="High-energy brand site for a custom cars & bikes shop." href="https://customdreamzmotorsports.com" />
           <Card img={desire} title="The Man Women Desire" desc="An AI-powered self-assessment built by a woman for men aiming to level up." href="https://themanwomendesire.com" />
           <Card img={pairings} title="VinoPairings" desc="Simple wine pairing recommendations and ideas." href="https://vinopairings.com" />
