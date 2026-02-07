@@ -111,39 +111,6 @@ export default function Work() {
           A mix of product sites, storytelling, utilities, and local-business builds.
         </p>
 
-  <div className="featured-wrapper">
-  <a
-    href="https://patrickandjean.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="featured-project"
-    aria-label="Visit patrickandjean.com"
-  >
-    <img
-      src={patrickandjean}
-      alt="PatrickandJean.com website"
-      className="featured-image"
-    />
-  </a>
-
-  <div className="featured-meta">
-    <span className="featured-title">patrickandjean.com</span>
-    <a
-      href="https://patrickandjean.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="featured-link"
-    >
-      Visit site →
-    </a>
-  </div>
-</div>
-
-    
-    
-
-  
-
 
         {/* Portfolio Grid */}
         <div className="grid">
