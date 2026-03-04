@@ -78,19 +78,11 @@ export default function Work() {
           />
 
           <Card
-            img={desire}
-            title="The Man Women Desire"
-            category="Behavioral Self-Assessment"
-            desc="An AI-enhanced assessment tool examining attraction, confidence, and relational psychology."
-            href="https://themanwomendesire.com"
-          />
-
-          <Card
-            img={senses}
-            title="Sensuality Quiz"
-            category="Interactive Experience"
-            desc="A guided quiz exploring sensual awareness, connection styles, and emotional presence."
-            href="https://sensualityquiz.com"
+            img={pairings}
+            title="VinoPairings"
+            category="Lifestyle Utility"
+            desc="A lightweight recommendation tool for discovering complementary wine pairings."
+            href="https://vinopairings.com"
           />
 
           <Card
@@ -109,13 +101,7 @@ export default function Work() {
             href="https://carepathwell.com"
           />
 
-          <Card
-            img={getvabuddy}
-            title="Get VA Buddy"
-            category="Government Utility Tool"
-            desc="A simplified helper for navigating common VA forms without login barriers."
-            href="https://getvabuddy.com"
-          />
+          
 
           <Card
             img={beforeandafter}
@@ -125,13 +111,7 @@ export default function Work() {
             href="https://beforeandaftervault.com"
           />
 
-          <Card
-            img={pairings}
-            title="VinoPairings"
-            category="Lifestyle Utility"
-            desc="A lightweight recommendation tool for discovering complementary wine pairings."
-            href="https://vinopairings.com"
-          />
+          
 
           <Card
             img={cosmic}
@@ -164,6 +144,31 @@ export default function Work() {
             desc="A digital hub supporting veterans and community outreach initiatives."
             href="https://pinkertonwilliams.org"
           />
+
+            <Card
+            img={getvabuddy}
+            title="Get VA Buddy"
+            category="Government Utility Tool"
+            desc="A simplified helper for navigating common VA forms without login barriers."
+            href="https://getvabuddy.com"
+          />
+
+           <Card
+            img={desire}
+            title="The Man Women Desire"
+            category="Behavioral Self-Assessment"
+            desc="An AI-enhanced assessment tool examining attraction, confidence, and relational psychology."
+            href="https://themanwomendesire.com"
+          />
+
+           <Card
+            img={senses}
+            title="Sensuality Quiz"
+            category="Interactive Experience"
+            desc="A guided quiz exploring sensual awareness, connection styles, and emotional presence."
+            href="https://sensualityquiz.com"
+          />
+
         </div>
       </section>
 
