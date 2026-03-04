@@ -70,6 +70,13 @@
   );
 }
 
+.tech {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #b8b8b8;
+  letter-spacing: 0.5px;
+}
+
 /* Fallback when mask-image isn’t supported */
 @supports not (mask-image: radial-gradient(circle, #000 50%, transparent)) {
   .portrait-wrap::after {

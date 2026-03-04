@@ -23,6 +23,11 @@ export default function HomeBlack() {
         <h1 className="title">Pamela J Terrell</h1>
         <p className="tag">Web Developer · Digital Entrepreneur</p>
 
+        <p className="tech-title">Tech Stack</p>
+<p className="tech">
+JavaScript • React • Next.js • Vite • Tailwind • Supabase • Stripe • Vercel • Google Analytics • GitHub
+</p>
+
         {/* Actions */}
         <div className="actions">
           <a
