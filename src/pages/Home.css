@@ -41,13 +41,10 @@
 ---------------------------------------- */
 .portrait-wrap { position: relative; }
 
-/* Disable any halo/glow for pure black edge */
-.portrait-glow { display: none; }
-
 /* Base portrait styling */
 .portrait {
   display: block;
-  width: clamp(220px, 34vw, 520px);
+  width: clamp(170px, 24vw, 360px); /* smaller than before */
   height: auto;
   background: #000;         /* merges with page */
   border: none;
@@ -70,11 +67,39 @@
   );
 }
 
-.tech {
-  margin-top: 8px;
-  font-size: 0.95rem;
-  color: #b8b8b8;
-  letter-spacing: 0.5px;
+/* ---- Portrait "alive" effect (NEW) ----
+   Very subtle float + gentle glow pulse,
+   keeps the aesthetic elegant, not flashy.
+---------------------------------------- */
+.portrait-alive {
+  transform: translateY(0);
+  filter: drop-shadow(0 0 0 rgba(255,255,255,0));
+  animation: portraitFloat 7s ease-in-out infinite;
+}
+
+.portrait-alive::after {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(255,255,255,0.10),
+    rgba(255,255,255,0.00) 60%
+  );
+  opacity: 0.0;
+  pointer-events: none;
+  animation: portraitGlow 7s ease-in-out infinite;
+}
+
+@keyframes portraitFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+@keyframes portraitGlow {
+  0%, 100% { opacity: 0.0; }
+  50%      { opacity: 0.22; }
 }
 
 /* Fallback when mask-image isn’t supported */
@@ -83,7 +108,11 @@
     content: "";
     position: absolute;
     inset: -8%;
-    background: radial-gradient(ellipse at 50% 38%, transparent 55%, rgba(0,0,0,0.85) 85%);
+    background: radial-gradient(
+      ellipse at 50% 38%,
+      transparent 55%,
+      rgba(0,0,0,0.85) 85%
+    );
     pointer-events: none;
     filter: blur(18px);
   }
@@ -106,6 +135,41 @@
   margin: 0;
 }
 
+/* -------------------------
+   Tech chips
+-------------------------- */
+.tech-chips {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 760px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+  line-height: 1;
+  backdrop-filter: blur(6px);
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.chip:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
 /* Primary CTA */
 .portal {
   display: inline-flex;
@@ -124,8 +188,13 @@
 
 .portal:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 18px rgba(255,255,255,0.08);
   background: rgba(255, 255, 255, 0.1);
+}
+
+.portal:focus-visible{
+  outline: 2px solid rgba(147, 197, 253, 0.9);
+  outline-offset: 3px;
 }
 
 .dot {
@@ -157,13 +226,21 @@
   z-index:2;
 }
 
+/* Make CTAs sit side-by-side on desktop */
+@media (min-width: 681px){
+  .actions{
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
 /* Secondary CTA: Visit Mixer */
 .btn-play{
   display:inline-block;
   padding:12px 28px;
   border-radius:999px;
   background:linear-gradient(90deg,#6366f1,#22d3ee);
-  color:#0b1220;
+  color:#06121a;
   font-weight:600;
   font-size:1rem;
   text-decoration:none;
@@ -177,7 +254,7 @@
   filter:brightness(1.08);
   box-shadow:0 14px 36px #0009,0 0 18px #6ea8ff55;
 }
-.btn-play:visited{ color:#0b1220; }          /* prevent purple visited look */
+.btn-play:visited{ color:#06121a; }          /* prevent purple visited look */
 .btn-play:focus-visible{
   outline:2px solid #93c5fd;
   outline-offset:3px;
@@ -207,7 +284,7 @@
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .portal, .chev, .black-landing .stack { 
+  .portal, .chev, .black-landing .stack, .chip, .portrait-alive, .portrait-alive::after { 
     transition: none !important; 
     animation: none !important; 
     opacity: 1; 
@@ -216,13 +293,11 @@
 
 /* --- Responsive refinements for small screens --- */
 @media (max-width: 680px) {
-  /* slightly reduce portrait size so the CTA appears on first load */
   .portrait {
-    width: clamp(160px, 48vw, 240px);
+    width: clamp(150px, 46vw, 220px);
     height: auto;
   }
 
-  /* tighten vertical spacing */
   .stack {
     gap: 12px;
   }
@@ -232,7 +307,6 @@
     gap: 12px;
   }
 
-  /* title/tag scaling */
   .title {
     font-size: clamp(18px, 6vw, 24px);
   }
@@ -240,14 +314,17 @@
     font-size: clamp(12px, 3vw, 14px);
   }
 
-  /* logo smaller to avoid overflow */
+  .chip{
+    font-size: 0.85rem;
+    padding: 7px 10px;
+  }
+
   .landing-logo {
     width: 90px;
     margin-top: 10px;
   }
 }
 
-/* extra-small viewports (narrow phones) */
 @media (max-width: 400px) {
   .portrait {
     width: clamp(140px, 52vw, 200px);

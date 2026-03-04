@@ -2,13 +2,25 @@ import React from "react";
 import "./Home.css";
 import pjtImage from "../assets/PJT.jpg";
 
+const TECH_STACK = [
+  "JavaScript",
+  "React",
+  "Next.js",
+  "Vite",
+  "Tailwind",
+  "Supabase",
+  "Stripe",
+  "Vercel",
+  "Google Analytics",
+  "GitHub",
+];
+
 export default function HomeBlack() {
   return (
     <main className="black-landing" role="main" aria-label="Landing">
       <div className="stack">
         {/* Portrait */}
-        <div className="portrait-wrap" aria-hidden>
-          <div className="portrait-glow" />
+        <div className="portrait-wrap portrait-alive" aria-hidden="true">
           <img
             src={pjtImage}
             alt="Pamela Terrell portrait"
@@ -23,10 +35,14 @@ export default function HomeBlack() {
         <h1 className="title">Pamela J Terrell</h1>
         <p className="tag">Web Developer · Digital Entrepreneur</p>
 
-        <p className="tech-title">Tech Stack</p>
-<p className="tech">
-JavaScript • React • Next.js • Vite • Tailwind • Supabase • Stripe • Vercel • Google Analytics • GitHub
-</p>
+        {/* Tech chips */}
+        <ul className="tech-chips" aria-label="Tech stack">
+          {TECH_STACK.map((tech) => (
+            <li key={tech} className="chip">
+              {tech}
+            </li>
+          ))}
+        </ul>
 
         {/* Actions */}
         <div className="actions">
@@ -35,9 +51,9 @@ JavaScript • React • Next.js • Vite • Tailwind • Supabase • Stripe �
             href="/projects"
             aria-label="Enter portfolio to view projects"
           >
-            <span className="dot" aria-hidden />
+            <span className="dot" aria-hidden="true" />
             Enter Portfolio
-            <svg className="chev" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <svg className="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path
                 d="M9 18l6-6-6-6"
                 stroke="currentColor"
@@ -48,7 +64,6 @@ JavaScript • React • Next.js • Vite • Tailwind • Supabase • Stripe �
             </svg>
           </a>
 
-          {/* Redirect to live Mixer */}
           <a
             href="https://mixer.pamelajterrell.com"
             className="btn-play"
