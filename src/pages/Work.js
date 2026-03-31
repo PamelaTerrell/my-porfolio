@@ -21,24 +21,26 @@ import senses from "../assets/senses.png";
 export default function Work() {
   return (
     <div className="work-root">
-      {/* Header */}
       <header className="mini-header">
         <a href="/" className="crumb" aria-label="Back to landing">
           ← Home
         </a>
-        <img src={ptlogo} alt="PT logo" className="brand-logo" />
+
+        <div className="brand-group">
+          <img src={ptlogo} alt="PT logo" className="brand-logo" />
+          <span className="brand-sub">Stabile USA</span>
+        </div>
       </header>
 
-      {/* Hero */}
       <section className="work-hero">
+        <p className="eyebrow">Stabile USA Portfolio</p>
         <h1>Digital Ventures</h1>
         <p className="intro">
-          Independent platforms and experiments built at the intersection of
-          storytelling, psychology, and technology.
+          A portfolio of independently built platforms exploring storytelling,
+          behavior, and focused digital interaction.
         </p>
       </section>
 
-      {/* About */}
       <section id="about" className="about">
         <img
           src={pjtImage}
@@ -46,34 +48,79 @@ export default function Work() {
           className="about-photo"
           loading="lazy"
         />
+
         <div className="about-copy">
           <h2>About</h2>
           <p>
-            I design, build, and launch independent digital platforms focused on
-            human behavior, identity, and meaningful interaction online.
+            I design, build, and operate independent digital platforms through
+            Stabile USA, with a focus on human behavior, identity, and meaningful
+            interaction.
           </p>
           <p>
-            My work blends thoughtful UX, performance-driven engineering, and
-            narrative structure to create focused, intentional digital
-            experiences.
+            My work combines thoughtful user experience, performance-focused
+            engineering, and narrative structure to create intentional, lasting
+            digital products.
           </p>
         </div>
       </section>
 
-      {/* Ventures */}
       <section id="ventures" className="portfolio">
         <h2>Ventures</h2>
         <p className="muted">
-          A collection of platforms and niche products created and operated
+          A collection of platforms and niche products created and maintained
           independently.
         </p>
+
+        {/* Featured Project — Night Listener */}
+<section className="featured">
+  <div className="featured-inner">
+    <div className="featured-copy">
+      <p className="eyebrow">Featured Project</p>
+
+      <h2>Night Listener</h2>
+
+      <p className="featured-desc">
+        A calm, story-driven audio experience exploring human behavior,
+        relationships, and the quiet moments we replay.
+      </p>
+
+      <div className="featured-actions">
+        <a
+          href="https://stabileusa.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="featured-btn primary"
+        >
+          Visit Night Listener
+        </a>
+
+        <a
+          href="https://stabileusa.com/listen"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="featured-btn"
+        >
+          Listen
+        </a>
+      </div>
+    </div>
+
+    <div className="featured-media">
+      <img
+        src="/images/night-listener-preview.png"
+        alt="Night Listener preview"
+        className="featured-image"
+      />
+    </div>
+  </div>
+</section>
 
         <div className="grid">
           <Card
             img={lifestories}
             title="Life Stories Now"
             category="Storytelling Platform"
-            desc="A narrative-driven platform exploring anonymous memory, reflection, and shared life experiences."
+            desc="A narrative-driven platform exploring anonymous memory, reflection, and shared experience."
             href="https://lifestoriesnow.com"
           />
 
@@ -81,7 +128,7 @@ export default function Work() {
             img={pairings}
             title="VinoPairings"
             category="Lifestyle Utility"
-            desc="A lightweight recommendation tool for discovering complementary wine pairings."
+            desc="A streamlined tool for discovering complementary wine pairings."
             href="https://vinopairings.com"
           />
 
@@ -89,35 +136,31 @@ export default function Work() {
             img={psych}
             title="Psychological Manipulation"
             category="Educational Resource"
-            desc="A research-focused reference exploring emotional control, influence patterns, and behavioral tactics."
+            desc="A reference exploring influence, emotional patterns, and behavioral dynamics."
             href="https://psychological-manipulation.com"
           />
 
           <Card
             img={carepathwell}
             title="CarePathWell"
-            category="Health Workflow Platform"
-            desc="A streamlined intake and scheduling experience designed to centralize behavioral health coordination."
+            category="Health Platform"
+            desc="A centralized intake and scheduling experience for behavioral health coordination."
             href="https://carepathwell.com"
           />
-
-          
 
           <Card
             img={beforeandafter}
             title="Before And After Vault"
-            category="Image Archive Platform"
-            desc="A private and community-based vault for documenting personal transformations."
+            category="Image Archive"
+            desc="A private and community-based platform for documenting transformation."
             href="https://beforeandaftervault.com"
           />
-
-          
 
           <Card
             img={cosmic}
             title="Cosmic Zodiac Astrology"
-            category="Content Hub"
-            desc="An astrology-based content platform centered on interpretation and symbolic exploration."
+            category="Content Platform"
+            desc="An astrology-based experience focused on symbolic interpretation."
             href="https://cosmiczodiacastrology.com"
           />
 
@@ -125,15 +168,15 @@ export default function Work() {
             img={customdreamz}
             title="Custom Dreamz Motorsports"
             category="Brand Platform"
-            desc="A high-energy digital presence supporting custom automotive craftsmanship."
+            desc="A digital presence supporting custom automotive craftsmanship."
             href="https://customdreamzmotorsports.com"
           />
 
           <Card
             img={pace}
             title="Big Pace Barbershop & Beauty Salon 2"
-            category="Local Business Presence"
-            desc="A streamlined website supporting appointment visibility and brand presence."
+            category="Local Business"
+            desc="A streamlined site supporting visibility and appointment flow."
             href="https://bigpacebarbershopandbeautysalon2.com"
           />
 
@@ -141,34 +184,33 @@ export default function Work() {
             img={pwimage}
             title="Pinkerton Williams DAV Chapter 18"
             category="Community Organization"
-            desc="A digital hub supporting veterans and community outreach initiatives."
+            desc="A digital hub supporting veterans and outreach initiatives."
             href="https://pinkertonwilliams.org"
           />
 
-            <Card
+          <Card
             img={getvabuddy}
             title="Get VA Buddy"
-            category="Government Utility Tool"
-            desc="A simplified helper for navigating common VA forms without login barriers."
+            category="Utility Tool"
+            desc="A simplified helper for navigating VA forms without login barriers."
             href="https://getvabuddy.com"
           />
 
-           <Card
+          <Card
             img={desire}
             title="The Man Women Desire"
-            category="Behavioral Self-Assessment"
-            desc="An AI-enhanced assessment tool examining attraction, confidence, and relational psychology."
+            category="Behavioral Assessment"
+            desc="An AI-assisted tool exploring attraction, confidence, and relational dynamics."
             href="https://themanwomendesire.com"
           />
 
-           <Card
+          <Card
             img={senses}
             title="Sensuality Quiz"
             category="Interactive Experience"
-            desc="A guided quiz exploring sensual awareness, connection styles, and emotional presence."
+            desc="A guided quiz exploring connection, awareness, and emotional presence."
             href="https://sensualityquiz.com"
           />
-
         </div>
       </section>
 
@@ -177,11 +219,11 @@ export default function Work() {
   );
 }
 
-/* Card Component */
 function Card({ img, title, category, desc, href }) {
   return (
     <article className="card">
       <img src={img} alt={title} loading="lazy" />
+
       <div className="card-body">
         <h3>{title}</h3>
         <p className="meta">{category}</p>

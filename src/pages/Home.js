@@ -7,7 +7,7 @@ const TECH_STACK = [
   "React",
   "Next.js",
   "Vite",
-  "Tailwind",
+  "Tailwind CSS",
   "Supabase",
   "Stripe",
   "Vercel",
@@ -17,13 +17,18 @@ const TECH_STACK = [
 
 export default function HomeBlack() {
   return (
-    <main className="black-landing" role="main" aria-label="Landing">
-      <div className="stack">
-        {/* Portrait */}
-        <div className="portrait-wrap portrait-alive" aria-hidden="true">
+    <main
+      className="black-landing"
+      role="main"
+      aria-label="Pamela J Terrell landing page"
+    >
+      <section className="stack" aria-labelledby="home-title">
+        <p className="eyebrow">Stabile USA</p>
+
+        <div className="portrait-wrap portrait-alive">
           <img
             src={pjtImage}
-            alt="Pamela Terrell portrait"
+            alt="Portrait of Pamela J Terrell"
             className="portrait"
             width={280}
             height={280}
@@ -31,12 +36,20 @@ export default function HomeBlack() {
           />
         </div>
 
-        {/* Name + Tag */}
-        <h1 className="title">Pamela J Terrell</h1>
-        <p className="tag">Web Developer · Digital Entrepreneur</p>
+        <header className="hero-copy">
+          <h1 id="home-title" className="title">
+            Pamela J Terrell
+          </h1>
 
-        {/* Tech chips */}
-        <ul className="tech-chips" aria-label="Tech stack">
+          <p className="tag">Web Developer · Digital Entrepreneur</p>
+
+          <p className="intro">
+            Designing and building modern web experiences, independent products,
+            and digital brands.
+          </p>
+        </header>
+
+        <ul className="tech-chips" aria-label="Core technologies">
           {TECH_STACK.map((tech) => (
             <li key={tech} className="chip">
               {tech}
@@ -44,16 +57,16 @@ export default function HomeBlack() {
           ))}
         </ul>
 
-        {/* Actions */}
-        <div className="actions">
-          <a
-            className="portal"
-            href="/projects"
-            aria-label="Enter portfolio to view projects"
-          >
+        <nav className="actions" aria-label="Primary">
+          <a className="portal" href="/projects" aria-label="View portfolio">
             <span className="dot" aria-hidden="true" />
-            Enter Portfolio
-            <svg className="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            View Portfolio
+            <svg
+              className="chev"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
               <path
                 d="M9 18l6-6-6-6"
                 stroke="currentColor"
@@ -69,15 +82,21 @@ export default function HomeBlack() {
             className="btn-play"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Open Mixer by Pamela J Terrell"
+            aria-label="Visit Mixer"
           >
-            🍸 Visit Mixer
+            Mixer
           </a>
-        </div>
+        </nav>
 
-        {/* Logo */}
-        <img src="/ptlogo.png" alt="PT logo" className="landing-logo" />
-      </div>
+        <div className="brand-footer">
+          <img
+            src="/ptlogo.png"
+            alt="Pamela J Terrell logo"
+            className="landing-logo"
+          />
+          <p className="brand-note">A Stabile USA project</p>
+        </div>
+      </section>
     </main>
   );
 }

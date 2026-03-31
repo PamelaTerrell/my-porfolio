@@ -14,8 +14,8 @@
 
 /* Root layout */
 .black-landing {
-  min-height: 100vh;   /* fallback */
-  min-height: 100svh;  /* small viewport unit */
+  min-height: 100vh;
+  min-height: 100svh;
   background: var(--bg);
   color: var(--fg);
   display: flex;
@@ -30,50 +30,49 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-5);
+  gap: 16px;
   text-align: center;
+  max-width: 780px;
 }
 
-/* ---------------------------------------
-   Portrait — seamless blend into black
-   Uses CSS mask to feather edges so the
-   image melts into the background.
----------------------------------------- */
-.portrait-wrap { position: relative; }
+/* Brand eyebrow */
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 4px;
+}
 
-/* Base portrait styling */
+/* Portrait */
+.portrait-wrap {
+  position: relative;
+}
+
 .portrait {
   display: block;
-  width: clamp(170px, 24vw, 360px); /* smaller than before */
+  width: clamp(170px, 24vw, 360px);
   height: auto;
-  background: #000;         /* merges with page */
+  background: #000;
   border: none;
   box-shadow: none;
-  object-fit: contain;      /* preserves your image without crop */
+  object-fit: contain;
   object-position: center top;
-}
-
-/* Soft feather with mask (modern) */
-.portrait {
   -webkit-mask-image: radial-gradient(
     circle at 50% 38%,
     #000 68%,
-    rgba(0,0,0,0) 92%
+    rgba(0, 0, 0, 0) 92%
   );
   mask-image: radial-gradient(
     circle at 50% 38%,
     #000 68%,
-    rgba(0,0,0,0) 92%
+    rgba(0, 0, 0, 0) 92%
   );
 }
 
-/* ---- Portrait "alive" effect (NEW) ----
-   Very subtle float + gentle glow pulse,
-   keeps the aesthetic elegant, not flashy.
----------------------------------------- */
 .portrait-alive {
   transform: translateY(0);
-  filter: drop-shadow(0 0 0 rgba(255,255,255,0));
+  filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
   animation: portraitFloat 7s ease-in-out infinite;
 }
 
@@ -84,25 +83,34 @@
   border-radius: 999px;
   background: radial-gradient(
     circle at 50% 45%,
-    rgba(255,255,255,0.10),
-    rgba(255,255,255,0.00) 60%
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0) 60%
   );
-  opacity: 0.0;
+  opacity: 0;
   pointer-events: none;
   animation: portraitGlow 7s ease-in-out infinite;
 }
 
 @keyframes portraitFloat {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-6px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 @keyframes portraitGlow {
-  0%, 100% { opacity: 0.0; }
-  50%      { opacity: 0.22; }
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.22;
+  }
 }
 
-/* Fallback when mask-image isn’t supported */
 @supports not (mask-image: radial-gradient(circle, #000 50%, transparent)) {
   .portrait-wrap::after {
     content: "";
@@ -111,13 +119,14 @@
     background: radial-gradient(
       ellipse at 50% 38%,
       transparent 55%,
-      rgba(0,0,0,0.85) 85%
+      rgba(0, 0, 0, 0.85) 85%
     );
     pointer-events: none;
     filter: blur(18px);
   }
+
   .portrait {
-    border-radius: 18px; /* subtle, prevents hard corners */
+    border-radius: 18px;
   }
 }
 
@@ -125,19 +134,26 @@
 .title {
   font-size: clamp(22px, 3.2vw, 30px);
   font-weight: 600;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
   margin: 6px 0 0;
 }
 
 .tag {
-  color: var(--fg-dim);
+  color: rgba(255, 255, 255, 0.55);
   font-size: clamp(13px, 2.2vw, 16px);
-  margin: 0;
+  margin-top: 2px;
+  margin-bottom: 0;
 }
 
-/* -------------------------
-   Tech chips
--------------------------- */
+.intro {
+  max-width: 520px;
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Tech chips */
 .tech-chips {
   list-style: none;
   padding: 0;
@@ -170,7 +186,24 @@
   border-color: rgba(255, 255, 255, 0.24);
 }
 
-/* Primary CTA */
+/* Actions */
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 18px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 681px) {
+  .actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
 .portal {
   display: inline-flex;
   align-items: center;
@@ -188,11 +221,13 @@
 
 .portal:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 18px rgba(255,255,255,0.08);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.45),
+    0 0 18px rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.1);
 }
 
-.portal:focus-visible{
+.portal:focus-visible {
   outline: 2px solid rgba(147, 197, 253, 0.9);
   outline-offset: 3px;
 }
@@ -213,56 +248,50 @@
   transition: transform 180ms ease;
 }
 
-.portal:hover .chev { transform: translateX(3px); }
-
-/* Actions (Enter Portfolio + Visit Mixer) */
-.actions{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:16px;
-  margin-top:18px;
-  position:relative;
-  z-index:2;
+.portal:hover .chev {
+  transform: translateX(3px);
 }
 
-/* Make CTAs sit side-by-side on desktop */
-@media (min-width: 681px){
-  .actions{
-    flex-direction: row;
-    justify-content: center;
-  }
+.btn-play {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--fg);
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  transition: all 0.2s ease;
 }
 
-/* Secondary CTA: Visit Mixer */
-.btn-play{
-  display:inline-block;
-  padding:12px 28px;
-  border-radius:999px;
-  background:linear-gradient(90deg,#6366f1,#22d3ee);
-  color:#06121a;
-  font-weight:600;
-  font-size:1rem;
-  text-decoration:none;
-  box-shadow:0 10px 26px #0006;
-  transition:all .25s ease;
-  position:relative;
-  z-index:2;
-}
-.btn-play:hover{
-  transform:translateY(-2px);
-  filter:brightness(1.08);
-  box-shadow:0 14px 36px #0009,0 0 18px #6ea8ff55;
-}
-.btn-play:visited{ color:#06121a; }          /* prevent purple visited look */
-.btn-play:focus-visible{
-  outline:2px solid #93c5fd;
-  outline-offset:3px;
+.btn-play:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
 }
 
-/* Logo — keep it subtle on black */
-.landing-logo{
-  display:block;
+.btn-play:visited {
+  color: var(--fg);
+}
+
+.btn-play:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+/* Footer branding */
+.brand-footer {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-logo {
+  display: block;
   margin: 1.2rem auto 0;
   width: 120px;
   height: auto;
@@ -271,27 +300,47 @@
   transform-origin: center bottom;
 }
 
-/* Subtle entrance for the stack */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+.brand-note {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 6px;
 }
+
+/* Entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .black-landing .stack {
   opacity: 0;
   animation: fadeInUp 0.9s ease-out forwards;
   animation-delay: 0.15s;
 }
 
-/* Respect reduced motion */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .portal, .chev, .black-landing .stack, .chip, .portrait-alive, .portrait-alive::after { 
-    transition: none !important; 
-    animation: none !important; 
-    opacity: 1; 
+  .portal,
+  .chev,
+  .black-landing .stack,
+  .chip,
+  .portrait-alive,
+  .portrait-alive::after {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1;
   }
 }
 
-/* --- Responsive refinements for small screens --- */
+/* Responsive */
 @media (max-width: 680px) {
   .portrait {
     width: clamp(150px, 46vw, 220px);
@@ -310,11 +359,16 @@
   .title {
     font-size: clamp(18px, 6vw, 24px);
   }
+
   .tag {
     font-size: clamp(12px, 3vw, 14px);
   }
 
-  .chip{
+  .intro {
+    font-size: 13px;
+  }
+
+  .chip {
     font-size: 0.85rem;
     padding: 7px 10px;
   }
@@ -329,6 +383,7 @@
   .portrait {
     width: clamp(140px, 52vw, 200px);
   }
+
   .btn-play,
   .portal {
     padding: 10px 20px;
@@ -336,7 +391,8 @@
   }
 }
 
-/* Prefer 100svh when supported */
 @supports (height: 100svh) {
-  .black-landing { min-height: 100svh; }
+  .black-landing {
+    min-height: 100svh;
+  }
 }
