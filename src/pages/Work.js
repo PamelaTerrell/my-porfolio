@@ -41,6 +41,8 @@ export default function Work() {
         </p>
       </section>
 
+      
+
       <section id="about" className="about">
         <img
           src={pjtImage}
@@ -114,6 +116,10 @@ export default function Work() {
     </div>
   </div>
 </section>
+
+<p className="featured-note">
+  A Stabile USA product
+</p>
 
         <div className="grid">
           <Card

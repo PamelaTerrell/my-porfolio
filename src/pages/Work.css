@@ -339,3 +339,11 @@
     justify-content: center;
   }
 }
+
+.featured-note {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
