@@ -17,6 +17,7 @@ import getvabuddy from "../assets/getvabuddy.jpg";
 import pwimage from "../assets/PW.jpg";
 import ptlogo from "../assets/ptlogo.png";
 import senses from "../assets/senses.png";
+import medicareBeforeSwitch from "../assets/medicare-before-you-switch.png";
 
 export default function Work() {
   return (
@@ -139,6 +140,14 @@ export default function Work() {
           />
 
           <Card
+          img={medicareBeforeSwitch}
+          title="Medicare Before You Switch"
+          category="Educational Resource"
+          desc="A plain-language Medicare education site helping seniors and families review ads, benefits, plan tradeoffs, and coverage questions before switching."
+          href="https://medicarebeforeyouswitch.com"
+          />
+
+          <Card
             img={psych}
             title="Psychological Manipulation"
             category="Educational Resource"
@@ -170,13 +179,7 @@ export default function Work() {
             href="https://cosmiczodiacastrology.com"
           />
 
-          <Card
-            img={customdreamz}
-            title="Custom Dreamz Motorsports"
-            category="Brand Platform"
-            desc="A digital presence supporting custom automotive craftsmanship."
-            href="https://customdreamzmotorsports.com"
-          />
+          
 
           <Card
             img={pace}
