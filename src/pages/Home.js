@@ -22,6 +22,14 @@ export default function HomeBlack() {
       role="main"
       aria-label="Pamela J Terrell landing page"
     >
+      <div className="cartoon-walkway" aria-hidden="true">
+        <img
+          src="/cartoon-pamela-laptop.png"
+          alt=""
+          className="cartoon-pamela"
+        />
+      </div>
+
       <section className="stack" aria-labelledby="home-title">
         <p className="eyebrow">Stabile USA</p>
 
