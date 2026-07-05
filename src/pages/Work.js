@@ -7,7 +7,6 @@ import pjtImage from "../assets/PJT.jpg";
 import lifestories from "../assets/LifeStories.png";
 import beforeandafter from "../assets/beforeandafter.png";
 import carepathwell from "../assets/carepath.png";
-import customdreamz from "../assets/CustomDreamz.png";
 import desire from "../assets/desire.jpg";
 import pairings from "../assets/pairings.png";
 import cosmic from "../assets/cosmic.png";
@@ -35,14 +34,36 @@ export default function Work() {
 
       <section className="work-hero">
         <p className="eyebrow">Stabile USA Portfolio</p>
+
         <h1>Digital Ventures</h1>
+
         <p className="intro">
           A portfolio of independently built platforms exploring storytelling,
-          behavior, and focused digital interaction.
+          behavior, education, community, and focused digital interaction.
         </p>
       </section>
 
-      
+      <section className="hire-strip" aria-labelledby="hire-title">
+        <p className="eyebrow">Available for select projects</p>
+
+        <h2 id="hire-title">Need a website, refresh, or custom digital tool?</h2>
+
+        <p>
+          I build polished websites, landing pages, story platforms, forms,
+          membership experiences, and simple web apps for small businesses,
+          nonprofits, creators, and community projects.
+        </p>
+
+        <div className="hire-actions">
+          <a href="/work-with-me" className="hire-btn primary">
+            Work With Me
+          </a>
+
+          <a href="#ventures" className="hire-btn">
+            View My Work
+          </a>
+        </div>
+      </section>
 
       <section id="about" className="about">
         <img
@@ -54,73 +75,74 @@ export default function Work() {
 
         <div className="about-copy">
           <h2>About</h2>
+
           <p>
-            I design, build, and operate independent digital platforms through
-            Stabile USA, with a focus on human behavior, identity, and meaningful
-            interaction.
+            I design, build, and maintain independent digital platforms through
+            Stabile USA, including websites, story-driven products, educational
+            tools, community resources, and interactive web experiences.
           </p>
+
           <p>
-            My work combines thoughtful user experience, performance-focused
-            engineering, and narrative structure to create intentional, lasting
-            digital products.
+            My work combines thoughtful user experience, clear content
+            structure, performance-focused development, and practical tools that
+            help people share, learn, connect, and take action.
           </p>
         </div>
       </section>
 
       <section id="ventures" className="portfolio">
         <h2>Ventures</h2>
+
         <p className="muted">
           A collection of platforms and niche products created and maintained
           independently.
         </p>
 
         {/* Featured Project — Night Listener */}
-<section className="featured">
-  <div className="featured-inner">
-    <div className="featured-copy">
-      <p className="eyebrow">Featured Project</p>
+        <section className="featured">
+          <div className="featured-inner">
+            <div className="featured-copy">
+              <p className="eyebrow">Featured Project</p>
 
-      <h2>Night Listener</h2>
+              <h2>Night Listener</h2>
 
-      <p className="featured-desc">
-        A calm, story-driven audio experience exploring human behavior,
-        relationships, and the quiet moments we replay.
-      </p>
+              <p className="featured-desc">
+                A calm, story-driven audio experience exploring human behavior,
+                relationships, and the quiet moments we replay.
+              </p>
 
-      <div className="featured-actions">
-        <a
-          href="https://stabileusa.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="featured-btn primary"
-        >
-          Visit Night Listener
-        </a>
+              <div className="featured-actions">
+                <a
+                  href="https://stabileusa.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="featured-btn primary"
+                >
+                  Visit Night Listener
+                </a>
 
-        <a
-          href="https://stabileusa.com/listen"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="featured-btn"
-        >
-          Listen
-        </a>
-      </div>
-    </div>
+                <a
+                  href="https://stabileusa.com/listen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="featured-btn"
+                >
+                  Listen
+                </a>
+              </div>
+            </div>
 
-    <div className="featured-media">
-      <img
-        src="/images/night-listener-preview.png"
-        alt="Night Listener preview"
-        className="featured-image"
-      />
-    </div>
-  </div>
-</section>
+            <div className="featured-media">
+              <img
+                src="/images/night-listener-preview.png"
+                alt="Night Listener preview"
+                className="featured-image"
+              />
+            </div>
+          </div>
+        </section>
 
-<p className="featured-note">
-  A Stabile USA product
-</p>
+        <p className="featured-note">A Stabile USA product</p>
 
         <div className="grid">
           <Card
@@ -140,11 +162,11 @@ export default function Work() {
           />
 
           <Card
-          img={medicareBeforeSwitch}
-          title="Medicare Before You Switch"
-          category="Educational Resource"
-          desc="A plain-language Medicare education site helping seniors and families review ads, benefits, plan tradeoffs, and coverage questions before switching."
-          href="https://medicarebeforeyouswitch.com"
+            img={medicareBeforeSwitch}
+            title="Medicare Before You Switch"
+            category="Educational Resource"
+            desc="A plain-language Medicare education site helping seniors and families review ads, benefits, plan tradeoffs, and coverage questions before switching."
+            href="https://medicarebeforeyouswitch.com"
           />
 
           <Card
@@ -178,8 +200,6 @@ export default function Work() {
             desc="An astrology-based experience focused on symbolic interpretation."
             href="https://cosmiczodiacastrology.com"
           />
-
-          
 
           <Card
             img={pace}
@@ -235,8 +255,11 @@ function Card({ img, title, category, desc, href }) {
 
       <div className="card-body">
         <h3>{title}</h3>
+
         <p className="meta">{category}</p>
+
         <p className="muted">{desc}</p>
+
         <a
           className="visit"
           href={href}

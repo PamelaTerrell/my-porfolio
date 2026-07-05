@@ -52,8 +52,8 @@ export default function HomeBlack() {
           <p className="tag">Web Developer · Digital Entrepreneur</p>
 
           <p className="intro">
-            Designing and building modern web experiences, independent products,
-            and digital brands.
+            I design and build modern websites, digital products, and useful web
+            tools for people with real stories, ideas, businesses, and missions.
           </p>
         </header>
 
@@ -64,6 +64,18 @@ export default function HomeBlack() {
             </li>
           ))}
         </ul>
+
+        <div className="service-card" aria-label="Work with Pamela">
+          <p className="service-kicker">Now accepting select projects</p>
+
+          <h2 className="service-title">Need a website or digital tool?</h2>
+
+          <p className="service-text">
+            I create polished websites, landing pages, story platforms, forms,
+            membership experiences, and simple web apps for small businesses,
+            nonprofits, creators, and community projects.
+          </p>
+        </div>
 
         <nav className="actions" aria-label="Primary">
           <a className="portal" href="/projects" aria-label="View portfolio">
@@ -85,9 +97,13 @@ export default function HomeBlack() {
             </svg>
           </a>
 
+          <a className="btn-play" href="/work-with-me" aria-label="Work with Pamela">
+            Work With Me
+          </a>
+
           <a
             href="https://mixer.pamelajterrell.com"
-            className="btn-play"
+            className="btn-play secondary"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Visit Mixer"

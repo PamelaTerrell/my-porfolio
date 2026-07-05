@@ -5,8 +5,10 @@ import { Analytics } from "@vercel/analytics/react";
 
 import Home from "./pages/Home";
 import Work from "./pages/Work";
-import Mixer from "./pages/Mixer";   // ✅ matches Mixer.jsx
-import "./App.css";                  // ✅ keep your global styles only
+import Mixer from "./pages/Mixer";
+import WorkWithMe from "./pages/WorkWithMe";
+
+import "./App.css";
 
 const App = () => {
   const ranRef = useRef(false);
@@ -19,7 +21,8 @@ const App = () => {
 
     const shouldLog =
       process.env.NODE_ENV === "production" ||
-      String(process.env.REACT_APP_LOG_VISITS_IN_DEV || "").toLowerCase() === "true";
+      String(process.env.REACT_APP_LOG_VISITS_IN_DEV || "").toLowerCase() ===
+        "true";
 
     if (!shouldLog) return;
 
@@ -49,6 +52,7 @@ const App = () => {
       while (attempt < maxAttempts) {
         attempt += 1;
         const { controller, cancel } = withTimeout(3000);
+
         try {
           const res = await fetch("/api/log-ip", {
             method: "POST",
@@ -60,12 +64,16 @@ const App = () => {
             body: JSON.stringify(buildPayload()),
             signal: controller.signal,
           });
+
           cancel();
+
           if (res.ok) return;
+
           lastErr = new Error(`HTTP ${res.status}`);
         } catch (e) {
           lastErr = e;
         }
+
         await new Promise((r) => setTimeout(r, 250 * attempt));
       }
 
@@ -82,8 +90,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Work />} />
-        <Route path="/mixer" element={<Mixer />} />  {/* ✅ new route */}
+        <Route path="/work-with-me" element={<WorkWithMe />} />
+        <Route path="/mixer" element={<Mixer />} />
       </Routes>
+
       <Analytics />
     </div>
   );
