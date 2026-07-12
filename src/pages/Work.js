@@ -17,6 +17,8 @@ import pwimage from "../assets/PW.jpg";
 import ptlogo from "../assets/ptlogo.png";
 import senses from "../assets/senses.png";
 import medicareBeforeSwitch from "../assets/medicare-before-you-switch.png";
+import redLipsticks from "../assets/redlipsticks.png";
+import superCleaningLady from "../assets/supercleaninglady.png";
 
 export default function Work() {
   return (
@@ -39,14 +41,17 @@ export default function Work() {
 
         <p className="intro">
           A portfolio of independently built platforms exploring storytelling,
-          behavior, education, community, and focused digital interaction.
+          behavior, education, community, lifestyle, and focused digital
+          interaction.
         </p>
       </section>
 
       <section className="hire-strip" aria-labelledby="hire-title">
         <p className="eyebrow">Available for select projects</p>
 
-        <h2 id="hire-title">Need a website, refresh, or custom digital tool?</h2>
+        <h2 id="hire-title">
+          Need a website, refresh, or custom digital tool?
+        </h2>
 
         <p>
           I build polished websites, landing pages, story platforms, forms,
@@ -79,13 +84,14 @@ export default function Work() {
           <p>
             I design, build, and maintain independent digital platforms through
             Stabile USA, including websites, story-driven products, educational
-            tools, community resources, and interactive web experiences.
+            tools, community resources, lifestyle brands, and interactive web
+            experiences.
           </p>
 
           <p>
             My work combines thoughtful user experience, clear content
-            structure, performance-focused development, and practical tools that
-            help people share, learn, connect, and take action.
+            structure, performance-focused development, and practical tools
+            that help people share, learn, connect, and take action.
           </p>
         </div>
       </section>
@@ -159,6 +165,22 @@ export default function Work() {
             category="Lifestyle Utility"
             desc="A streamlined tool for discovering complementary wine pairings."
             href="https://vinopairings.com"
+          />
+
+          <Card
+            img={redLipsticks}
+            title="RedLipsticks.com"
+            category="Beauty and Lifestyle"
+            desc="A bold beauty platform celebrating red lipstick, personal style, confidence, product discoveries, and timeless glamour."
+            href="https://redlipsticks.com"
+          />
+
+          <Card
+            img={superCleaningLady}
+            title="Super Cleaning Lady"
+            category="Home and Lifestyle"
+            desc="A playful home-care platform offering cleaning motivation, room rescue missions, sparkle tricks, and real-life resets."
+            href="https://supercleaninglady.com"
           />
 
           <Card
@@ -251,7 +273,7 @@ export default function Work() {
 function Card({ img, title, category, desc, href }) {
   return (
     <article className="card">
-      <img src={img} alt={title} loading="lazy" />
+      <img src={img} alt={`${title} website preview`} loading="lazy" />
 
       <div className="card-body">
         <h3>{title}</h3>
@@ -265,6 +287,7 @@ function Card({ img, title, category, desc, href }) {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`Explore ${title}`}
         >
           Explore →
         </a>
