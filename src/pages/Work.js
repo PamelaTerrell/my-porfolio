@@ -19,17 +19,18 @@ import senses from "../assets/senses.png";
 import medicareBeforeSwitch from "../assets/medicare-before-you-switch.png";
 import redLipsticks from "../assets/redlipsticks.png";
 import superCleaningLady from "../assets/supercleaninglady.png";
+import crimeRecordingsPreview from "../assets/crime-recordings-preview.png";
 
 export default function Work() {
   return (
     <div className="work-root">
       <header className="mini-header">
-        <a href="/" className="crumb" aria-label="Back to landing">
+        <a href="/" className="crumb" aria-label="Back to landing page">
           ← Home
         </a>
 
         <div className="brand-group">
-          <img src={ptlogo} alt="PT logo" className="brand-logo" />
+          <img src={ptlogo} alt="Pamela Terrell logo" className="brand-logo" />
           <span className="brand-sub">Stabile USA</span>
         </div>
       </header>
@@ -104,51 +105,103 @@ export default function Work() {
           independently.
         </p>
 
-        {/* Featured Project — Night Listener */}
-        <section className="featured">
-          <div className="featured-inner">
-            <div className="featured-copy">
-              <p className="eyebrow">Featured Project</p>
+        <div className="featured-projects">
+          {/* Featured Project — Crime Recordings */}
+          <section
+            className="featured"
+            aria-labelledby="crime-recordings-title"
+          >
+            <div className="featured-inner">
+              <div className="featured-copy">
+                <p className="eyebrow">Featured Full-Stack Project</p>
 
-              <h2>Night Listener</h2>
+                <h2 id="crime-recordings-title">Crime Recordings</h2>
 
-              <p className="featured-desc">
-                A calm, story-driven audio experience exploring human behavior,
-                relationships, and the quiet moments we replay.
-              </p>
+                <p className="featured-desc">
+                  A full-stack true-crime public-recordings archive built with
+                  secure authentication, structured case data, audio and
+                  document management, subscription-based access, editorial
+                  tools, and Cloudflare-backed delivery.
+                </p>
 
-              <div className="featured-actions">
-                <a
-                  href="https://stabileusa.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="featured-btn primary"
-                >
-                  Visit Night Listener
-                </a>
+                
 
-                <a
-                  href="https://stabileusa.com/listen"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="featured-btn"
-                >
-                  Listen
-                </a>
+                <div className="featured-actions">
+                  <a
+                    href="https://crimerecordings.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="featured-btn primary"
+                  >
+                    Visit Crime Recordings
+                  </a>
+                </div>
+              </div>
+
+              <div className="featured-media">
+                <img
+                  src={crimeRecordingsPreview}
+                  alt="Crime Recordings website preview"
+                  className="featured-image"
+                  loading="lazy"
+                />
               </div>
             </div>
+          </section>
 
-            <div className="featured-media">
-              <img
-                src="/images/night-listener-preview.png"
-                alt="Night Listener preview"
-                className="featured-image"
-              />
+          <p className="featured-note">
+            An independent Stabile USA venture
+          </p>
+
+          {/* Featured Project — Night Listener */}
+          <section className="featured" aria-labelledby="night-listener-title">
+            <div className="featured-inner">
+              <div className="featured-copy">
+                <p className="eyebrow">Featured Storytelling Project</p>
+
+                <h2 id="night-listener-title">Night Listener</h2>
+
+                <p className="featured-desc">
+                  A calm, story-driven audio experience exploring human
+                  behavior, relationships, and the quiet moments we replay.
+                </p>
+
+                
+
+                <div className="featured-actions">
+                  <a
+                    href="https://stabileusa.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="featured-btn primary"
+                  >
+                    Visit Night Listener
+                  </a>
+
+                  <a
+                    href="https://stabileusa.com/listen"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="featured-btn"
+                  >
+                    Listen
+                  </a>
+                </div>
+              </div>
+
+              <div className="featured-media">
+                <img
+                  src="/images/night-listener-preview.png"
+                  alt="Night Listener website preview"
+                  className="featured-image"
+                  loading="lazy"
+                />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <p className="featured-note">A Stabile USA product</p>
+          <p className="featured-note">A Stabile USA product</p>
+        </div>
 
         <div className="grid">
           <Card
@@ -162,8 +215,8 @@ export default function Work() {
           <Card
             img={pairings}
             title="VinoPairings"
-            category="Lifestyle Utility"
-            desc="A streamlined tool for discovering complementary wine pairings."
+            category="AI-Powered Lifestyle Utility"
+            desc="A wine-pairing platform featuring Viv, an AI-powered virtual sommelier built with the OpenAI API."
             href="https://vinopairings.com"
           />
 
