@@ -3,17 +3,63 @@ import "./Home.css";
 import pjtImage from "../assets/PJT.jpg";
 
 const TECH_STACK = [
-  "JavaScript",
-  "React",
-  "Next.js",
-  "Vite",
-  "Tailwind CSS",
-  "Supabase",
-  "Stripe",
-  "Vercel",
-  "Google Analytics",
-  "GitHub",
+  {
+    category: "Frontend",
+    technologies: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Vite",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    category: "Backend, Data & APIs",
+    technologies: [
+      "Node.js",
+      "Supabase",
+      "PostgreSQL",
+      "Supabase Auth",
+      "REST APIs",
+      "Third-Party API Integration",
+      "Webhooks",
+    ],
+  },
+  {
+    category: "Services & Integrations",
+    technologies: [
+      "Stripe",
+      "Resend",
+      "Formspree",
+      "Google Analytics",
+    ],
+  },
+  {
+    category: "Deployment & Tools",
+    technologies: [
+      "Vercel",
+      "Cloudflare",
+      "Git",
+      "GitHub",
+    ],
+  },
+  {
+    category: "AI & AI-Assisted Development",
+    technologies: [
+      "OpenAI API",
+      "ChatGPT",
+      "Prompt Engineering",
+      "AI Integration",
+      "AI-Assisted Debugging",
+      "AI-Assisted Prototyping",
+    ],
+  },
 ];
+ 
+
 
 export default function HomeBlack() {
   return (
@@ -57,13 +103,37 @@ export default function HomeBlack() {
           </p>
         </header>
 
-        <ul className="tech-chips" aria-label="Core technologies">
-          {TECH_STACK.map((tech) => (
-            <li key={tech} className="chip">
-              {tech}
-            </li>
-          ))}
-        </ul>
+        <section
+          className="tech-stack-section"
+          aria-labelledby="tech-stack-title"
+        >
+          <div className="tech-stack-heading">
+            <p className="service-kicker">Development toolkit</p>
+
+            <h2 id="tech-stack-title" className="tech-stack-title">
+              Technologies I work with
+            </h2>
+          </div>
+
+          <div className="tech-category-grid">
+            {TECH_STACK.map((group) => (
+              <div className="tech-category" key={group.category}>
+                <h3 className="tech-category-title">{group.category}</h3>
+
+                <ul
+                  className="tech-chips"
+                  aria-label={`${group.category} technologies`}
+                >
+                  {group.technologies.map((tech) => (
+                    <li key={tech} className="chip">
+                      {tech}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
 
         <div className="service-card" aria-label="Work with Pamela">
           <p className="service-kicker">Now accepting select projects</p>
@@ -80,6 +150,7 @@ export default function HomeBlack() {
         <nav className="actions" aria-label="Primary">
           <a className="portal" href="/projects" aria-label="View portfolio">
             <span className="dot" aria-hidden="true" />
+
             View Portfolio
 
             <svg
@@ -124,7 +195,6 @@ export default function HomeBlack() {
             className="home-social-links"
             aria-label="Stabile USA social media links"
           >
-            {/* GitHub */}
             <a
               href="https://github.com/pamelaterrell"
               target="_blank"
@@ -145,7 +215,6 @@ export default function HomeBlack() {
               </svg>
             </a>
 
-            {/* Bluesky */}
             <a
               href="https://bsky.app/profile/stabileusa.bsky.social"
               target="_blank"
@@ -166,7 +235,6 @@ export default function HomeBlack() {
               </svg>
             </a>
 
-            {/* Instagram */}
             <a
               href="https://www.instagram.com/stabileusa/"
               target="_blank"
