@@ -107,13 +107,7 @@ export default function HomeBlack() {
           className="tech-stack-section"
           aria-labelledby="tech-stack-title"
         >
-          <div className="tech-stack-heading">
-            <p className="service-kicker">Development toolkit</p>
-
-            <h2 id="tech-stack-title" className="tech-stack-title">
-              Technologies I work with
-            </h2>
-          </div>
+         
 
           <div className="tech-category-grid">
             {TECH_STACK.map((group) => (
