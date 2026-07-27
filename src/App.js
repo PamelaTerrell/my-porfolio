@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Work from "./pages/Work";
 import Mixer from "./pages/Mixer";
 import WorkWithMe from "./pages/WorkWithMe";
+import StabileUSA from "./pages/StabileUSA";
 
 import "./App.css";
 
@@ -92,6 +93,7 @@ const App = () => {
         <Route path="/projects" element={<Work />} />
         <Route path="/work-with-me" element={<WorkWithMe />} />
         <Route path="/mixer" element={<Mixer />} />
+        <Route path="/stabile-usa" element={<StabileUSA />} />
       </Routes>
 
       <Analytics />

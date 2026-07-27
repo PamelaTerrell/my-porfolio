@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 import pjtImage from "../assets/PJT.jpg";
 
@@ -58,15 +59,13 @@ const TECH_STACK = [
     ],
   },
 ];
- 
-
 
 export default function HomeBlack() {
   return (
     <main
       className="black-landing"
       role="main"
-      aria-label="Pamela J Terrell landing page"
+      aria-label="Pamela J. Terrell portfolio landing page"
     >
       <div className="cartoon-walkway" aria-hidden="true">
         <img
@@ -77,12 +76,18 @@ export default function HomeBlack() {
       </div>
 
       <section className="stack" aria-labelledby="home-title">
-        <p className="eyebrow">Stabile USA</p>
+        <Link
+          to="/stabile-usa"
+          className="eyebrow home-stabile-link"
+          aria-label="Learn about Stabile USA"
+        >
+          Stabile USA
+        </Link>
 
         <div className="portrait-wrap portrait-alive">
           <img
             src={pjtImage}
-            alt="Portrait of Pamela J Terrell"
+            alt="Portrait of Pamela J. Terrell"
             className="portrait"
             width={280}
             height={280}
@@ -92,7 +97,7 @@ export default function HomeBlack() {
 
         <header className="hero-copy">
           <h1 id="home-title" className="title">
-            Pamela J Terrell
+            Pamela J. Terrell
           </h1>
 
           <p className="tag">Web Developer · Digital Entrepreneur</p>
@@ -105,18 +110,16 @@ export default function HomeBlack() {
 
         <section
           className="tech-stack-section"
-          aria-labelledby="tech-stack-title"
+          aria-label="Technical skills and development experience"
         >
-         
-
           <div className="tech-category-grid">
             {TECH_STACK.map((group) => (
               <div className="tech-category" key={group.category}>
-                <h3 className="tech-category-title">{group.category}</h3>
+                <h2 className="tech-category-title">{group.category}</h2>
 
                 <ul
                   className="tech-chips"
-                  aria-label={`${group.category} technologies`}
+                  aria-label={`${group.category} skills`}
                 >
                   {group.technologies.map((tech) => (
                     <li key={tech} className="chip">
@@ -141,8 +144,12 @@ export default function HomeBlack() {
           </p>
         </div>
 
-        <nav className="actions" aria-label="Primary">
-          <a className="portal" href="/projects" aria-label="View portfolio">
+        <nav className="actions" aria-label="Primary navigation">
+          <Link
+            className="portal"
+            to="/projects"
+            aria-label="View Pamela's portfolio"
+          >
             <span className="dot" aria-hidden="true" />
 
             View Portfolio
@@ -161,15 +168,15 @@ export default function HomeBlack() {
                 strokeLinejoin="round"
               />
             </svg>
-          </a>
+          </Link>
 
-          <a
+          <Link
             className="btn-play"
-            href="/work-with-me"
+            to="/work-with-me"
             aria-label="Work with Pamela"
           >
             Work With Me
-          </a>
+          </Link>
 
           <a
             href="https://mixer.pamelajterrell.com"
@@ -255,6 +262,7 @@ export default function HomeBlack() {
               href="https://bsky.app/profile/stabileusa.bsky.social"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit Stabile USA on Bluesky"
             >
               stabileusa.bsky.social
             </a>
@@ -265,6 +273,7 @@ export default function HomeBlack() {
               href="https://www.instagram.com/stabileusa/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit Stabile USA on Instagram"
             >
               @stabileusa
             </a>
@@ -274,11 +283,17 @@ export default function HomeBlack() {
         <div className="brand-footer">
           <img
             src="/ptlogo.png"
-            alt="Pamela J Terrell logo"
+            alt="Pamela J. Terrell logo"
             className="landing-logo"
           />
 
-          <p className="brand-note">A Stabile USA project</p>
+          <p className="brand-note">
+            A{" "}
+            <Link to="/stabile-usa" className="brand-note-link">
+              Stabile USA
+            </Link>{" "}
+            project
+          </p>
         </div>
       </section>
     </main>

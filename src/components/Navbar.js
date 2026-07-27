@@ -1,39 +1,109 @@
-import React, { useState } from 'react';
-import { Link } from 'react-scroll';
-import './Navbar.css';
+import React, { useState } from "react";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Toggle for the mobile menu
-  const toggleMobileMenu = () => setIsMobile(!isMobile);
+  const toggleMobileMenu = () => {
+    setIsMobile((current) => !current);
+  };
 
-  // Toggle for dark/light mode
-  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+  const closeMobileMenu = () => {
+    setIsMobile(false);
+  };
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((current) => !current);
+  };
 
   return (
-    <nav className={`navbar ${isDarkMode ? 'dark' : 'light'}`}>
-      <div className="logo">pamela J terrell</div>
+    <nav className={`navbar ${isDarkMode ? "dark" : "light"}`}>
+      <RouterLink
+        to="/"
+        className="logo"
+        onClick={closeMobileMenu}
+        aria-label="Pamela J. Terrell home"
+      >
+        Pamela J. Terrell
+      </RouterLink>
 
-      {/* Navbar Links */}
-      <ul className={`nav-links ${isMobile ? 'active' : ''}`}>
-        <li><Link to="home" smooth={true} duration={500}>Home</Link></li>
-        <li><Link to="about" smooth={true} duration={500}>About</Link></li>
-        <li><Link to="portfolio" smooth={true} duration={500}>Portfolio</Link></li>
-        <li><Link to="contact" smooth={true} duration={500}>Contact</Link></li>
+      <ul className={`nav-links ${isMobile ? "active" : ""}`}>
+        <li>
+          <ScrollLink
+            to="home"
+            smooth
+            duration={500}
+            offset={-80}
+            onClick={closeMobileMenu}
+          >
+            Home
+          </ScrollLink>
+        </li>
+
+        <li>
+          <ScrollLink
+            to="about"
+            smooth
+            duration={500}
+            offset={-80}
+            onClick={closeMobileMenu}
+          >
+            About
+          </ScrollLink>
+        </li>
+
+        <li>
+          <RouterLink to="/projects" onClick={closeMobileMenu}>
+            Portfolio
+          </RouterLink>
+        </li>
+
+        <li>
+          <ScrollLink
+            to="contact"
+            smooth
+            duration={500}
+            offset={-80}
+            onClick={closeMobileMenu}
+          >
+            Contact
+          </ScrollLink>
+        </li>
+
+        <li>
+          <RouterLink to="/stabile-usa" onClick={closeMobileMenu}>
+            Stabile USA
+          </RouterLink>
+        </li>
       </ul>
 
-      {/* Hamburger Menu for Mobile */}
-      <div className="hamburger" onClick={toggleMobileMenu}>
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
-      </div>
+      <div className="navbar-controls">
+        <button
+          type="button"
+          className="dark-mode-toggle"
+          onClick={toggleDarkMode}
+          aria-label={
+            isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+          }
+          title={isDarkMode ? "Light mode" : "Dark mode"}
+        >
+          {isDarkMode ? "🌞" : "🌙"}
+        </button>
 
-      {/* Dark Mode Toggle */}
-      <div className="dark-mode-toggle" onClick={toggleDarkMode}>
-        {isDarkMode ? '🌞' : '🌙'}
+        <button
+          type="button"
+          className={`hamburger ${isMobile ? "active" : ""}`}
+          onClick={toggleMobileMenu}
+          aria-label={isMobile ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isMobile}
+        >
+          <span className="bar" />
+          <span className="bar" />
+          <span className="bar" />
+        </button>
       </div>
     </nav>
   );

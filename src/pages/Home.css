@@ -725,3 +725,40 @@
     display: none;
   }
 }
+
+/* Stabile USA page links */
+.home-stabile-link {
+  display: inline-block;
+  color: rgba(244, 179, 143, 0.72);
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.home-stabile-link:hover {
+  color: var(--accent);
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.brand-note-link {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.brand-note-link:hover {
+  color: rgba(255, 218, 145, 0.9);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.home-stabile-link:focus-visible,
+.brand-note-link:focus-visible {
+  border-radius: 4px;
+  outline: 2px solid rgba(244, 179, 143, 0.95);
+  outline-offset: 4px;
+}
