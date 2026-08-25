@@ -1,101 +1,31 @@
 // src/App.js
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
-
+import SiteHeader from "./components/SiteHeader";
+import Footer from "./components/Footer";
+import CaseStudyPage from "./components/CaseStudyPage";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
 import Mixer from "./pages/Mixer";
 import WorkWithMe from "./pages/WorkWithMe";
 import StabileUSA from "./pages/StabileUSA";
-
-import "./App.css";
-
+import NotFound from "./pages/NotFound";
 const App = () => {
-  const ranRef = useRef(false);
-
-  useEffect(() => {
-    if (ranRef.current) return;
-    ranRef.current = true;
-    if (sessionStorage.getItem("ipLogged")) return;
-    sessionStorage.setItem("ipLogged", "1");
-
-    const shouldLog =
-      process.env.NODE_ENV === "production" ||
-      String(process.env.REACT_APP_LOG_VISITS_IN_DEV || "").toLowerCase() ===
-        "true";
-
-    if (!shouldLog) return;
-
-    const buildPayload = () => ({
-      event: "pageview",
-      path: window.location.pathname + window.location.search,
-      referrer: document.referrer || "",
-      ua: navigator.userAgent,
-      lang: navigator.language,
-      tz: Intl.DateTimeFormat().resolvedOptions().timeZone || "",
-      vw: window.innerWidth,
-      vh: window.innerHeight,
-      ts: Date.now(),
-    });
-
-    const withTimeout = (ms) => {
-      const controller = new AbortController();
-      const t = setTimeout(() => controller.abort(), ms);
-      return { controller, cancel: () => clearTimeout(t) };
-    };
-
-    const logVisit = async () => {
-      const maxAttempts = 2;
-      let attempt = 0;
-      let lastErr;
-
-      while (attempt < maxAttempts) {
-        attempt += 1;
-        const { controller, cancel } = withTimeout(3000);
-
-        try {
-          const res = await fetch("/api/log-ip", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "x-visit-key": process.env.REACT_APP_VISIT_KEY || "",
-            },
-            credentials: "same-origin",
-            body: JSON.stringify(buildPayload()),
-            signal: controller.signal,
-          });
-
-          cancel();
-
-          if (res.ok) return;
-
-          lastErr = new Error(`HTTP ${res.status}`);
-        } catch (e) {
-          lastErr = e;
-        }
-
-        await new Promise((r) => setTimeout(r, 250 * attempt));
-      }
-
-      if (process.env.NODE_ENV !== "production") {
-        console.warn("[visit] log failed:", lastErr);
-      }
-    };
-
-    logVisit();
-  }, []);
-
   return (
     <div className="app">
+      <SiteHeader />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Work />} />
+        <Route path="/projects/:slug" element={<CaseStudyPage />} />
         <Route path="/work-with-me" element={<WorkWithMe />} />
         <Route path="/mixer" element={<Mixer />} />
         <Route path="/stabile-usa" element={<StabileUSA />} />
+        <Route path="/not-found" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
-
+      <Footer />
       <Analytics />
     </div>
   );

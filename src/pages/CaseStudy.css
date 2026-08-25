@@ -1,0 +1,38 @@
+.caseStudyPage { min-height: 100vh; padding-bottom: 1px; color: var(--siteText); background: var(--siteBackground); }
+.caseStudyHeader { max-width: 920px; padding-top: clamp(3.5rem, 7vw, 6rem); padding-bottom: 2.75rem; }
+.backLink { display: inline-block; margin-bottom: clamp(2.5rem, 5vw, 3.5rem); color: var(--siteMuted); text-decoration: none; }
+.backLink:hover { color: var(--siteText); }
+.caseStudyHeader h1 { max-width: 900px; margin: 0; font-size: clamp(2.8rem, 6.5vw, 5.7rem); line-height: .96; letter-spacing: -.05em; text-wrap: balance; }
+.caseStudyHeader .projectOwnership { max-width: 720px; margin-top: 1rem; }
+.caseStudyThesis { max-width: 760px; margin: 1.4rem 0 2rem; color: #ded2cb; font-size: clamp(1.12rem, 2vw, 1.45rem); line-height: 1.6; }
+.caseStudyHeroMedia { display: grid; overflow: hidden; height: clamp(280px, 68vw, 680px); place-items: center; padding: clamp(.7rem, 2vw, 1.75rem); border: 1px solid var(--siteBorder); border-radius: clamp(1.2rem, 4vw, 3rem); background: #181616; }
+.caseStudyHeroMedia img { display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; object-position: center; }
+.caseStudyHeroMedia + .pageShell .productSignature { margin-top: 2rem; }
+.caseStudyBody { max-width: 960px; padding-block: clamp(3.5rem, 7vw, 6rem); }
+.caseStudyIntroduction { max-width: 740px; margin: 0 0 clamp(3.75rem, 6vw, 5rem); font-size: clamp(1.2rem, 2.2vw, 1.65rem); line-height: 1.6; }
+.editorialSection { max-width: 720px; margin: 0 auto clamp(3.75rem, 6.5vw, 5.5rem); }
+.editorialSection h2, .decisionsSection h2, .technicalPanel h2, .outcomesAndLessons h2, .nextDirection h2 { margin: 0 0 1.15rem; font-size: clamp(1.8rem, 3.4vw, 2.8rem); line-height: 1.1; letter-spacing: -.025em; text-wrap: balance; }
+.editorialSection p, .technicalPanel p, .nextDirection p { color: var(--siteMuted); font-size: 1.06rem; line-height: 1.8; }
+.caseStudyQuote { max-width: 800px; margin: 0 auto clamp(4rem, 7vw, 6rem); padding: 1.5rem 0 1.5rem clamp(1.25rem, 4vw, 3rem); border-left: 3px solid var(--siteAccent); color: var(--siteAccentStrong); font-size: clamp(1.45rem, 3vw, 2.45rem); line-height: 1.35; text-wrap: balance; }
+.decisionsSection { margin-block: clamp(4rem, 7vw, 6rem); }
+.decisionGrid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; margin-top: 2rem; }
+.decisionCard { padding: clamp(1.3rem, 3vw, 2rem); border: 1px solid var(--siteBorder); border-top-color: var(--projectAccent); border-radius: 1.3rem; background: var(--siteSurface); }
+.decisionIndex { display: block; margin-bottom: .8rem; color: var(--projectAccentText); font-size: .7rem; font-weight: 780; letter-spacing: .12em; }
+.decisionCard h3 { margin: 0 0 1.3rem; font-size: 1.35rem; }
+.decisionCard p { margin: .9rem 0; color: var(--siteMuted); line-height: 1.55; }
+.decisionCard strong { display: block; margin-bottom: .25rem; color: var(--siteAccentStrong); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+.technicalPanel { display: grid; grid-template-columns: 1.35fr .65fr; gap: clamp(2rem, 5vw, 3rem); margin-block: clamp(4rem, 7vw, 6rem); padding: clamp(1.7rem, 4vw, 3rem); border-radius: 2rem; background: #1c1715; }
+.stackList { display: flex; flex-wrap: wrap; align-content: center; gap: .55rem; padding: 0; list-style: none; }
+.stackList li { padding: .55rem .75rem; border: 1px solid var(--color-primary); border-radius: 999px; color: var(--siteMuted); font-size: .8rem; }
+.outcomesAndLessons { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); margin-block: clamp(4rem, 7vw, 6rem); }
+.checkList, .lessonList { display: grid; gap: .85rem; padding: 0; list-style: none; }
+.checkList li, .lessonList li { position: relative; padding: 0 0 .85rem 1.5rem; border-bottom: 1px solid var(--siteBorder); color: var(--siteMuted); line-height: 1.55; }
+.checkList li::before { content: "✓"; position: absolute; left: 0; color: var(--siteAccent); }
+.lessonList li::before { content: "→"; position: absolute; left: 0; color: var(--siteAccent); }
+.nextDirection { margin-block: clamp(4rem, 7vw, 6rem); padding: clamp(1.7rem, 4vw, 3rem); border-top: 1px solid var(--color-primary); border-bottom: 1px solid var(--color-primary); }
+.relatedWork { margin-top: clamp(4rem, 7vw, 5.5rem); }
+.relatedWork div { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.relatedWork a { display: grid; grid-template-columns: auto 1fr auto; gap: .85rem; align-items: center; padding: 1.3rem; border: 1px solid var(--siteBorder); border-top-color: var(--projectAccent); border-radius: 1rem; color: var(--siteText); text-decoration: none; }
+.relatedWork a:hover { border-color: var(--projectAccent); background: var(--siteSurface); }
+.caseStudy-playful { background: #120b17; }
+@media (max-width: 760px) { .decisionGrid, .technicalPanel, .outcomesAndLessons { grid-template-columns: 1fr; } .relatedWork div { grid-template-columns: 1fr; } }

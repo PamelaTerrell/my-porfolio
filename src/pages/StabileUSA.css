@@ -6,8 +6,9 @@
   --stabile-muted: rgba(255, 255, 255, 0.66);
   --stabile-soft: rgba(255, 255, 255, 0.46);
   --stabile-line: rgba(255, 255, 255, 0.12);
-  --stabile-gold: #caa55a;
-  --stabile-gold-light: #e3ca8a;
+  --stabile-primary: var(--color-primary);
+  --stabile-primary-text: var(--color-primary-text);
+  --stabile-secondary: var(--color-secondary-hover);
   --stabile-navy: #182a45;
 }
 
@@ -25,7 +26,7 @@ html {
   background:
     radial-gradient(
       circle at 50% 8%,
-      rgba(202, 165, 90, 0.1),
+      var(--color-primary-soft),
       transparent 24rem
     ),
     linear-gradient(180deg, #050607 0%, #0b0d12 48%, #07080b 100%);
@@ -91,12 +92,12 @@ html {
 }
 
 .stabile-hero-copy {
-  max-width: 830px;
+  max-width: 800px;
 }
 
 .stabile-eyebrow {
   margin: 0 0 8px;
-  color: var(--stabile-gold-light);
+  color: var(--stabile-primary-text);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.22em;
@@ -105,10 +106,11 @@ html {
 
 .stabile-hero h1 {
   margin: 0;
-  font-size: clamp(3rem, 7vw, 6.6rem);
+  font-size: clamp(2.8rem, 5.5vw, 5.2rem);
   font-weight: 500;
-  line-height: 0.98;
-  letter-spacing: -0.055em;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
 }
 
 .stabile-tagline {
@@ -116,12 +118,13 @@ html {
   margin: 24px auto 0;
   color: rgba(255, 255, 255, 0.88);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.35rem, 3vw, 2.1rem);
-  line-height: 1.35;
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  line-height: 1.42;
+  text-wrap: balance;
 }
 
 .stabile-tagline span {
-  color: var(--stabile-gold-light);
+  color: var(--stabile-secondary);
 }
 
 .stabile-intro {
@@ -167,34 +170,31 @@ html {
 }
 
 .stabile-btn.primary {
-  border-color: rgba(227, 202, 138, 0.62);
-  background: linear-gradient(
-    135deg,
-    rgba(202, 165, 90, 0.96),
-    rgba(156, 119, 51, 0.96)
-  );
-  color: #090909;
+  border-color: var(--stabile-primary);
+  background: var(--stabile-primary);
+  color: var(--color-on-primary);
 }
 
 /* Shared Sections */
 .stabile-section {
   width: min(1160px, calc(100% - 40px));
-  margin: 0 auto clamp(70px, 9vw, 120px);
+  margin: 0 auto clamp(64px, 7vw, 96px);
 }
 
 .stabile-section-heading {
-  max-width: 760px;
-  margin-bottom: 34px;
+  max-width: 720px;
+  margin-bottom: 30px;
 }
 
 .stabile-section-heading h2,
 .stabile-founder-copy h2,
 .stabile-final-cta h2 {
   margin: 0;
-  font-size: clamp(2rem, 4vw, 3.6rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
   font-weight: 520;
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
 }
 
 .stabile-section-intro {
@@ -211,7 +211,7 @@ html {
   background:
     radial-gradient(
       circle at top right,
-      rgba(202, 165, 90, 0.1),
+      var(--color-primary-soft),
       transparent 34%
     ),
     linear-gradient(180deg, #11141a, #0b0d12);
@@ -248,7 +248,7 @@ html {
 .stabile-principle-number {
   display: block;
   margin-bottom: 28px;
-  color: var(--stabile-gold);
+  color: var(--stabile-secondary);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -273,7 +273,7 @@ html {
 
 .stabile-build-item {
   padding: 25px;
-  border-top: 1px solid rgba(227, 202, 138, 0.44);
+  border-top: 1px solid var(--stabile-primary);
   background: rgba(255, 255, 255, 0.025);
 }
 
@@ -323,14 +323,14 @@ html {
 }
 
 .stabile-venture-card:hover {
-  border-color: rgba(227, 202, 138, 0.32);
+  border-color: var(--stabile-primary);
   background: rgba(255, 255, 255, 0.055);
   transform: translateY(-3px);
 }
 
 .stabile-venture-category {
   margin: 0 0 8px;
-  color: var(--stabile-gold-light);
+  color: var(--stabile-primary-text);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -348,9 +348,14 @@ html {
   color: var(--stabile-muted);
 }
 
-.stabile-venture-card a {
-  align-self: flex-start;
+.stabile-venture-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
   margin-top: 22px;
+}
+
+.stabile-venture-card a {
   color: #ffffff;
   font-size: 0.92rem;
   font-weight: 600;
@@ -358,7 +363,7 @@ html {
 }
 
 .stabile-venture-card a:hover {
-  color: var(--stabile-gold-light);
+  color: var(--stabile-primary-text);
 }
 
 .stabile-portfolio-cta {
@@ -393,7 +398,7 @@ html {
   display: block;
   width: min(390px, 100%);
   aspect-ratio: 1;
-  border: 1px solid rgba(227, 202, 138, 0.24);
+  border: 1px solid var(--color-primary-soft);
   border-radius: 50%;
   background: #000;
   object-fit: contain;
@@ -414,12 +419,12 @@ html {
   width: min(1160px, calc(100% - 40px));
   margin: 0 auto 80px;
   padding: clamp(48px, 8vw, 90px) clamp(24px, 6vw, 70px);
-  border: 1px solid rgba(227, 202, 138, 0.24);
+  border: 1px solid var(--color-primary-soft);
   border-radius: 30px;
   background:
     radial-gradient(
       circle at 50% 0%,
-      rgba(202, 165, 90, 0.16),
+      var(--color-primary-soft),
       transparent 45%
     ),
     linear-gradient(180deg, #11141a, #090a0d);
@@ -437,7 +442,7 @@ html {
 .stabile-portfolio-link:focus-visible,
 .stabile-btn:focus-visible,
 .stabile-venture-card a:focus-visible {
-  outline: 2px solid var(--stabile-gold-light);
+  outline: 2px solid var(--color-focus);
   outline-offset: 4px;
 }
 
@@ -484,11 +489,11 @@ html {
   }
 
   .stabile-hero h1 {
-    font-size: clamp(2.7rem, 15vw, 4.4rem);
+    font-size: clamp(2.6rem, 12vw, 3.6rem);
   }
 
   .stabile-tagline {
-    font-size: 1.28rem;
+    font-size: 1.2rem;
   }
 
   .stabile-section,

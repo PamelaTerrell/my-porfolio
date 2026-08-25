@@ -116,7 +116,7 @@ export default function Mixer() {
   };
 
   return (
-    <main className="mixer-wrap">
+    <main id="main-content" className="mixer-wrap">
       <div className="bg-sheen" aria-hidden="true" />
       <header className="mixer-head">
         <h1>mixer<span className="dot">.</span>pamelajterrell<span className="com">.com</span></h1>

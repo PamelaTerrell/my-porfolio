@@ -1,70 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import ExternalLink from "../components/ExternalLink";
 import "./StabileUSA.css";
-import Footer from "../components/Footer";
+import { externalSites, featuredProjects, getProjectLiveLabel, supportingProjects } from "../data/projects";
 
 /* Assets */
 import stabileUSALogo from "../assets/stabileusalogo.png";
 import pjtImage from "../assets/PJT.jpg";
 
-const VENTURES = [
-  {
-    title: "Crime Recordings",
-    category: "Public Records and Media Archive",
-    description:
-      "A full-stack true-crime archive organizing public audio recordings, case documents, editorial content, authentication, and member access.",
-    href: "https://crimerecordings.com",
-  },
-  {
-    title: "Night Listener",
-    category: "Audio Storytelling Platform",
-    description:
-      "A calm, story-driven listening experience exploring relationships, behavior, reflection, and the quiet moments people replay.",
-    href: "https://stabileusa.com",
-  },
-  {
-    title: "VinoPairings",
-    category: "AI-Powered Lifestyle Utility",
-    description:
-      "A wine-pairing platform featuring Viv, an AI-powered virtual sommelier that helps users discover thoughtful food and wine combinations.",
-    href: "https://vinopairings.com",
-  },
-  {
-    title: "Life Stories Now",
-    category: "Storytelling Platform",
-    description:
-      "A narrative platform centered on memory, personal reflection, anonymous storytelling, and shared human experience.",
-    href: "https://lifestoriesnow.com",
-  },
-  {
-    title: "Super Cleaning Lady",
-    category: "Home and Lifestyle Brand",
-    description:
-      "A playful cleaning and home-care platform built around practical motivation, room-rescue missions, humor, and everyday progress.",
-    href: "https://supercleaninglady.com",
-  },
-  {
-    title: "Medicare Before You Switch",
-    category: "Educational Resource",
-    description:
-      "A plain-language educational site helping people slow down, compare options, and ask better questions before changing Medicare coverage.",
-    href: "https://medicarebeforeyouswitch.com",
-  },
+const studioProjects = [
+  ...featuredProjects.filter((project) => project.parent === "Stabile USA"),
+  ...supportingProjects.filter((project) => ["VinoPairings", "Life Stories Now"].includes(project.name)),
 ];
 
 export default function StabileUSA() {
   return (
     <div className="stabile-page">
-      <header className="stabile-header">
-        <a href="/" className="stabile-home-link" aria-label="Return home">
-          ← Home
-        </a>
-
-        <a href="/projects" className="stabile-portfolio-link">
-          View Portfolio
-        </a>
-      </header>
-
-      <main>
+      <main id="main-content">
         <section className="stabile-hero" aria-labelledby="stabile-title">
           <div className="stabile-logo-wrap">
             <img
@@ -97,9 +49,13 @@ export default function StabileUSA() {
                 Explore the Ventures
               </a>
 
-              <a href="/work-with-me" className="stabile-btn">
+              <ExternalLink href={externalSites.stabileUSA} className="stabile-btn">
+                Visit StabileUSA.com
+              </ExternalLink>
+
+              <Link to="/work-with-me" className="stabile-btn">
                 Work With Pamela
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -238,22 +194,20 @@ export default function StabileUSA() {
           </div>
 
           <div className="stabile-venture-grid">
-            {VENTURES.map((venture) => (
-              <article className="stabile-venture-card" key={venture.title}>
-                <p className="stabile-venture-category">{venture.category}</p>
+            {studioProjects.map((venture) => (
+              <article className="stabile-venture-card" key={venture.name}>
+                <p className="stabile-venture-category">{venture.category || venture.group}</p>
 
-                <h3>{venture.title}</h3>
+                <h3>{venture.name}</h3>
 
-                <p>{venture.description}</p>
+                <p>{venture.thesis || venture.description}</p>
 
-                <a
-                  href={venture.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Visit ${venture.title}`}
-                >
-                  Visit venture →
-                </a>
+                <div className="stabile-venture-actions">
+                  {venture.slug && <Link to={`/projects/${venture.slug}`}>Read the case study →</Link>}
+                  <ExternalLink href={venture.liveUrl || venture.url}>
+                    {getProjectLiveLabel(venture)}
+                  </ExternalLink>
+                </div>
               </article>
             ))}
           </div>
@@ -261,9 +215,9 @@ export default function StabileUSA() {
           <div className="stabile-portfolio-cta">
             <p>Explore the complete collection of Stabile USA ventures.</p>
 
-            <a href="/projects" className="stabile-btn primary">
+            <Link to="/projects" className="stabile-btn primary">
               View Full Portfolio
-            </a>
+            </Link>
           </div>
         </section>
 
@@ -296,13 +250,13 @@ export default function StabileUSA() {
             </p>
 
             <div className="stabile-founder-actions">
-              <a href="/projects" className="stabile-btn primary">
+              <Link to="/projects" className="stabile-btn primary">
                 View Pamela&apos;s Work
-              </a>
+              </Link>
 
-              <a href="/work-with-me" className="stabile-btn">
+              <Link to="/work-with-me" className="stabile-btn">
                 Start a Project
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -317,13 +271,12 @@ export default function StabileUSA() {
             growing.
           </p>
 
-          <a href="/work-with-me" className="stabile-btn primary">
+          <Link to="/work-with-me" className="stabile-btn primary">
             Work With Pamela
-          </a>
+          </Link>
         </section>
       </main>
 
-      <Footer />
     </div>
   );
 }

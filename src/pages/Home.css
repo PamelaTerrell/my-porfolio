@@ -76,8 +76,8 @@
   background: #000;
   border: none;
   box-shadow: none;
-  object-fit: contain;
-  object-position: center top;
+  object-fit: cover;
+  object-position: center;
   -webkit-mask-image: radial-gradient(
     circle at 50% 38%,
     #000 68%,
