@@ -189,12 +189,19 @@ test("Product Switchboard keeps project information outside the image stage", ()
 });
 
 test("Product Switchboard preserves the VinoPairings development milestone", () => {
+  const vino = supportingProjects.find((project) => project.name === "VinoPairings");
+  expect(vino.description).toContain("user-facing AI sommelier");
+  expect(vino.description).toContain("first full-stack application");
+  expect(vino.stack).not.toEqual(expect.arrayContaining(["Mongoose", "MongoDB"]));
+  expect(vino.architecture).toContain("protected server-side AI routes");
   const view = renderRoute("/");
   const vinoIndex = portfolioProjects.findIndex((project) => project.name === "VinoPairings");
   const tabs = view.container.querySelectorAll('[role="tab"]');
   act(() => tabs[vinoIndex].dispatchEvent(new MouseEvent("click", { bubbles: true })));
   expect(view.container.querySelector('[role="tabpanel"]').textContent).toContain("Pamela’s first full-stack application");
+  expect(view.container.querySelector('[role="tabpanel"]').textContent).toContain("OpenAI Responses API");
   expect(view.container.querySelector('[role="tabpanel"]').textContent).toContain("2024");
+  expect(view.container.querySelector(".developmentTimeline").textContent).toContain("user-facing AI sommelier");
   view.cleanup();
 });
 

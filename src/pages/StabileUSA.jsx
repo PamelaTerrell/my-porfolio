@@ -153,10 +153,11 @@ export default function StabileUSA() {
             </div>
 
             <div className="stabile-build-item">
-              <h3>AI-Powered Tools</h3>
+              <h3>User-Facing AI</h3>
               <p>
-                Focused applications that use artificial intelligence to
-                support recommendations, discovery, guidance, and interaction.
+                VinoPairings includes a conversational AI sommelier that helps
+                visitors explore wine-pairing questions through a protected
+                server-side integration.
               </p>
             </div>
 

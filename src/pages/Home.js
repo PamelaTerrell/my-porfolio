@@ -50,7 +50,7 @@ export default function Home() {
         <div><p className="sectionEyebrow">About Pamela</p><h2 id="about-heading">Founder, developer, and hands-on product builder</h2><p>I’m Pamela J. Terrell, founder of Stabile USA. I create independent digital products and work with people whose ideas need both thoughtful direction and practical execution.</p><p>My role often crosses boundaries separated on larger teams: research, product definition, content structure, design, frontend and backend development, integrations, launch, and continued operation.</p></div>
         <ol className="developmentTimeline" aria-label="Development timeline">
           <li><strong>2016</strong><span><ExternalLink href={pinkertonWilliams.liveUrl}>PinkertonWilliams.org</ExternalLink> began as my college Web Design final project and became a lasting community website I continue maintaining.</span></li>
-          <li><strong>2024</strong><span>I completed the Per Scholas Software Engineering program and built <ExternalLink href={vinoPairings.url}>VinoPairings</ExternalLink> as my first full-stack application.</span></li>
+          <li><strong>2024</strong><span>I completed the Per Scholas Software Engineering program and built <ExternalLink href={vinoPairings.url}>VinoPairings</ExternalLink> as my first full-stack application, then continued reshaping it into an actively maintained wine-pairing product with a user-facing AI sommelier.</span></li>
           <li><strong>2026</strong><span>I launched a growing group of founder-led products through Stabile USA.</span></li>
         </ol>
       </section>

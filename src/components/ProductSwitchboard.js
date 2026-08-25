@@ -136,6 +136,8 @@ export default function ProductSwitchboard({ groups }) {
                   {activeProject.relationship && <div><dt>Relationship</dt><dd>{activeProject.relationship}</dd></div>}
                   {activeProject.status && <div><dt>Status</dt><dd>{activeProject.status}{activeProject.launchYear ? ` · ${activeProject.launchYear}` : ""}</dd></div>}
                   {(activeProject.milestone || activeProject.marker) && <div><dt>Development milestone</dt><dd>{activeProject.milestone || activeProject.marker}</dd></div>}
+                  {activeProject.architecture && <div><dt>Current architecture</dt><dd>{activeProject.architecture}</dd></div>}
+                  {activeProject.stack && <div><dt>Current technology</dt><dd>{activeProject.stack.join(" · ")}</dd></div>}
                 </dl>
               </>
             )}
