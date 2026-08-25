@@ -37,7 +37,7 @@ export default function Home() {
       </section>
 
       <section id="product-switchboard" className="homeSection pageShell" aria-labelledby="switchboard-heading" tabIndex="-1">
-        <div className="sectionHeading switchboardIntroduction"><p className="sectionEyebrow">Pamela Product Index · Featured work</p><h2 id="switchboard-heading">The Product Switchboard</h2><p>Five products. Different audiences. One end-to-end approach: identify the problem, shape the product, build the system, and operate what launches.</p></div>
+        <div className="sectionHeading switchboardIntroduction"><p className="sectionEyebrow">Pamela Product Index · Featured work</p><h2 id="switchboard-heading">The Product Switchboard</h2><p>Six featured products. Different audiences. One end-to-end approach: identify the problem, shape the product, build the system, and operate what launches.</p></div>
         <ProductSwitchboard groups={switchboardGroups} />
         <div className="sectionAction"><Link className="textAction" to="/projects">Explore the complete portfolio <span aria-hidden="true">→</span></Link></div>
       </section>

@@ -112,8 +112,9 @@ export default function ProductSwitchboard({ groups }) {
           <header className="switchboardHeading">
             {activeProject.index && <span className="projectIndex" aria-hidden="true">{activeProject.index}</span>}
             <div>
-              <p className="sectionEyebrow">{activeProject.featured ? "Featured product" : activeProject.classification || activeProject.group}</p>
+              <p className="sectionEyebrow">{activeProject.switchboardEyebrow || (activeProject.featured ? "Featured product" : activeProject.classification || activeProject.group)}</p>
               <h3>{activeProject.name}</h3>
+              {activeProject.category && <p className="switchboardCategory">{activeProject.category}</p>}
             </div>
           </header>
           <div className="switchboardEvidence">
@@ -127,6 +128,7 @@ export default function ProductSwitchboard({ groups }) {
                   <div><dt>Status</dt><dd>{activeProject.status} · {activeProject.launchYear}</dd></div>
                 </dl>
                 <blockquote className="switchboardDecision"><span>Product decision</span>{activeProject.featuredDecision}</blockquote>
+                {activeProject.switchboardTechnical && <dl className="supportingProjectFacts"><div><dt>Current architecture</dt><dd>{activeProject.switchboardTechnical}</dd></div></dl>}
               </>
             ) : (
               <>

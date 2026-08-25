@@ -13,6 +13,7 @@ import bigPacePreview from "../assets/pace.png";
 import vaBuddyPreview from "../assets/getvabuddy.jpg";
 import manWomenDesirePreview from "../assets/desire.jpg";
 import sensualityQuizPreview from "../assets/senses.png";
+import mixerPreview from "../assets/mixer.png";
 
 export const externalSites = {
   stabileUSA: "https://stabileusa.com",
@@ -312,6 +313,17 @@ export const supportingProjects = [
     launchYear: 2024,
     relationship: "Created and operated by Pamela J. Terrell",
     marker: "Development Milestone · First Full-Stack Application",
+    switchboardFeatured: true,
+    switchboardIndex: "06",
+    switchboardEyebrow: "Development Milestone · First Full-Stack Application · 2024",
+    switchboardCategory: "Interactive wine-pairing product",
+    switchboardSignature: {
+      problem: "Help visitors move from uncertainty about wine pairings toward useful, approachable recommendations.",
+      owned: "Created as Pamela’s first full-stack application and continued as an independently operated product after the course ended.",
+      operating: "Interactive pairing content and a user-facing AI sommelier supported by protected server-side responses.",
+    },
+    switchboardDecision: "I treated the course project as a beginning rather than a finished assignment, continuing to reshape both the experience and its architecture.",
+    switchboardTechnical: "Next.js App Router and React with Tailwind CSS, local pairing content, and the OpenAI Responses API through protected server-side streaming and fallback routes. Chat history remains browser-local, and the current product has no database dependency.",
     origin: "VinoPairings began in 2024 as my Per Scholas Software Engineering final project and first full-stack application. I continued developing it after the course, later adding a user-facing AI sommelier and replacing its original database-backed architecture with a leaner Next.js implementation.",
     milestone: "Pamela’s first full-stack application and Per Scholas Software Engineering final project",
     architecture: "Next.js application with local pairing content and protected server-side AI routes",
@@ -334,7 +346,8 @@ export const supportingProjects = [
     name: "Mixer",
     description: "A playful interactive martini-building experiment.",
     url: "https://mixer.pamelajterrell.com",
-    image: null,
+    image: mixerPreview,
+    imageAlt: "Mixer interface for choosing a base, modifiers, and garnish before shaking a custom martini",
   },
 ];
 
@@ -344,9 +357,27 @@ export const supportingGroups = [
   "Consumer Products and Experiments",
 ];
 
+export const switchboardFeaturedProjects = [
+  ...featuredProjects,
+  ...supportingProjects
+    .filter((project) => project.switchboardFeatured)
+    .map((project) => ({
+      ...project,
+      featured: true,
+      index: project.switchboardIndex,
+      category: project.switchboardCategory || project.group,
+      thesis: project.description,
+      signature: project.switchboardSignature,
+      featuredDecision: project.switchboardDecision,
+    })),
+];
+
 export const switchboardGroups = [
-  { name: "Featured Products", projects: featuredProjects },
-  ...supportingGroups.map((name) => ({ name, projects: supportingProjects.filter((project) => project.group === name) })),
+  { name: "Featured Products", projects: switchboardFeaturedProjects },
+  ...supportingGroups.map((name) => ({
+    name,
+    projects: supportingProjects.filter((project) => project.group === name && !project.switchboardFeatured),
+  })),
 ];
 
 export const portfolioProjects = switchboardGroups.flatMap((group) => group.projects);

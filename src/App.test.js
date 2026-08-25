@@ -5,7 +5,7 @@ import { MemoryRouter } from "react-router-dom";
 jest.mock("@vercel/analytics/react", () => ({ Analytics: () => null }), { virtual: true });
 
 import App from "./App";
-import { featuredProjects, portfolioProjects, supportingProjects, switchboardGroups } from "./data/projects";
+import { featuredProjects, portfolioProjects, supportingProjects, switchboardFeaturedProjects, switchboardGroups } from "./data/projects";
 
 global.IS_REACT_ACT_ENVIRONMENT = true;
 
@@ -96,6 +96,21 @@ test("Product Switchboard represents every centralized project in grouped sectio
   view.cleanup();
 });
 
+test("Product Switchboard promotes VinoPairings without changing the five case-study projects", () => {
+  expect(featuredProjects).toHaveLength(5);
+  expect(switchboardFeaturedProjects.map((project) => project.name)).toEqual([
+    "Crime Recordings",
+    "Night Listener",
+    "Medicare Before You Switch",
+    "Super Cleaning Lady",
+    "Pinkerton Williams DAV Chapter 18",
+    "VinoPairings",
+  ]);
+  expect(switchboardFeaturedProjects.map((project) => project.index)).toEqual(["01", "02", "03", "04", "05", "06"]);
+  expect(portfolioProjects.filter((project) => project.name === "VinoPairings")).toHaveLength(1);
+  expect(switchboardFeaturedProjects[5].caseStudyPath).toBeUndefined();
+});
+
 test("Product Switchboard index avoids redundant category and View labels", () => {
   const view = renderRoute("/");
   const groups = view.container.querySelectorAll(".switchboardGroup");
@@ -134,7 +149,8 @@ test("Product Switchboard supports arrow-key navigation", () => {
 test("Product Switchboard renders a simpler supporting-project panel", () => {
   const view = renderRoute("/");
   const tabs = view.container.querySelectorAll('[role="tab"]');
-  act(() => tabs[featuredProjects.length].dispatchEvent(new MouseEvent("click", { bubbles: true })));
+  const supportingIndex = portfolioProjects.findIndex((project) => project.name === supportingProjects[0].name);
+  act(() => tabs[supportingIndex].dispatchEvent(new MouseEvent("click", { bubbles: true })));
   expect(view.container.querySelector(".switchboardPanelSupporting")).not.toBeNull();
   expect(view.container.querySelector('[role="tabpanel"] a[href^="/projects/"]')).toBeNull();
   expect(view.container.querySelector(`[role="tabpanel"] a[href="${supportingProjects[0].url}"]`)).not.toBeNull();
@@ -151,7 +167,21 @@ test("Product Switchboard mobile selector exposes every project and updates the 
     select.dispatchEvent(new Event("change", { bubbles: true }));
   });
   expect(view.container.querySelector('[role="tabpanel"] h3').textContent).toBe("Mixer");
-  expect(view.container.querySelector(".switchboardMediaUnavailable").getAttribute("aria-label")).toBe("Preview image not available");
+  const mixerImage = view.container.querySelector('.switchboardMedia img[alt="Mixer interface for choosing a base, modifiers, and garnish before shaking a custom martini"]');
+  expect(mixerImage).not.toBeNull();
+  expect(mixerImage.getAttribute("src")).toContain("mixer.png");
+  expect(view.container.querySelector(".switchboardMediaUnavailable")).toBeNull();
+  view.cleanup();
+});
+
+test("Mixer uses its centralized image in the Selected Work directory", () => {
+  const mixer = supportingProjects.find((project) => project.name === "Mixer");
+  expect(mixer.image).toContain("mixer.png");
+  expect(mixer.imageAlt).toBe("Mixer interface for choosing a base, modifiers, and garnish before shaking a custom martini");
+  const view = renderRoute("/projects");
+  const image = view.container.querySelector(`img[alt="${mixer.imageAlt}"]`);
+  expect(image).not.toBeNull();
+  expect(image.closest(".directoryEntry").textContent).toContain("Mixer");
   view.cleanup();
 });
 
@@ -205,7 +235,7 @@ test("Product Switchboard preserves the VinoPairings development milestone", () 
   view.cleanup();
 });
 
-test("Product Switchboard includes VinoPairings and RedLipsticks.com in All and Consumer views", () => {
+test("Product Switchboard includes VinoPairings in Featured and RedLipsticks.com in Consumer views", () => {
   const vino = supportingProjects.find((project) => project.name === "VinoPairings");
   const redLipsticks = supportingProjects.find((project) => project.name === "RedLipsticks.com");
   expect(vino.classification).toBe("Founder-led product");
@@ -215,20 +245,27 @@ test("Product Switchboard includes VinoPairings and RedLipsticks.com in All and 
   const view = renderRoute("/");
   expect(view.container.textContent).toContain("VinoPairings");
   expect(view.container.textContent).toContain("RedLipsticks.com");
-  const consumerFilter = [...view.container.querySelectorAll(".switchboardFilters button")].find((button) => button.textContent === "Consumer Products and Experiments");
-  act(() => consumerFilter.dispatchEvent(new MouseEvent("click", { bubbles: true })));
-  const tabs = view.container.querySelectorAll('[role="tab"]');
-  expect(tabs).toHaveLength(3);
-  expect([...tabs].map((tab) => tab.textContent)).toEqual(expect.arrayContaining([expect.stringContaining("VinoPairings"), expect.stringContaining("RedLipsticks.com")]));
-
-  act(() => tabs[0].dispatchEvent(new MouseEvent("click", { bubbles: true })));
+  const featuredFilter = [...view.container.querySelectorAll(".switchboardFilters button")].find((button) => button.textContent === "Featured Products");
+  act(() => featuredFilter.dispatchEvent(new MouseEvent("click", { bubbles: true })));
+  let tabs = view.container.querySelectorAll('[role="tab"]');
+  expect(tabs).toHaveLength(6);
+  expect(tabs[5].textContent).toContain("VinoPairings");
+  tabs[4].focus();
+  act(() => tabs[4].dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", bubbles: true })));
   let panel = view.container.querySelector('[role="tabpanel"]');
+  expect(panel.querySelector("h3").textContent).toBe("VinoPairings");
   expect(panel.textContent).toContain(vino.description);
   expect(panel.querySelector(`a[href="${vino.url}"]`).textContent).toContain("Visit VinoPairings");
   expect(panel.querySelector('a[href^="/projects/"]')).toBeNull();
 
-  tabs[0].focus();
-  act(() => tabs[0].dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", bubbles: true })));
+  const consumerFilter = [...view.container.querySelectorAll(".switchboardFilters button")].find((button) => button.textContent === "Consumer Products and Experiments");
+  act(() => consumerFilter.dispatchEvent(new MouseEvent("click", { bubbles: true })));
+  tabs = view.container.querySelectorAll('[role="tab"]');
+  expect(tabs).toHaveLength(2);
+  expect([...tabs].map((tab) => tab.textContent)).not.toEqual(expect.arrayContaining([expect.stringContaining("VinoPairings")]));
+  expect([...tabs].map((tab) => tab.textContent)).toEqual(expect.arrayContaining([expect.stringContaining("RedLipsticks.com")]));
+
+  act(() => tabs[0].dispatchEvent(new MouseEvent("click", { bubbles: true })));
   panel = view.container.querySelector('[role="tabpanel"]');
   expect(panel.textContent).toContain(redLipsticks.description);
   expect(panel.querySelector(`a[href="${redLipsticks.url}"]`).textContent).toContain("Visit RedLipsticks.com");

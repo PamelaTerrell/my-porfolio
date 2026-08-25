@@ -28,6 +28,7 @@
 .switchboardHeading { grid-row: 1; display: flex; gap: 1rem; align-items: flex-start; margin-bottom: clamp(1rem, 2vw, 1.4rem); }
 .switchboardHeading .sectionEyebrow { margin-bottom: .35rem; color: var(--projectAccentText); }
 .switchboardHeading h3 { margin: 0; font-size: clamp(1.65rem, 3vw, 2.45rem); line-height: 1.08; letter-spacing: -.025em; text-wrap: balance; }
+.switchboardCategory { margin: .45rem 0 0; color: var(--textMuted); font-size: .88rem; line-height: 1.4; }
 .switchboardMedia { grid-row: 2; display: grid; place-items: center; width: 100%; height: clamp(360px, 50vh, 500px); max-height: clamp(420px, 58vh, 560px); min-height: 0; padding: clamp(.65rem, 1.5vw, 1rem); border: 1px solid var(--siteBorder); border-radius: .65rem; background: #181616; }
 .switchboardPanelSupporting .switchboardMedia { height: clamp(320px, 44vh, 440px); }
 .switchboardMedia img { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; object-position: center; }
