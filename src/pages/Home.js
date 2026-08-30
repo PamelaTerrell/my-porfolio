@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ExternalLink from "../components/ExternalLink";
 import ProductSwitchboard from "../components/ProductSwitchboard";
 import { externalSites, featuredProjects, getSupportingProject, switchboardGroups } from "../data/projects";
-import pjtImage from "../assets/pamela-hero-portrait.jpg";
+import pjtImage from "../assets/pamela-hero-portrait2.jpg";
 import "./Portfolio.css";
 
 const buildPrinciples = [
