@@ -14,6 +14,7 @@ import vaBuddyPreview from "../assets/getvabuddy.jpg";
 import manWomenDesirePreview from "../assets/desire.jpg";
 import sensualityQuizPreview from "../assets/senses.png";
 import mixerPreview from "../assets/mixer.png";
+import iLoveYouSoMuchPreview from "../assets/i-love-you-so-much-preview.png";
 
 export const externalSites = {
   stabileUSA: "https://stabileusa.com",
@@ -36,13 +37,17 @@ export const featuredProjects = [
     liveUrl: "https://crimerecordings.com",
     liveLabel: "Visit Crime Recordings",
     caseStudyPath: "/projects/crime-recordings",
-    ownership: "A Stabile USA product · Conceived, built, and operated by Pamela J. Terrell",
+    ownership:
+      "A Stabile USA product · Conceived, built, and operated by Pamela J. Terrell",
     signature: {
       problem: "Difficult-to-navigate public-records productions",
-      owned: "Product direction, full-stack build, research, and publishing",
-      operating: "Public archive, membership, and repeatable publishing workflow",
+      owned:
+        "Product direction, full-stack build, research, and publishing",
+      operating:
+        "Public archive, membership, and repeatable publishing workflow",
     },
-    featuredDecision: "Structure each case and its media as a repeatable publishing system rather than an ordinary article or file directory.",
+    featuredDecision:
+      "Structure each case and its media as a repeatable publishing system rather than an ordinary article or file directory.",
     thesis:
       "Crime Recordings turns difficult-to-navigate public-records productions into structured case experiences containing original recordings, documents, photographs, and contextual information.",
     preview:
@@ -66,6 +71,7 @@ export const featuredProjects = [
     ],
     tone: "flagship",
   },
+
   {
     featured: true,
     index: "02",
@@ -75,20 +81,26 @@ export const featuredProjects = [
     classification: "Founder-led product",
     status: "Active and continuing to grow",
     launchYear: 2026,
-    role: "Founder, product owner, product developer, writer, and narrator",
+    role:
+      "Founder, product owner, product developer, writer, and narrator",
     parent: "Stabile USA",
     image: "/images/night-listener-preview.png",
     imageAlt: "Night Listener listening experience",
     liveUrl: "https://stabileusa.com/listen",
     liveLabel: "Listen to Night Listener",
     caseStudyPath: "/projects/night-listener",
-    ownership: "A Stabile USA product · Conceived, built, and operated by Pamela J. Terrell",
+    ownership:
+      "A Stabile USA product · Conceived, built, and operated by Pamela J. Terrell",
     signature: {
-      problem: "Meaningful personal experiences without a quiet place to be heard",
-      owned: "Product direction, writing, narration, development, and publishing",
-      operating: "Listening, membership, and tested submission experiences",
+      problem:
+        "Meaningful personal experiences without a quiet place to be heard",
+      owned:
+        "Product direction, writing, narration, development, and publishing",
+      operating:
+        "Listening, membership, and tested submission experiences",
     },
-    featuredDecision: "Build around reflective storytelling rather than conventional advice, leaving listeners room to recognize their own meaning.",
+    featuredDecision:
+      "Build around reflective storytelling rather than conventional advice, leaving listeners room to recognize their own meaning.",
     thesis:
       "Night Listener shares and uncovers the life experiences people continue to carry—especially the moments that shape how they understand relationships, choices, and themselves.",
     preview:
@@ -110,6 +122,7 @@ export const featuredProjects = [
     ],
     tone: "reflective",
   },
+
   {
     featured: true,
     index: "03",
@@ -119,20 +132,26 @@ export const featuredProjects = [
     classification: "Founder-led product",
     status: "Active and publicly available",
     launchYear: 2026,
-    role: "Founder, product owner, product developer, and content creator",
+    role:
+      "Founder, product owner, product developer, and content creator",
     parent: "Stabile USA",
     image: medicarePreview,
     imageAlt: "Medicare Before You Switch website checker",
     liveUrl: "https://medicarebeforeyouswitch.com",
     liveLabel: "Visit Medicare Before You Switch",
     caseStudyPath: "/projects/medicare-before-you-switch",
-    ownership: "A Stabile USA product · Conceived, built, and operated by Pamela J. Terrell",
+    ownership:
+      "A Stabile USA product · Conceived, built, and operated by Pamela J. Terrell",
     signature: {
-      problem: "Coverage decisions shaped by urgency and incomplete benefit claims",
-      owned: "Product strategy, insurance-grounded content, and development",
-      operating: "Education, practical guidance, and a website verification tool",
+      problem:
+        "Coverage decisions shaped by urgency and incomplete benefit claims",
+      owned:
+        "Product strategy, insurance-grounded content, and development",
+      operating:
+        "Education, practical guidance, and a website verification tool",
     },
-    featuredDecision: "Separate educational domain indicators from technical-threat checking so one result never implies what the other cannot prove.",
+    featuredDecision:
+      "Separate educational domain indicators from technical-threat checking so one result never implies what the other cannot prove.",
     thesis:
       "Medicare Before You Switch helps people pause, verify Medicare-related advertising, and understand coverage tradeoffs before changing coverage or sharing personal information.",
     preview:
@@ -143,9 +162,13 @@ export const featuredProjects = [
       "Website verification tool",
       "Privacy-conscious design",
     ],
-    stack: ["Server-side JavaScript", "Google Safe Browsing API"],
+    stack: [
+      "Server-side JavaScript",
+      "Google Safe Browsing API",
+    ],
     tone: "trust",
   },
+
   {
     featured: true,
     index: "04",
@@ -155,20 +178,27 @@ export const featuredProjects = [
     classification: "Founder-led product",
     status: "Active and publicly available",
     launchYear: 2026,
-    role: "Founder, product owner, product developer, writer, and creative director",
+    role:
+      "Founder, product owner, product developer, writer, and creative director",
     parent: "Stabile USA",
     image: superCleaningLadyPreview,
-    imageAlt: "Super Cleaning Lady character and cleaning mission",
+    imageAlt:
+      "Super Cleaning Lady character and cleaning mission",
     liveUrl: "https://supercleaninglady.com",
     liveLabel: "Visit Super Cleaning Lady",
     caseStudyPath: "/projects/super-cleaning-lady",
-    ownership: "A Stabile USA product · Conceived, built, and operated by Pamela J. Terrell",
+    ownership:
+      "A Stabile USA product · Conceived, built, and operated by Pamela J. Terrell",
     signature: {
-      problem: "Household work that feels overwhelming or shame-filled",
-      owned: "Product development, writing, characters, and creative direction",
-      operating: "Practical missions, comics, and a connected character universe",
+      problem:
+        "Household work that feels overwhelming or shame-filled",
+      owned:
+        "Product development, writing, characters, and creative direction",
+      operating:
+        "Practical missions, comics, and a connected character universe",
     },
-    featuredDecision: "Make the mess the problem—not the person dealing with it—and use humor to create a practical starting point.",
+    featuredDecision:
+      "Make the mess the problem—not the person dealing with it—and use humor to create a practical starting point.",
     thesis:
       "Super Cleaning Lady turns everyday messes, repairs, clutter, and household frustration into approachable superhero missions through practical guidance, original characters, comics, and visual storytelling.",
     preview:
@@ -189,29 +219,99 @@ export const featuredProjects = [
     ],
     tone: "playful",
   },
+
   {
     featured: true,
     index: "05",
+    name: "I Love You So Much",
+    slug: "i-love-you-so-much",
+    category:
+      "Community love-note and private sharing platform",
+    classification: "Founder-led full-stack product",
+    status: "Active and publicly available",
+    launchYear: 2026,
+    role:
+      "Founder, product owner, designer, and full-stack product developer",
+    parent: "Stabile USA",
+    image: iLoveYouSoMuchPreview,
+    imageAlt:
+      "I Love You So Much full-stack web application for public and private love-note sharing",
+    liveUrl: "https://www.iloveyousomuch.love",
+    liveLabel: "Visit I Love You So Much",
+    caseStudyPath: "/projects/i-love-you-so-much",
+    ownership:
+      "A Stabile USA product · Conceived, designed, built, and operated by Pamela J. Terrell",
+
+    signature: {
+      problem:
+        "Most social platforms are not designed around thoughtful, intentional expressions of love and appreciation.",
+      owned:
+        "Product concept, identity, UX, frontend, backend, moderation, private sharing, and ongoing operation",
+      operating:
+        "Public love notes, moderated submissions, persistent reactions, reporting, private sharing, and themed recipient experiences",
+    },
+
+    featuredDecision:
+      "Separate the public community experience from private one-to-one sharing while giving both experiences the same warm, intentional product identity.",
+
+    thesis:
+      "I Love You So Much is a full-stack sharing platform built around the things people want to say when a simple “I love you” does not feel big enough.",
+
+    preview:
+      "I designed and built the product from concept through launch, including the public Love Wall, anonymous submissions, moderation tools, persistent heart reactions, reporting, private love-note creation, themed envelope choices, dynamic share previews, and recipient reveal experiences.",
+
+    labels: [
+      "Full-stack product development",
+      "Community submissions and moderation",
+      "Private link sharing",
+      "Persistent reactions and reporting",
+      "Themed recipient experiences",
+      "Serverless social previews",
+    ],
+
+    stack: [
+      "React",
+      "Supabase",
+      "PostgreSQL",
+      "Supabase Auth",
+      "Vercel",
+      "Vercel Serverless Functions",
+      "Resend",
+    ],
+
+    tone: "love",
+  },
+
+  {
+    featured: true,
+    index: "06",
     name: "Pinkerton Williams DAV Chapter 18",
     slug: "pinkerton-williams",
     category: "Volunteer community website",
     classification: "Volunteer community work",
     status: "Active and maintained since 2016",
     launchYear: 2016,
-    role: "Volunteer website developer and long-term maintainer",
+    role:
+      "Volunteer website developer and long-term maintainer",
     organization: "Pinkerton Williams DAV Chapter 18",
     image: pinkertonWilliamsPreview,
-    imageAlt: "Pinkerton Williams DAV Chapter 18 website",
+    imageAlt:
+      "Pinkerton Williams DAV Chapter 18 website",
     liveUrl: "https://pinkertonwilliams.org",
     liveLabel: "Visit PinkertonWilliams.org",
     caseStudyPath: "/projects/pinkerton-williams",
-    ownership: "Volunteer community commitment · Maintained since 2016",
+    ownership:
+      "Volunteer community commitment · Maintained since 2016",
     signature: {
-      problem: "Chapter information without a dependable online home",
-      owned: "Volunteer website development and long-term maintenance",
-      operating: "Events, meetings, office information, and contact options",
+      problem:
+        "Chapter information without a dependable online home",
+      owned:
+        "Volunteer website development and long-term maintenance",
+      operating:
+        "Events, meetings, office information, and contact options",
     },
-    featuredDecision: "Modernize the technology while preserving the familiar information and dependable access the chapter relies on.",
+    featuredDecision:
+      "Modernize the technology while preserving the familiar information and dependable access the chapter relies on.",
     thesis:
       "What began as a college Web Design final project became the chapter’s first and only website—and an active community resource I have maintained and modernized since 2016.",
     preview:
@@ -222,7 +322,13 @@ export const featuredProjects = [
       "Information architecture",
       "React and Vite modernization",
     ],
-    stack: ["React 19", "Vite 6", "React Router", "Formspree", "React Icons"],
+    stack: [
+      "React 19",
+      "Vite 6",
+      "React Router",
+      "Formspree",
+      "React Icons",
+    ],
     tone: "community",
   },
 ];
@@ -232,122 +338,170 @@ export const supportingProjects = [
     featured: false,
     group: "Story, Reflection, and Human Experience",
     name: "Life Stories Now",
-    description: "A narrative platform centered on memory, reflection, and shared human experience.",
+    description:
+      "A narrative platform centered on memory, reflection, and shared human experience.",
     url: "https://lifestoriesnow.com",
     image: lifeStoriesPreview,
   },
+
   {
     featured: false,
     group: "Story, Reflection, and Human Experience",
     name: "Psychological Manipulation",
-    description: "A reference exploring influence, emotional patterns, and behavioral dynamics.",
+    description:
+      "A reference exploring influence, emotional patterns, and behavioral dynamics.",
     url: "https://psychological-manipulation.com",
     image: psychologicalManipulationPreview,
   },
+
   {
     featured: false,
     group: "Story, Reflection, and Human Experience",
     name: "The Man Women Desire",
-    description: "An interactive assessment exploring confidence, attraction, and relational dynamics.",
+    description:
+      "An interactive assessment exploring confidence, attraction, and relational dynamics.",
     url: "https://themanwomendesire.com",
     image: manWomenDesirePreview,
   },
+
   {
     featured: false,
     group: "Story, Reflection, and Human Experience",
     name: "Sensuality Quiz",
-    description: "A guided experience exploring connection, awareness, and emotional presence.",
+    description:
+      "A guided experience exploring connection, awareness, and emotional presence.",
     url: "https://sensualityquiz.com",
     image: sensualityQuizPreview,
   },
+
   {
     featured: false,
     group: "Story, Reflection, and Human Experience",
     name: "Cosmic Zodiac Astrology",
-    description: "An astrology experience focused on symbolic interpretation.",
+    description:
+      "An astrology experience focused on symbolic interpretation.",
     url: "https://cosmiczodiacastrology.com",
     image: cosmicZodiacPreview,
   },
+
   {
     featured: false,
     group: "Practical and Community Platforms",
     name: "Get VA Buddy",
-    description: "A simplified helper for finding and navigating printable VA forms.",
+    description:
+      "A simplified helper for finding and navigating printable VA forms.",
     url: "https://getvabuddy.com",
     image: vaBuddyPreview,
   },
+
   {
     featured: false,
     group: "Practical and Community Platforms",
     name: "CarePathWell",
-    description: "A centralized intake and scheduling experience for behavioral health coordination.",
+    description:
+      "A centralized intake and scheduling experience for behavioral health coordination.",
     url: "https://carepathwell.com",
     image: carePathWellPreview,
   },
+
   {
     featured: false,
     group: "Practical and Community Platforms",
     name: "Before and After Vault",
-    description: "A private and community-based platform for documenting transformation.",
+    description:
+      "A private and community-based platform for documenting transformation.",
     url: "https://beforeandaftervault.com",
     image: beforeAfterPreview,
   },
+
   {
     featured: false,
     group: "Practical and Community Platforms",
     name: "Big Pace Barbershop & Beauty Salon 2",
-    description: "A local-business website supporting visibility and appointment flow.",
+    description:
+      "A local-business website supporting visibility and appointment flow.",
     url: "https://bigpacebarbershopandbeautysalon2.com",
     image: bigPacePreview,
   },
+
   {
     featured: false,
     group: "Consumer Products and Experiments",
     name: "VinoPairings",
-    description: "VinoPairings is an interactive wine-pairing product that helps visitors explore pairing ideas and consult a user-facing AI sommelier. What began as my 2024 Per Scholas Software Engineering final project and first full-stack application became an actively maintained product that I continued reshaping after the course ended.",
+    description:
+      "VinoPairings is an interactive wine-pairing product that helps visitors explore pairing ideas and consult a user-facing AI sommelier. What began as my 2024 Per Scholas Software Engineering final project and first full-stack application became an actively maintained product that I continued reshaping after the course ended.",
     url: "https://vinopairings.com",
     liveLabel: "Visit VinoPairings",
     image: vinoPairingsPreview,
     classification: "Founder-led product",
     status: "Actively operated",
     launchYear: 2024,
-    relationship: "Created and operated by Pamela J. Terrell",
-    marker: "Development Milestone · First Full-Stack Application",
+    relationship:
+      "Created and operated by Pamela J. Terrell",
+    marker:
+      "Development Milestone · First Full-Stack Application",
     switchboardFeatured: true,
-    switchboardIndex: "06",
-    switchboardEyebrow: "Development Milestone · First Full-Stack Application · 2024",
-    switchboardCategory: "Interactive wine-pairing product",
+    switchboardIndex: "07",
+    switchboardEyebrow:
+      "Development Milestone · First Full-Stack Application · 2024",
+    switchboardCategory:
+      "Interactive wine-pairing product",
     switchboardSignature: {
-      problem: "Help visitors move from uncertainty about wine pairings toward useful, approachable recommendations.",
-      owned: "Created as Pamela’s first full-stack application and continued as an independently operated product after the course ended.",
-      operating: "Interactive pairing content and a user-facing AI sommelier supported by protected server-side responses.",
+      problem:
+        "Help visitors move from uncertainty about wine pairings toward useful, approachable recommendations.",
+      owned:
+        "Created as Pamela’s first full-stack application and continued as an independently operated product after the course ended.",
+      operating:
+        "Interactive pairing content and a user-facing AI sommelier supported by protected server-side responses.",
     },
-    switchboardDecision: "I treated the course project as a beginning rather than a finished assignment, continuing to reshape both the experience and its architecture.",
-    switchboardTechnical: "Next.js App Router and React with Tailwind CSS, local pairing content, and the OpenAI Responses API through protected server-side streaming and fallback routes. Chat history remains browser-local, and the current product has no database dependency.",
-    origin: "VinoPairings began in 2024 as my Per Scholas Software Engineering final project and first full-stack application. I continued developing it after the course, later adding a user-facing AI sommelier and replacing its original database-backed architecture with a leaner Next.js implementation.",
-    milestone: "Pamela’s first full-stack application and Per Scholas Software Engineering final project",
-    architecture: "Next.js application with local pairing content and protected server-side AI routes",
-    stack: ["Next.js 13.5", "React 18", "Tailwind CSS 3", "OpenAI Responses API", "Vercel Analytics", "Google Analytics"],
-    capabilities: ["Pairing finder", "User-facing AI sommelier", "AI chatbot integration"],
+    switchboardDecision:
+      "I treated the course project as a beginning rather than a finished assignment, continuing to reshape both the experience and its architecture.",
+    switchboardTechnical:
+      "Next.js App Router and React with Tailwind CSS, local pairing content, and the OpenAI Responses API through protected server-side streaming and fallback routes. Chat history remains browser-local, and the current product has no database dependency.",
+    origin:
+      "VinoPairings began in 2024 as my Per Scholas Software Engineering final project and first full-stack application. I continued developing it after the course, later adding a user-facing AI sommelier and replacing its original database-backed architecture with a leaner Next.js implementation.",
+    milestone:
+      "Pamela’s first full-stack application and Per Scholas Software Engineering final project",
+    architecture:
+      "Next.js application with local pairing content and protected server-side AI routes",
+    stack: [
+      "Next.js 13.5",
+      "React 18",
+      "Tailwind CSS 3",
+      "OpenAI Responses API",
+      "Vercel Analytics",
+      "Google Analytics",
+    ],
+    capabilities: [
+      "Pairing finder",
+      "User-facing AI sommelier",
+      "AI chatbot integration",
+    ],
   },
+
   {
     featured: false,
     group: "Consumer Products and Experiments",
     name: "RedLipsticks.com",
-    description: "A beauty and lifestyle platform about red lipstick, personal style, and confidence.",
+    description:
+      "A beauty and lifestyle platform about red lipstick, personal style, and confidence.",
     url: "https://redlipsticks.com",
     liveLabel: "Visit RedLipsticks.com",
     image: redLipsticksPreview,
-    classification: "Founder-led consumer product",
+    classification:
+      "Founder-led consumer product",
   },
+
   {
     featured: false,
     group: "Consumer Products and Experiments",
     name: "Mixer",
-    description: "A playful interactive martini-building experiment.",
+    description:
+      "A playful interactive martini-building experiment.",
     url: "https://mixer.pamelajterrell.com",
     image: mixerPreview,
-    imageAlt: "Mixer interface for choosing a base, modifiers, and garnish before shaking a custom martini",
+    imageAlt:
+      "Mixer interface for choosing a base, modifiers, and garnish before shaking a custom martini",
   },
 ];
 
@@ -359,37 +513,84 @@ export const supportingGroups = [
 
 export const switchboardFeaturedProjects = [
   ...featuredProjects,
+
   ...supportingProjects
-    .filter((project) => project.switchboardFeatured)
+    .filter(
+      (project) =>
+        project.switchboardFeatured
+    )
     .map((project) => ({
       ...project,
+
       featured: true,
-      index: project.switchboardIndex,
-      category: project.switchboardCategory || project.group,
-      thesis: project.description,
-      signature: project.switchboardSignature,
-      featuredDecision: project.switchboardDecision,
+
+      index:
+        project.switchboardIndex,
+
+      category:
+        project.switchboardCategory ||
+        project.group,
+
+      thesis:
+        project.description,
+
+      signature:
+        project.switchboardSignature,
+
+      featuredDecision:
+        project.switchboardDecision,
     })),
 ];
 
 export const switchboardGroups = [
-  { name: "Featured Products", projects: switchboardFeaturedProjects },
-  ...supportingGroups.map((name) => ({
-    name,
-    projects: supportingProjects.filter((project) => project.group === name && !project.switchboardFeatured),
-  })),
+  {
+    name: "Featured Products",
+    projects:
+      switchboardFeaturedProjects,
+  },
+
+  ...supportingGroups.map(
+    (name) => ({
+      name,
+
+      projects:
+        supportingProjects.filter(
+          (project) =>
+            project.group === name &&
+            !project.switchboardFeatured
+        ),
+    })
+  ),
 ];
 
-export const portfolioProjects = switchboardGroups.flatMap((group) => group.projects);
+export const portfolioProjects =
+  switchboardGroups.flatMap(
+    (group) => group.projects
+  );
 
-export function getFeaturedProject(slug) {
-  return featuredProjects.find((project) => project.slug === slug);
+export function getFeaturedProject(
+  slug
+) {
+  return featuredProjects.find(
+    (project) =>
+      project.slug === slug
+  );
 }
 
-export function getSupportingProject(name) {
-  return supportingProjects.find((project) => project.name === name);
+export function getSupportingProject(
+  name
+) {
+  return supportingProjects.find(
+    (project) =>
+      project.name === name
+  );
 }
 
-export function getProjectLiveLabel(project) {
-  return project.liveLabel || `Visit ${project.name}`;
+export function getProjectLiveLabel(
+  project
+) {
+  return (
+    project.liveLabel ||
+    `Visit ${project.name}`
+  );
 }

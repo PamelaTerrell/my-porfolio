@@ -321,6 +321,165 @@ export const caseStudies = {
       "Super Cleaning Lady is focused on strengthening its character universe, practical missions, comics, and audience experience. Future commercial possibilities remain open, but the product’s identity and usefulness come first.",
     quote: "I wanted the mess to be the problem—not the person dealing with it.",
   },
+
+    "i-love-you-so-much": {
+    introduction:
+      "I created I Love You So Much as a digital space built around something most social platforms treat as secondary: giving people a thoughtful place to tell someone they are loved, appreciated, missed, remembered, or simply important.",
+
+    sections: [
+      {
+        title: "The idea",
+        paragraphs: [
+          "People say meaningful things in texts, cards, social posts, and private conversations, but those experiences are usually scattered across tools designed for broader purposes. I wanted to build a product where expressing love and appreciation was the purpose rather than an incidental feature.",
+          "The product developed into two connected experiences: a moderated public Love Wall where people can leave positive messages for others, and a private-note experience for something intended for one recipient rather than an audience.",
+        ],
+      },
+
+      {
+        title: "My role",
+        paragraphs: [
+          "I conceived the product, developed its name and identity, defined the public and private sharing models, designed the user experience, and built the frontend, backend, moderation workflow, sharing system, and administrative tools.",
+          "I also designed the operating rules around public submissions, reactions, reporting, moderation, and private-link behavior. I continue testing the live experience, reviewing submissions and reports, refining the interface, and operating the product through Stabile USA.",
+        ],
+      },
+
+      {
+        title: "Public love and private sharing",
+        paragraphs: [
+          "The public Love Wall allows visitors to submit messages across categories including romantic love, family, friendship, gratitude, missing someone, pets, and self-love. New public submissions enter a moderation queue before appearing on the wall.",
+          "Approved messages can receive persistent heart reactions and can be reported by visitors. The authenticated admin experience provides separate queues for pending submissions and reported messages so I can approve, reject, keep, or remove content as appropriate.",
+          "Private love notes follow a different path. The sender writes a note, chooses an envelope theme, previews the finished experience, and receives a unique link that can be copied, shared, or sent by text. The recipient opens a themed reveal page that retrieves the saved note without placing it on the public Love Wall.",
+        ],
+      },
+    ],
+
+    decisions: [
+      {
+        title: "Public and private experiences instead of one sharing model",
+        context:
+          "Some expressions of love are appropriate for a community wall, while others are meant for one specific person.",
+        decision:
+          "Build separate public and private note workflows within the same product.",
+        reason:
+          "The distinction lets people choose whether their message is part of a shared community experience or a direct one-to-one gesture.",
+        tradeoff:
+          "The two experiences require different database rules, interfaces, routing, privacy language, and moderation expectations.",
+      },
+
+      {
+        title: "Moderation before public publication",
+        context:
+          "Anonymous public submissions can be positive and heartfelt, but an open submission form can also be misused.",
+        decision:
+          "Place public submissions into a pending moderation state rather than publishing them immediately.",
+        reason:
+          "Moderation protects the tone of the Love Wall and gives me an opportunity to stop inappropriate, identifying, harassing, or unrelated material before it becomes public.",
+        tradeoff:
+          "The community experience requires ongoing human review rather than operating as a completely automatic feed.",
+      },
+
+      {
+        title: "Persistent reactions without requiring an account",
+        context:
+          "Heart reactions should feel lightweight, but simply changing a number in the browser would not create a real shared response.",
+        decision:
+          "Store reactions in the backend while using a browser identifier to limit duplicate reactions from the same browser.",
+        reason:
+          "Visitors can participate without creating an account, while the heart count remains persistent across sessions and visitors.",
+        tradeoff:
+          "Browser-based identity is intentionally lightweight and is not equivalent to authenticated user identity.",
+      },
+
+      {
+        title: "Reporting without public comments",
+        context:
+          "Community participation creates moderation responsibilities, while comments would introduce a much larger conversation and abuse surface.",
+        decision:
+          "Support reactions and reporting but not public comments in the initial product.",
+        reason:
+          "The Love Wall can remain centered on the submitted message itself while still giving visitors a way to flag content that needs review.",
+        tradeoff:
+          "Visitors can respond with a heart but cannot publicly discuss or reply to a message.",
+      },
+
+      {
+        title: "Unlisted private links rather than accounts for recipients",
+        context:
+          "A private love note should be easy to send to someone who may never have visited the site before.",
+        decision:
+          "Use unique, unlisted share tokens instead of requiring recipients to create accounts.",
+        reason:
+          "The recipient can move directly from a text or shared link into the note without registration friction.",
+        tradeoff:
+          "Anyone who obtains the unique link can read the note, so the interface explicitly tells senders to share it only with the intended person. The notes are link-accessible rather than end-to-end encrypted.",
+      },
+
+      {
+        title: "Make the envelope choice part of the whole experience",
+        context:
+          "The original private-note design was strongly blush and pink, which did not fit every sender, recipient, or relationship.",
+        decision:
+          "Add Blush, Deep Red, Navy, Forest, Black, and Ivory themes that carry from composition through preview, social sharing, and final reveal.",
+        reason:
+          "Color gives the sender a simple way to make the gesture feel more personal without complicating the writing experience.",
+        tradeoff:
+          "Theme information has to remain synchronized across database records, frontend routes, serverless preview generation, social metadata, and reveal styling.",
+      },
+
+      {
+        title: "Branded share previews instead of raw URLs",
+        context:
+          "A plain link in a text message does not communicate the emotional experience waiting behind it.",
+        decision:
+          "Create themed Open Graph preview routes and matching preview artwork for private love notes.",
+        reason:
+          "A recipient can see that something intentional and personal is waiting before opening the link.",
+        tradeoff:
+          "The sharing flow requires server-side routing and metadata generation in addition to the React application itself.",
+      },
+    ],
+
+    technical:
+      "I Love You So Much is a React application backed by Supabase and PostgreSQL. Supabase stores public love messages, private notes, reactions, reports, moderation state, and administrative access. Row Level Security and security-definer database functions limit public operations to the specific actions required by each experience. Supabase Auth provides authenticated administrative access, with Resend configured for branded authentication email. Vercel hosts the application and provides serverless functions used for themed Open Graph sharing previews and private-note routing.",
+
+    considerations: {
+      title: "Privacy, moderation, and emotional context",
+      paragraphs: [
+        "The product encourages heartfelt expression without encouraging people to publish unnecessary private information. Public-facing guidance asks visitors not to include phone numbers, email addresses, home addresses, or other identifying details in Love Wall submissions.",
+        "Private notes do not appear on the public Love Wall, but they are intentionally accessible to anyone who possesses the unique share link. The product describes that limitation directly rather than presenting link-accessible notes as encrypted private communication.",
+        "Anonymous participation makes the experience easier to use but also increases the importance of moderation, reporting, database validation, rate-limiting considerations, and careful control over which backend operations are available to unauthenticated visitors.",
+      ],
+    },
+
+    outcomes: [
+      "Active full-stack product launched in 2026",
+      "Moderated public Love Wall with multiple message categories",
+      "Persistent heart reactions without mandatory visitor accounts",
+      "Visitor reporting with an authenticated moderation workflow",
+      "Secure administrative approval and removal tools",
+      "Private one-to-one love-note creation using unique share tokens",
+      "Six selectable envelope and reveal themes",
+      "Sender preview, copy, native sharing, and text-message flows",
+      "Dynamic themed Open Graph previews for shared private notes",
+      "Supabase-backed public, private, moderation, and administrative workflows",
+    ],
+
+    lessons: [
+      "A simple emotional idea can require substantial product architecture once public participation and private sharing are added.",
+      "Anonymous participation works best when the permitted backend actions are deliberately narrow.",
+      "Moderation is part of the product design, not merely an administrative feature.",
+      "A private-feeling experience still needs precise language about what privacy the technology actually provides.",
+      "Small visual choices such as an envelope color can become system-wide data and routing decisions when they must persist across every stage of a sharing journey.",
+      "Testing the actual sender-to-recipient journey reveals problems that cannot be found by testing the composer or database independently.",
+    ],
+
+    next:
+      "I am continuing to test the complete sharing and moderation journeys, strengthen protections against automated abuse, refine the private-note experience, and grow the Love Wall carefully while preserving the warm and positive identity that defines the product.",
+
+    quote:
+      "Sometimes “I love you” just isn’t big enough.",
+  },
+
   "pinkerton-williams": {
     introduction:
       "PinkertonWilliams.org gives Pinkerton Williams DAV Chapter 18 in Augusta, Georgia, a dependable online home for events, meeting details, office information, and contact.",
