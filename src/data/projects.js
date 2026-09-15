@@ -220,67 +220,79 @@ export const featuredProjects = [
     tone: "playful",
   },
 
-  {
-    featured: true,
-    index: "05",
-    name: "I Love You So Much",
-    slug: "i-love-you-so-much",
-    category:
-      "Community love-note and private sharing platform",
-    classification: "Founder-led full-stack product",
-    status: "Active and publicly available",
-    launchYear: 2026,
-    role:
-      "Founder, product owner, designer, and full-stack product developer",
-    parent: "Stabile USA",
-    image: iLoveYouSoMuchPreview,
-    imageAlt:
-      "I Love You So Much full-stack web application for public and private love-note sharing",
-    liveUrl: "https://www.iloveyousomuch.love",
-    liveLabel: "Visit I Love You So Much",
-    caseStudyPath: "/projects/i-love-you-so-much",
-    ownership:
-      "A Stabile USA product · Conceived, designed, built, and operated by Pamela J. Terrell",
+  
+ {
+  featured: true,
+  index: "05",
+  name: "I Love You So Much",
+  slug: "i-love-you-so-much",
+  category:
+    "Community love-note and private sharing product",
+  classification: "Founder-led digital product",
+  status: "Active on the web and Apple App Store",
+  launchYear: 2026,
+  role:
+    "Founder, product owner, designer, and full-stack product developer",
+  parent: "Stabile USA",
 
-    signature: {
-      problem:
-        "Most social platforms are not designed around thoughtful, intentional expressions of love and appreciation.",
-      owned:
-        "Product concept, identity, UX, frontend, backend, moderation, private sharing, and ongoing operation",
-      operating:
-        "Public love notes, moderated submissions, persistent reactions, reporting, private sharing, and themed recipient experiences",
-    },
+  image: iLoveYouSoMuchPreview,
+  imageAlt:
+    "I Love You So Much community and private love-note experience",
 
-    featuredDecision:
-      "Separate the public community experience from private one-to-one sharing while giving both experiences the same warm, intentional product identity.",
+  liveUrl: "https://www.iloveyousomuch.love",
+  liveLabel: "Visit I Love You So Much",
 
-    thesis:
-      "I Love You So Much is a full-stack sharing platform built around the things people want to say when a simple “I love you” does not feel big enough.",
+  appStoreUrl:
+    "https://apps.apple.com/us/app/i-love-you-so-much/id6810764631",
+  appStoreLabel: "View on the App Store",
 
-    preview:
-      "I designed and built the product from concept through launch, including the public Love Wall, anonymous submissions, moderation tools, persistent heart reactions, reporting, private love-note creation, themed envelope choices, dynamic share previews, and recipient reveal experiences.",
+  caseStudyPath: "/projects/i-love-you-so-much",
 
-    labels: [
-      "Full-stack product development",
-      "Community submissions and moderation",
-      "Private link sharing",
-      "Persistent reactions and reporting",
-      "Themed recipient experiences",
-      "Serverless social previews",
-    ],
+  ownership:
+    "A Stabile USA product · Conceived, designed, built, published, and operated by Pamela J. Terrell",
 
-    stack: [
-      "React",
-      "Supabase",
-      "PostgreSQL",
-      "Supabase Auth",
-      "Vercel",
-      "Vercel Serverless Functions",
-      "Resend",
-    ],
-
-    tone: "love",
+  signature: {
+    problem:
+      "Most social platforms are not designed around thoughtful, intentional expressions of love and appreciation.",
+    owned:
+      "Product concept, identity, UX, full-stack development, moderation, private sharing, and release",
+    operating:
+      "Public love notes, moderated submissions, persistent reactions, reporting, private sharing, themed recipient experiences, and web and App Store distribution",
   },
+
+  featuredDecision:
+    "Separate the public community experience from private one-to-one sharing while giving both experiences the same warm, intentional product identity.",
+
+  thesis:
+    "I Love You So Much is a digital sharing product built around the things people want to say when a simple “I love you” does not feel big enough.",
+
+  preview:
+    "I conceived, designed, and built the product from concept through launch, including the public Love Wall, anonymous submissions, moderation tools, persistent heart reactions, reporting, private love-note creation, themed envelope choices, dynamic share previews, and recipient reveal experiences. I later extended the product to mobile and took version 1.0 through App Store submission and public release.",
+
+  labels: [
+    "Full-stack product development",
+    "Community submissions and moderation",
+    "Private sharing",
+    "Persistent reactions and reporting",
+    "Themed recipient experiences",
+    "Web and mobile distribution",
+  ],
+
+  stack: [
+    "React",
+    "Supabase",
+    "PostgreSQL",
+    "Supabase Auth",
+    "Vercel",
+    "Vercel Serverless Functions",
+    "Resend",
+  ],
+
+  tone: "love",
+},
+
+   
+  
 
   {
     featured: true,
