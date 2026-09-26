@@ -10,6 +10,7 @@ import Work from "./pages/Work";
 import Mixer from "./pages/Mixer";
 import WorkWithMe from "./pages/WorkWithMe";
 import StabileUSA from "./pages/StabileUSA";
+import AugustaWebDevelopment from "./pages/AugustaWebDevelopment";
 import NotFound from "./pages/NotFound";
 const App = () => {
   return (
@@ -23,6 +24,8 @@ const App = () => {
         <Route path="/mixer" element={<Mixer />} />
         <Route path="/stabile-usa" element={<StabileUSA />} />
         <Route path="/not-found" element={<NotFound />} />
+        <Route path="/web-development-augusta-ga" element={<AugustaWebDevelopment />}
+/>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

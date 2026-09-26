@@ -1,0 +1,826 @@
+/* src/pages/AugustaWebDevelopment.css */
+
+.augustaPage {
+  --augusta-bg: #080b0f;
+  --augusta-bg-deep: #06080b;
+  --augusta-surface: #0d1117;
+  --augusta-surface-soft: #10151c;
+
+  --augusta-text: #f6f8fb;
+  --augusta-muted: #9da7b4;
+  --augusta-subtle: #707b89;
+
+  --augusta-line: rgba(255, 255, 255, 0.1);
+  --augusta-line-strong: rgba(255, 255, 255, 0.16);
+
+  --augusta-blue: #63a4ff;
+  --augusta-blue-soft: rgba(99, 164, 255, 0.11);
+
+  background: var(--augusta-bg);
+  color: var(--augusta-text);
+}
+
+.augustaPage .pageShell {
+  width: min(1380px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+/* ---------------------------------------
+   SHARED TYPE
+--------------------------------------- */
+
+.augustaEyebrow,
+.augustaSectionEyebrow {
+  margin: 0 0 26px;
+  color: var(--augusta-blue);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.augustaPage h1,
+.augustaPage h2,
+.augustaPage h3 {
+  text-wrap: balance;
+}
+
+.augustaPage h2 span,
+.augustaHero h1 span {
+  color: #b8c1cd;
+}
+
+.augustaLeadCopy {
+  color: #d4dae2 !important;
+  font-size: 1.16rem !important;
+}
+
+/* ---------------------------------------
+   HERO
+--------------------------------------- */
+
+.augustaHero {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.2fr)
+    minmax(310px, 0.55fr);
+
+  gap: clamp(70px, 8vw, 125px);
+  align-items: center;
+
+  padding-top: clamp(110px, 10vw, 155px);
+  padding-bottom: clamp(105px, 9vw, 145px);
+}
+
+.augustaHeroContent {
+  max-width: 940px;
+}
+
+.augustaHero h1 {
+  margin: 0;
+
+  font-size: clamp(4.2rem, 6.4vw, 7.4rem);
+  line-height: 0.88;
+  letter-spacing: -0.07em;
+  font-weight: 620;
+}
+
+.augustaHeroLead {
+  max-width: 810px;
+  margin: 42px 0 0;
+
+  color: var(--augusta-muted);
+
+  font-size: clamp(1.08rem, 1.35vw, 1.3rem);
+  line-height: 1.82;
+}
+
+.augustaHeroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 42px;
+}
+
+.augustaPrimaryButton,
+.augustaSecondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  min-height: 56px;
+  padding: 0 26px;
+
+  border-radius: 4px;
+
+  font-size: 0.97rem;
+  font-weight: 650;
+
+  text-decoration: none;
+
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.augustaPrimaryButton {
+  border: 1px solid var(--augusta-blue);
+  background: var(--augusta-blue);
+  color: #07101b;
+}
+
+.augustaPrimaryButton:hover {
+  transform: translateY(-2px);
+  background: #7bb2ff;
+}
+
+.augustaSecondaryButton {
+  border: 1px solid var(--augusta-line-strong);
+  background: transparent;
+  color: var(--augusta-text);
+}
+
+.augustaSecondaryButton:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.augustaPrimaryButton:focus-visible,
+.augustaSecondaryButton:focus-visible,
+.augustaTextLink:focus-visible {
+  outline: 2px solid var(--augusta-blue);
+  outline-offset: 4px;
+}
+
+.augustaHeroNote {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 28px;
+
+  color: var(--augusta-subtle);
+
+  font-size: 0.84rem;
+  letter-spacing: 0.025em;
+}
+
+.augustaStatusDot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 999px;
+  background: #74d5ad;
+
+  box-shadow: 0 0 14px rgba(116, 213, 173, 0.55);
+}
+
+/* ---------------------------------------
+   HERO ASIDE
+--------------------------------------- */
+
+.augustaHeroAside {
+  padding: 34px 0 34px 38px;
+  border-left: 1px solid var(--augusta-line);
+}
+
+.augustaHeroAside > p {
+  margin: 0 0 24px;
+
+  color: var(--augusta-subtle);
+
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.augustaHeroAside ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.augustaHeroAside li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  padding: 17px 0;
+
+  border-bottom: 1px solid var(--augusta-line);
+
+  color: #d7dde6;
+}
+
+.augustaHeroAside li:last-child {
+  border-bottom: 0;
+}
+
+.augustaHeroAside li span:last-child {
+  color: #536070;
+
+  font-size: 0.69rem;
+  letter-spacing: 0.12em;
+}
+
+/* ---------------------------------------
+   STATEMENT BAND
+--------------------------------------- */
+
+.augustaStatement {
+  border-top: 1px solid var(--augusta-line);
+  border-bottom: 1px solid var(--augusta-line);
+
+  background:
+    radial-gradient(
+      circle at 12% 40%,
+      rgba(99, 164, 255, 0.08),
+      transparent 30%
+    ),
+    var(--augusta-surface);
+}
+
+.augustaStatementInner {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 80px;
+
+  padding-top: 86px;
+  padding-bottom: 92px;
+}
+
+.augustaStatement p {
+  margin: 10px 0 0;
+
+  color: var(--augusta-blue);
+
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.augustaStatement h2 {
+  max-width: 1120px;
+  margin: 0;
+
+  font-size: clamp(2rem, 3.4vw, 3.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  font-weight: 540;
+}
+
+.augustaStatement h2 span {
+  color: var(--augusta-muted);
+}
+
+/* ---------------------------------------
+   SECTIONS
+--------------------------------------- */
+
+.augustaIntro,
+.augustaWork,
+.augustaLocal,
+.augustaFit {
+  padding-top: 135px;
+  padding-bottom: 135px;
+}
+
+.augustaIntroGrid,
+.augustaWorkGrid,
+.augustaLocal,
+.augustaFitGrid,
+.augustaTechGrid,
+.augustaCTAGrid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(330px, 0.78fr);
+
+  gap: clamp(70px, 8vw, 130px);
+  align-items: start;
+}
+
+.augustaIntro h2,
+.augustaWork h2,
+.augustaLocal h2,
+.augustaFit h2,
+.augustaTech h2,
+.augustaCTA h2,
+.augustaApproach h2 {
+  margin: 0;
+
+  font-size: clamp(3rem, 4.8vw, 5.6rem);
+  line-height: 0.97;
+  letter-spacing: -0.06em;
+  font-weight: 570;
+}
+
+.augustaBodyCopy p,
+.augustaWorkCopy p,
+.augustaTechIntroduction,
+.augustaCTAGrid p {
+  margin: 0 0 24px;
+
+  color: var(--augusta-muted);
+
+  font-size: 1.06rem;
+  line-height: 1.82;
+}
+
+/* ---------------------------------------
+   SERVICE GRID
+--------------------------------------- */
+
+.augustaServices {
+  padding-bottom: 135px;
+}
+
+.augustaServiceGrid,
+.augustaApproachGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid var(--augusta-line);
+  border-bottom: 1px solid var(--augusta-line);
+}
+
+.augustaServiceCard,
+.augustaApproachGrid article {
+  min-height: 335px;
+
+  padding: 32px 30px 38px;
+
+  border-right: 1px solid var(--augusta-line);
+
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.augustaServiceCard:last-child,
+.augustaApproachGrid article:last-child {
+  border-right: 0;
+}
+
+.augustaServiceCard:hover,
+.augustaApproachGrid article:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.augustaCardNumber {
+  display: block;
+  margin-bottom: 88px;
+
+  color: var(--augusta-blue);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.augustaServiceCard h3,
+.augustaApproachGrid h3 {
+  margin: 0 0 18px;
+
+  color: #eef2f7;
+
+  font-size: 1.18rem;
+  font-weight: 620;
+}
+
+.augustaServiceCard p,
+.augustaApproachGrid p {
+  margin: 0;
+
+  color: var(--augusta-muted);
+
+  font-size: 0.97rem;
+  line-height: 1.74;
+}
+
+/* ---------------------------------------
+   EXPERIENCE
+--------------------------------------- */
+
+.augustaWork {
+  border-top: 1px solid var(--augusta-line);
+}
+
+.augustaTextLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 10px;
+
+  color: #e8edf4;
+
+  font-weight: 620;
+
+  text-decoration: none;
+}
+
+.augustaTextLink span {
+  color: var(--augusta-blue);
+
+  transition: transform 180ms ease;
+}
+
+.augustaTextLink:hover span {
+  transform: translateX(5px);
+}
+
+.augustaProofStrip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  margin-top: 90px;
+
+  border-top: 1px solid var(--augusta-line);
+  border-bottom: 1px solid var(--augusta-line);
+}
+
+.augustaProofStrip > div {
+  padding: 26px 22px;
+
+  border-right: 1px solid var(--augusta-line);
+}
+
+.augustaProofStrip > div:last-child {
+  border-right: 0;
+}
+
+.augustaProofStrip strong,
+.augustaProofStrip span {
+  display: block;
+}
+
+.augustaProofStrip strong {
+  margin-bottom: 7px;
+
+  color: #edf1f6;
+
+  font-size: 0.88rem;
+}
+
+.augustaProofStrip span {
+  color: var(--augusta-subtle);
+
+  font-size: 0.78rem;
+}
+
+/* ---------------------------------------
+   APPROACH
+--------------------------------------- */
+
+.augustaApproach {
+  padding-top: 135px;
+  padding-bottom: 135px;
+
+  border-top: 1px solid var(--augusta-line);
+  border-bottom: 1px solid var(--augusta-line);
+
+  background: var(--augusta-surface);
+}
+
+.augustaApproachHeading {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(330px, 0.78fr);
+
+  gap: clamp(70px, 8vw, 130px);
+
+  align-items: end;
+
+  margin-bottom: 75px;
+}
+
+.augustaApproachHeading > p {
+  margin: 0;
+
+  color: var(--augusta-muted);
+
+  font-size: 1.06rem;
+  line-height: 1.8;
+}
+
+/* ---------------------------------------
+   LOCAL
+--------------------------------------- */
+
+.augustaLocal {
+  border-bottom: 1px solid var(--augusta-line);
+}
+
+/* ---------------------------------------
+   TECH
+--------------------------------------- */
+
+.augustaTech {
+  padding-top: 135px;
+  padding-bottom: 135px;
+
+  background:
+    linear-gradient(
+      130deg,
+      rgba(99, 164, 255, 0.055),
+      transparent 43%
+    ),
+    var(--augusta-surface-soft);
+}
+
+.augustaTechIntroduction {
+  margin-bottom: 34px;
+}
+
+.augustaTechList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.augustaTechList span {
+  padding: 10px 14px;
+
+  border: 1px solid var(--augusta-line);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  color: #dce2ea;
+
+  font-size: 0.82rem;
+}
+
+/* ---------------------------------------
+   FIT
+--------------------------------------- */
+
+.augustaFit {
+  border-top: 1px solid var(--augusta-line);
+}
+
+.augustaFitList {
+  border-top: 1px solid var(--augusta-line);
+}
+
+.augustaFitList p {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 18px;
+
+  margin: 0;
+  padding: 25px 0;
+
+  border-bottom: 1px solid var(--augusta-line);
+
+  color: var(--augusta-muted);
+
+  line-height: 1.7;
+}
+
+.augustaFitList p span {
+  color: var(--augusta-blue);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+/* ---------------------------------------
+   CTA
+--------------------------------------- */
+
+.augustaCTA {
+  padding-top: 140px;
+  padding-bottom: 56px;
+
+  border-top: 1px solid var(--augusta-line);
+
+  background:
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(99, 164, 255, 0.1),
+      transparent 30%
+    ),
+    var(--augusta-bg-deep);
+}
+
+.augustaCTAGrid {
+  align-items: end;
+}
+
+.augustaCTAGrid p {
+  max-width: 540px;
+  margin-bottom: 34px;
+}
+
+.augustaFinalButton {
+  min-width: 205px;
+}
+
+.augustaCTAFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  margin-top: 125px;
+  padding-top: 25px;
+
+  border-top: 1px solid var(--augusta-line);
+
+  color: var(--augusta-subtle);
+
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+}
+
+/* ---------------------------------------
+   RESPONSIVE
+--------------------------------------- */
+
+@media (max-width: 1100px) {
+  .augustaHero {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(280px, 0.45fr);
+
+    gap: 60px;
+  }
+
+  .augustaServiceGrid,
+  .augustaApproachGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .augustaServiceCard:nth-child(2),
+  .augustaApproachGrid article:nth-child(2) {
+    border-right: 0;
+  }
+
+  .augustaServiceCard:nth-child(-n + 2),
+  .augustaApproachGrid article:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--augusta-line);
+  }
+
+  .augustaProofStrip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .augustaProofStrip > div:nth-child(3) {
+    border-right: 0;
+  }
+
+  .augustaProofStrip > div:nth-child(-n + 3) {
+    border-bottom: 1px solid var(--augusta-line);
+  }
+}
+
+@media (max-width: 820px) {
+  .augustaPage .pageShell {
+    width: min(100% - 38px, 1380px);
+  }
+
+  .augustaHero,
+  .augustaIntroGrid,
+  .augustaWorkGrid,
+  .augustaLocal,
+  .augustaFitGrid,
+  .augustaTechGrid,
+  .augustaCTAGrid,
+  .augustaApproachHeading {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .augustaHero {
+    padding-top: 78px;
+    padding-bottom: 90px;
+  }
+
+  .augustaHero h1 {
+    font-size: clamp(3.8rem, 14vw, 6rem);
+  }
+
+  .augustaHeroAside {
+    padding: 30px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--augusta-line);
+  }
+
+  .augustaStatementInner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .augustaIntro,
+  .augustaWork,
+  .augustaLocal,
+  .augustaFit,
+  .augustaApproach,
+  .augustaTech {
+    padding-top: 95px;
+    padding-bottom: 95px;
+  }
+
+  .augustaServices {
+    padding-bottom: 95px;
+  }
+
+  .augustaCTA {
+    padding-top: 100px;
+  }
+
+  .augustaCTAFooter {
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-top: 85px;
+  }
+}
+
+@media (max-width: 580px) {
+  .augustaPage .pageShell {
+    width: calc(100% - 32px);
+  }
+
+  .augustaHero h1 {
+    font-size: clamp(3.2rem, 16.5vw, 4.8rem);
+    line-height: 0.92;
+  }
+
+  .augustaHeroLead {
+    margin-top: 30px;
+  }
+
+  .augustaHeroActions {
+    flex-direction: column;
+  }
+
+  .augustaPrimaryButton,
+  .augustaSecondaryButton {
+    width: 100%;
+  }
+
+  .augustaStatementInner {
+    padding-top: 65px;
+    padding-bottom: 70px;
+  }
+
+  .augustaServiceGrid,
+  .augustaApproachGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .augustaServiceCard,
+  .augustaApproachGrid article,
+  .augustaServiceCard:nth-child(2),
+  .augustaApproachGrid article:nth-child(2) {
+    min-height: 0;
+
+    border-right: 0;
+    border-bottom: 1px solid var(--augusta-line);
+  }
+
+  .augustaServiceCard:last-child,
+  .augustaApproachGrid article:last-child {
+    border-bottom: 0;
+  }
+
+  .augustaCardNumber {
+    margin-bottom: 48px;
+  }
+
+  .augustaProofStrip {
+    grid-template-columns: 1fr;
+  }
+
+  .augustaProofStrip > div,
+  .augustaProofStrip > div:nth-child(3) {
+    border-right: 0;
+    border-bottom: 1px solid var(--augusta-line);
+  }
+
+  .augustaProofStrip > div:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .augustaPrimaryButton,
+  .augustaSecondaryButton,
+  .augustaTextLink span,
+  .augustaServiceCard,
+  .augustaApproachGrid article {
+    transition: none;
+  }
+}
