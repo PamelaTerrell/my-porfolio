@@ -1,11 +1,50 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import ExternalLink from "./ExternalLink";
-import "./Footer.css";
-import ptlogo from "../assets/ptlogo.png";
+
 import { externalSites } from "../data/projects";
+import ptlogo from "../assets/ptlogo.png";
+
+import "./Footer.css";
+
+const footerNavigation = [
+  {
+    label: "Selected Work",
+    to: "/projects",
+  },
+  {
+    label: "Augusta Web Development",
+    to: "/web-development-augusta-ga",
+  },
+  {
+    label: "About Stabile USA",
+    to: "/stabile-usa",
+  },
+  {
+    label: "Collaborate",
+    to: "/work-with-me",
+  },
+];
+
+const socialLinks = [
+  {
+    label: "GitHub",
+    url: "https://github.com/PamelaTerrell",
+  },
+  {
+    label: "Stabile USA on Bluesky",
+    url: "https://bsky.app/profile/stabileusa.bsky.social",
+  },
+  {
+    label: "Stabile USA on Instagram",
+    url: "https://www.instagram.com/stabileusa/",
+  },
+];
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="siteFooter">
       <div className="siteFooterInner">
@@ -15,11 +54,17 @@ export default function Footer() {
             alt=""
             aria-hidden="true"
             className="footerLogo"
+            width="1024"
+            height="1024"
+            loading="lazy"
           />
 
           <div>
             <strong>Pamela J. Terrell</strong>
-            <p>Founder &amp; Full-Stack Product Developer</p>
+
+            <p>
+              Founder &amp; Full-Stack Product Developer
+            </p>
           </div>
         </div>
 
@@ -27,21 +72,14 @@ export default function Footer() {
           className="footerNavigation"
           aria-label="Footer navigation"
         >
-          <Link to="/projects">
-            Selected Work
-          </Link>
-
-          <Link to="/web-development-augusta-ga">
-            Augusta Web Development
-          </Link>
-
-          <Link to="/stabile-usa">
-            About Stabile USA
-          </Link>
-
-          <Link to="/work-with-me">
-            Collaborate
-          </Link>
+          {footerNavigation.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+            >
+              {item.label}
+            </Link>
+          ))}
 
           <a href="mailto:agentpamelajterrell@gmail.com">
             Email Pamela
@@ -56,21 +94,19 @@ export default function Footer() {
             Explore Stabile USA
           </ExternalLink>
 
-          <ExternalLink href="https://github.com/PamelaTerrell">
-            GitHub
-          </ExternalLink>
-
-          <ExternalLink href="https://bsky.app/profile/stabileusa.bsky.social">
-            Stabile USA on Bluesky
-          </ExternalLink>
-
-          <ExternalLink href="https://www.instagram.com/stabileusa/">
-            Stabile USA on Instagram
-          </ExternalLink>
+          {socialLinks.map((link) => (
+            <ExternalLink
+              key={link.url}
+              href={link.url}
+            >
+              {link.label}
+            </ExternalLink>
+          ))}
         </div>
 
         <p className="footerCopyright">
-          © {new Date().getFullYear()} Pamela J. Terrell. All rights reserved.
+          © {currentYear} Pamela J. Terrell.
+          {" "}All rights reserved.
         </p>
       </div>
     </footer>

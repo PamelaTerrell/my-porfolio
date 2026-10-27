@@ -1,13 +1,16 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import ExternalLink from "../components/ExternalLink";
 import ProductSwitchboard from "../components/ProductSwitchboard";
+
 import {
   externalSites,
   featuredProjects,
   getSupportingProject,
   switchboardGroups,
 } from "../data/projects";
+
 import pjtImage from "../assets/pamela-hero-portrait2.jpg";
 import "./Portfolio.css";
 
@@ -17,19 +20,23 @@ const APP_STORE_URL =
 const buildPrinciples = [
   {
     title: "Identify the problem",
-    text: "Understand who the product is for, what they need to do, and where the current experience becomes confusing or unnecessarily difficult.",
+    text:
+      "Understand the audience, the problem they need solved, and where existing experiences create confusion, friction, or unnecessary complexity.",
   },
   {
     title: "Shape the product",
-    text: "Define the content, flow, features, boundaries, and visual direction around the product’s actual purpose.",
+    text:
+      "Define the experience, content, features, user journeys, and visual direction around the product's purpose and the people it serves.",
   },
   {
     title: "Build the system",
-    text: "Develop the interface and the underlying data, services, integrations, and operational tools that make it work.",
+    text:
+      "Develop the frontend experience and the underlying data, services, integrations, and operational tools that make the product work.",
   },
   {
     title: "Operate what launched",
-    text: "Test the real experience, publish or distribute the product, support the live system, and keep learning from what operation reveals.",
+    text:
+      "Test, release, maintain, and improve the product through real-world use, ongoing evaluation, and practical iteration.",
   },
 ];
 
@@ -41,17 +48,17 @@ export default function Home() {
   const vinoPairings = getSupportingProject("VinoPairings");
 
   function focusSwitchboard() {
-    window.setTimeout(
-      () =>
-        document
-          .getElementById("product-switchboard")
-          ?.focus({ preventScroll: true }),
-      0
-    );
+    window.setTimeout(() => {
+      document
+        .getElementById("product-switchboard")
+        ?.focus({ preventScroll: true });
+    }, 0);
   }
 
   return (
     <main id="main-content" className="portfolioSite">
+      {/* HERO */}
+
       <section
         className="quietFounderHero pageShell"
         aria-labelledby="quiet-founder-heading"
@@ -93,22 +100,25 @@ export default function Home() {
         <div className="quietHeroPortrait">
           <img
             src={pjtImage}
-            alt="Pamela J. Terrell"
+            alt="Portrait of Pamela J. Terrell"
             width="1290"
             height="1790"
+            fetchPriority="high"
           />
         </div>
       </section>
+
+      {/* PRODUCT SWITCHBOARD */}
 
       <section
         id="product-switchboard"
         className="homeSection pageShell"
         aria-labelledby="switchboard-heading"
-        tabIndex="-1"
+        tabIndex={-1}
       >
         <div className="sectionHeading switchboardIntroduction">
           <p className="sectionEyebrow">
-            Pamela Product Index · Featured work
+            Pamela Product Index · Featured Work
           </p>
 
           <h2 id="switchboard-heading">
@@ -116,10 +126,13 @@ export default function Home() {
           </h2>
 
           <p>
-            Six featured products across web and mobile.
-            Different audiences. One end-to-end approach:
-            identify the problem, shape the product, build
-            the system, and operate what launches.
+            Explore digital products I've conceived,
+            designed, developed, launched, and maintained
+            across web and mobile. Each serves a different
+            audience and purpose, but all reflect an
+            end-to-end approach to building thoughtful,
+            useful experiences that continue evolving
+            beyond launch.
           </p>
         </div>
 
@@ -136,6 +149,8 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PRODUCT DEVELOPMENT APPROACH */}
+
       <section
         className="buildApproach homeSection"
         aria-labelledby="build-heading"
@@ -143,19 +158,19 @@ export default function Home() {
         <div className="pageShell">
           <div className="sectionHeading">
             <p className="sectionEyebrow">
-              Pamela’s product method
+              My Product Development Approach
             </p>
 
             <h2 id="build-heading">
-              Identify the problem → Shape the product →
-              Build the system → Operate what launched
+              From idea to launch—and everything that
+              comes after.
             </h2>
 
             <p className="methodStatement">
-              I do not just build the interface. I decide
-              what the product should be, build the systems
-              behind it, prepare it for release, and
-              continue operating what launches.
+              I build more than interfaces. I help shape
+              the product, design the experience, develop
+              the systems behind it, and take responsibility
+              for making it work in the real world.
             </p>
           </div>
 
@@ -165,7 +180,9 @@ export default function Home() {
                 className="buildPrinciple"
                 key={principle.title}
               >
-                <span>0{index + 1}</span>
+                <span aria-hidden="true">
+                  0{index + 1}
+                </span>
 
                 <h3>{principle.title}</h3>
 
@@ -175,6 +192,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ABOUT */}
 
       <section
         id="about"
@@ -191,30 +210,37 @@ export default function Home() {
           </h2>
 
           <p>
-            I’m Pamela J. Terrell, founder of Stabile USA. I
-            create independent digital products across web
-            and mobile and work with people whose ideas need
-            both thoughtful direction and practical
-            execution.
+            I'm Pamela J. Terrell, founder of Stabile USA.
+            I design, develop, launch, and operate independent
+            digital products across web and mobile. My work
+            brings together technical development, thoughtful
+            user experiences, and the practical decisions
+            required to turn an idea into a working product.
           </p>
 
           <p>
-            My role often crosses boundaries separated on
-            larger teams: research, product definition,
-            content structure, design, frontend and backend
-            development, data systems, integrations,
-            authentication, AI features, moderation,
-            testing, deployment, mobile distribution,
-            launch, and continued operation.
+            My strengths include frontend development with
+            React, responsive interface design, and creating
+            experiences that make complex information easier
+            to understand and use. I also work across backend
+            development, databases, authentication, payments,
+            APIs, AI integrations, moderation systems,
+            testing, deployment, and ongoing maintenance.
           </p>
 
           <p>
-            That work now includes publishing consumer
-            software through the Apple App Store, alongside
-            the web platforms and independent products I
-            continue to build and operate.
+            As an independent product developer, I often
+            take responsibility for the entire lifecycle:
+            defining the product, designing the experience,
+            building the application, preparing it for
+            release, and supporting it after launch.
+            My work includes publicly available web
+            platforms and a consumer application published
+            through the Apple App Store.
           </p>
         </div>
+
+        {/* DEVELOPMENT TIMELINE */}
 
         <ol
           className="developmentTimeline"
@@ -224,12 +250,19 @@ export default function Home() {
             <strong>2016</strong>
 
             <span>
-              <ExternalLink href={pinkertonWilliams.liveUrl}>
-                PinkertonWilliams.org
-              </ExternalLink>{" "}
+              {pinkertonWilliams ? (
+                <ExternalLink
+                  href={pinkertonWilliams.liveUrl}
+                >
+                  PinkertonWilliams.org
+                </ExternalLink>
+              ) : (
+                "PinkertonWilliams.org"
+              )}{" "}
               began as my college Web Design final project
-              and became a lasting community website I
-              continue maintaining.
+              and grew into a long-running community
+              website that I continue maintaining and
+              modernizing.
             </span>
           </li>
 
@@ -238,14 +271,18 @@ export default function Home() {
 
             <span>
               I completed the Per Scholas Software
-              Engineering program and built{" "}
-              <ExternalLink href={vinoPairings.url}>
-                VinoPairings
-              </ExternalLink>{" "}
-              as my first full-stack application, then
-              continued reshaping it into an actively
-              maintained wine-pairing product with a
-              user-facing AI sommelier.
+              Engineering program and created{" "}
+              {vinoPairings ? (
+                <ExternalLink href={vinoPairings.url}>
+                  VinoPairings
+                </ExternalLink>
+              ) : (
+                "VinoPairings"
+              )}{" "}
+              as my first full-stack application. What
+              began as a final project evolved into an
+              independently maintained wine-pairing
+              platform featuring an AI sommelier.
             </span>
           </li>
 
@@ -253,42 +290,46 @@ export default function Home() {
             <strong>2026</strong>
 
             <span>
-              I expanded Stabile USA into a growing group of
-              founder-led digital products spanning consumer
-              tools, storytelling, membership systems,
-              community experiences, and mobile software.
-              During the year I also published{" "}
+              I expanded Stabile USA into a growing
+              collection of digital products spanning
+              consumer tools, storytelling, membership
+              platforms, community experiences, and mobile
+              software. I also designed, developed, and
+              published{" "}
               <ExternalLink href={APP_STORE_URL}>
                 I Love You So Much
               </ExternalLink>{" "}
-              on the Apple App Store after taking version
-              1.0 through development, moderation design,
-              iOS packaging, App Store Connect, and Apple
-              App Review.
+              on the Apple App Store, taking the application
+              through development, testing, iOS packaging,
+              App Store Connect, and Apple's review process.
             </span>
           </li>
         </ol>
       </section>
 
-      <section className="stabileIntroduction homeSection">
+      {/* STABILE USA */}
+
+      <section
+        className="stabileIntroduction homeSection"
+        aria-labelledby="stabile-heading"
+      >
         <div className="pageShell">
           <p className="sectionEyebrow">
-            My independent venture studio
+            My Independent Venture Studio
           </p>
 
-          <h2>
-            Stabile USA gives focused ideas a place to
-            become real products.
+          <h2 id="stabile-heading">
+            Stabile USA gives focused ideas a place
+            to become real products.
           </h2>
 
           <p>
             Stabile USA is the parent company and creative
-            home for my independent products. Each venture
-            has its own purpose, audience, and identity
-            while remaining part of a studio built around
+            home for my independent digital products.
+            Each venture has its own purpose, audience,
+            and identity, while sharing a commitment to
             useful ideas, thoughtful execution, long-term
-            ownership, and products that continue evolving
-            after launch.
+            ownership, and continuous improvement.
           </p>
 
           <ExternalLink
@@ -300,20 +341,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="collaborationCallout pageShell">
+      {/* COLLABORATION */}
+
+      <section
+        className="collaborationCallout pageShell"
+        aria-labelledby="collaboration-heading"
+      >
         <p className="sectionEyebrow">
           Collaborate
         </p>
 
-        <h2>
-          Have a product that needs both direction and
-          execution?
+        <h2 id="collaboration-heading">
+          Have an idea that needs both direction
+          and execution?
         </h2>
 
         <p>
-          I’m interested in thoughtful product-development
-          work, strategic collaborations, and partnerships
-          around useful digital ideas across web and mobile.
+          I welcome thoughtful product-development
+          opportunities, frontend and full-stack projects,
+          and strategic collaborations with people who
+          value useful, well-designed digital experiences.
         </p>
 
         <Link

@@ -1,3 +1,4 @@
+
 import crimeRecordingsPreview from "../assets/crime-recordings-preview.png";
 import medicarePreview from "../assets/medicare-before-you-switch.png";
 import superCleaningLadyPreview from "../assets/supercleaninglady.png";
@@ -13,7 +14,6 @@ import bigPacePreview from "../assets/pace.png";
 import vaBuddyPreview from "../assets/getvabuddy.jpg";
 import manWomenDesirePreview from "../assets/desire.jpg";
 import sensualityQuizPreview from "../assets/senses.png";
-import mixerPreview from "../assets/mixer.png";
 import iLoveYouSoMuchPreview from "../assets/i-love-you-so-much-preview.png";
 
 export const externalSites = {
@@ -220,79 +220,63 @@ export const featuredProjects = [
     tone: "playful",
   },
 
-  
- {
-  featured: true,
-  index: "05",
-  name: "I Love You So Much",
-  slug: "i-love-you-so-much",
-  category:
-    "Community love-note and private sharing product",
-  classification: "Founder-led digital product",
-  status: "Active on the web and Apple App Store",
-  launchYear: 2026,
-  role:
-    "Founder, product owner, designer, and full-stack product developer",
-  parent: "Stabile USA",
-
-  image: iLoveYouSoMuchPreview,
-  imageAlt:
-    "I Love You So Much community and private love-note experience",
-
-  liveUrl: "https://www.iloveyousomuch.love",
-  liveLabel: "Visit I Love You So Much",
-
-  appStoreUrl:
-    "https://apps.apple.com/us/app/i-love-you-so-much/id6810764631",
-  appStoreLabel: "View on the App Store",
-
-  caseStudyPath: "/projects/i-love-you-so-much",
-
-  ownership:
-    "A Stabile USA product · Conceived, designed, built, published, and operated by Pamela J. Terrell",
-
-  signature: {
-    problem:
-      "Most social platforms are not designed around thoughtful, intentional expressions of love and appreciation.",
-    owned:
-      "Product concept, identity, UX, full-stack development, moderation, private sharing, and release",
-    operating:
-      "Public love notes, moderated submissions, persistent reactions, reporting, private sharing, themed recipient experiences, and web and App Store distribution",
+  {
+    featured: true,
+    index: "05",
+    name: "I Love You So Much",
+    slug: "i-love-you-so-much",
+    category:
+      "Community love-note and private sharing product",
+    classification: "Founder-led digital product",
+    status: "Active on the web and Apple App Store",
+    launchYear: 2026,
+    role:
+      "Founder, product owner, designer, and full-stack product developer",
+    parent: "Stabile USA",
+    image: iLoveYouSoMuchPreview,
+    imageAlt:
+      "I Love You So Much community and private love-note experience",
+    liveUrl: "https://www.iloveyousomuch.love",
+    liveLabel: "Visit I Love You So Much",
+    appStoreUrl:
+      "https://apps.apple.com/us/app/i-love-you-so-much/id6810764631",
+    appStoreLabel: "View on the App Store",
+    caseStudyPath: "/projects/i-love-you-so-much",
+    ownership:
+      "A Stabile USA product · Conceived, designed, built, published, and operated by Pamela J. Terrell",
+    signature: {
+      problem:
+        "Most social platforms are not designed around thoughtful, intentional expressions of love and appreciation.",
+      owned:
+        "Product concept, identity, UX, full-stack development, moderation, private sharing, and release",
+      operating:
+        "Public love notes, moderated submissions, persistent reactions, reporting, private sharing, themed recipient experiences, and web and App Store distribution",
+    },
+    featuredDecision:
+      "Separate the public community experience from private one-to-one sharing while giving both experiences the same warm, intentional product identity.",
+    thesis:
+      "I Love You So Much is a digital sharing product built around the things people want to say when a simple “I love you” does not feel big enough.",
+    preview:
+      "I conceived, designed, and built the product from concept through launch, including the public Love Wall, anonymous submissions, moderation tools, persistent heart reactions, reporting, private love-note creation, themed envelope choices, dynamic share previews, and recipient reveal experiences. I later extended the product to mobile and took version 1.0 through App Store submission and public release.",
+    labels: [
+      "Full-stack product development",
+      "Community submissions and moderation",
+      "Private sharing",
+      "Persistent reactions and reporting",
+      "Themed recipient experiences",
+      "Web and mobile distribution",
+    ],
+    stack: [
+      "React",
+      "Supabase",
+      "PostgreSQL",
+      "Supabase Auth",
+      "Vercel",
+      "Vercel Serverless Functions",
+      "Resend",
+    ],
+    tone: "love",
   },
-
-  featuredDecision:
-    "Separate the public community experience from private one-to-one sharing while giving both experiences the same warm, intentional product identity.",
-
-  thesis:
-    "I Love You So Much is a digital sharing product built around the things people want to say when a simple “I love you” does not feel big enough.",
-
-  preview:
-    "I conceived, designed, and built the product from concept through launch, including the public Love Wall, anonymous submissions, moderation tools, persistent heart reactions, reporting, private love-note creation, themed envelope choices, dynamic share previews, and recipient reveal experiences. I later extended the product to mobile and took version 1.0 through App Store submission and public release.",
-
-  labels: [
-    "Full-stack product development",
-    "Community submissions and moderation",
-    "Private sharing",
-    "Persistent reactions and reporting",
-    "Themed recipient experiences",
-    "Web and mobile distribution",
-  ],
-
-  stack: [
-    "React",
-    "Supabase",
-    "PostgreSQL",
-    "Supabase Auth",
-    "Vercel",
-    "Vercel Serverless Functions",
-    "Resend",
-  ],
-
-  tone: "love",
-},
-
-   
-  
 
   {
     featured: true,
@@ -502,18 +486,6 @@ export const supportingProjects = [
     image: redLipsticksPreview,
     classification:
       "Founder-led consumer product",
-  },
-
-  {
-    featured: false,
-    group: "Consumer Products and Experiments",
-    name: "Mixer",
-    description:
-      "A playful interactive martini-building experiment.",
-    url: "https://mixer.pamelajterrell.com",
-    image: mixerPreview,
-    imageAlt:
-      "Mixer interface for choosing a base, modifiers, and garnish before shaking a custom martini",
   },
 ];
 
