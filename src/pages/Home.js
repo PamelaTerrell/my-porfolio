@@ -1,6 +1,7 @@
 
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+
 import ExternalLink from "../components/ExternalLink";
 import ProductSwitchboard from "../components/ProductSwitchboard";
 
@@ -41,6 +42,8 @@ const buildPrinciples = [
 ];
 
 export default function Home() {
+  const switchboardRef = useRef(null);
+
   const pinkertonWilliams = featuredProjects.find(
     (project) => project.slug === "pinkerton-williams"
   );
@@ -48,11 +51,13 @@ export default function Home() {
   const vinoPairings = getSupportingProject("VinoPairings");
 
   function focusSwitchboard() {
-    window.setTimeout(() => {
-      document
-        .getElementById("product-switchboard")
-        ?.focus({ preventScroll: true });
-    }, 0);
+    // Let the native anchor navigate to the section first,
+    // then move keyboard focus to the section heading area.
+    window.requestAnimationFrame(() => {
+      switchboardRef.current?.focus({
+        preventScroll: true,
+      });
+    });
   }
 
   return (
@@ -103,7 +108,7 @@ export default function Home() {
             alt="Portrait of Pamela J. Terrell"
             width="1290"
             height="1790"
-            fetchPriority="high"
+            decoding="async"
           />
         </div>
       </section>
@@ -111,6 +116,7 @@ export default function Home() {
       {/* PRODUCT SWITCHBOARD */}
 
       <section
+        ref={switchboardRef}
         id="product-switchboard"
         className="homeSection pageShell"
         aria-labelledby="switchboard-heading"
@@ -181,7 +187,7 @@ export default function Home() {
                 key={principle.title}
               >
                 <span aria-hidden="true">
-                  0{index + 1}
+                  {String(index + 1).padStart(2, "0")}
                 </span>
 
                 <h3>{principle.title}</h3>
