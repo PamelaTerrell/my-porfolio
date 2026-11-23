@@ -7,13 +7,13 @@ import vinoPairingsPreview from "../assets/pairings.png";
 import lifeStoriesPreview from "../assets/LifeStories.png";
 import redLipsticksPreview from "../assets/redlipsticks.png";
 import psychologicalManipulationPreview from "../assets/psych.png";
-import carePathWellPreview from "../assets/carepath.png";
-import beforeAfterPreview from "../assets/beforeandafter.png";
+
+
 import cosmicZodiacPreview from "../assets/cosmic.png";
 import bigPacePreview from "../assets/pace.png";
 import vaBuddyPreview from "../assets/getvabuddy.jpg";
-import manWomenDesirePreview from "../assets/desire.jpg";
-import sensualityQuizPreview from "../assets/senses.png";
+
+
 import iLoveYouSoMuchPreview from "../assets/i-love-you-so-much-preview.png";
 
 export const externalSites = {
@@ -350,25 +350,9 @@ export const supportingProjects = [
     image: psychologicalManipulationPreview,
   },
 
-  {
-    featured: false,
-    group: "Story, Reflection, and Human Experience",
-    name: "The Man Women Desire",
-    description:
-      "An interactive assessment exploring confidence, attraction, and relational dynamics.",
-    url: "https://themanwomendesire.com",
-    image: manWomenDesirePreview,
-  },
+ 
 
-  {
-    featured: false,
-    group: "Story, Reflection, and Human Experience",
-    name: "Sensuality Quiz",
-    description:
-      "A guided experience exploring connection, awareness, and emotional presence.",
-    url: "https://sensualityquiz.com",
-    image: sensualityQuizPreview,
-  },
+  
 
   {
     featured: false,
@@ -390,25 +374,9 @@ export const supportingProjects = [
     image: vaBuddyPreview,
   },
 
-  {
-    featured: false,
-    group: "Practical and Community Platforms",
-    name: "CarePathWell",
-    description:
-      "A centralized intake and scheduling experience for behavioral health coordination.",
-    url: "https://carepathwell.com",
-    image: carePathWellPreview,
-  },
+  
 
-  {
-    featured: false,
-    group: "Practical and Community Platforms",
-    name: "Before and After Vault",
-    description:
-      "A private and community-based platform for documenting transformation.",
-    url: "https://beforeandaftervault.com",
-    image: beforeAfterPreview,
-  },
+  
 
   {
     featured: false,
