@@ -4,16 +4,11 @@ import medicarePreview from "../assets/medicare-before-you-switch.png";
 import superCleaningLadyPreview from "../assets/supercleaninglady.png";
 import pinkertonWilliamsPreview from "../assets/PW.jpg";
 import vinoPairingsPreview from "../assets/pairings.png";
-import lifeStoriesPreview from "../assets/LifeStories.png";
 import redLipsticksPreview from "../assets/redlipsticks.png";
 import psychologicalManipulationPreview from "../assets/psych.png";
-
-
 import cosmicZodiacPreview from "../assets/cosmic.png";
 import bigPacePreview from "../assets/pace.png";
 import vaBuddyPreview from "../assets/getvabuddy.jpg";
-
-
 import iLoveYouSoMuchPreview from "../assets/i-love-you-so-much-preview.png";
 
 export const externalSites = {
@@ -41,10 +36,8 @@ export const featuredProjects = [
       "A Stabile USA product · Conceived, built, and operated by Pamela J. Terrell",
     signature: {
       problem: "Difficult-to-navigate public-records productions",
-      owned:
-        "Product direction, full-stack build, research, and publishing",
-      operating:
-        "Public archive, membership, and repeatable publishing workflow",
+      owned: "Product direction, full-stack build, research, and publishing",
+      operating: "Public archive, membership, and repeatable publishing workflow",
     },
     featuredDecision:
       "Structure each case and its media as a repeatable publishing system rather than an ordinary article or file directory.",
@@ -71,7 +64,6 @@ export const featuredProjects = [
     ],
     tone: "flagship",
   },
-
   {
     featured: true,
     index: "02",
@@ -81,8 +73,7 @@ export const featuredProjects = [
     classification: "Founder-led product",
     status: "Active and continuing to grow",
     launchYear: 2026,
-    role:
-      "Founder, product owner, product developer, writer, and narrator",
+    role: "Founder, product owner, product developer, writer, and narrator",
     parent: "Stabile USA",
     image: "/images/night-listener-preview.png",
     imageAlt: "Night Listener listening experience",
@@ -92,12 +83,9 @@ export const featuredProjects = [
     ownership:
       "A Stabile USA product · Conceived, built, and operated by Pamela J. Terrell",
     signature: {
-      problem:
-        "Meaningful personal experiences without a quiet place to be heard",
-      owned:
-        "Product direction, writing, narration, development, and publishing",
-      operating:
-        "Listening, membership, and tested submission experiences",
+      problem: "Meaningful personal experiences without a quiet place to be heard",
+      owned: "Product direction, writing, narration, development, and publishing",
+      operating: "Listening, membership, and tested submission experiences",
     },
     featuredDecision:
       "Build around reflective storytelling rather than conventional advice, leaving listeners room to recognize their own meaning.",
@@ -122,7 +110,6 @@ export const featuredProjects = [
     ],
     tone: "reflective",
   },
-
   {
     featured: true,
     index: "03",
@@ -132,8 +119,7 @@ export const featuredProjects = [
     classification: "Founder-led product",
     status: "Active and publicly available",
     launchYear: 2026,
-    role:
-      "Founder, product owner, product developer, and content creator",
+    role: "Founder, product owner, product developer, and content creator",
     parent: "Stabile USA",
     image: medicarePreview,
     imageAlt: "Medicare Before You Switch website checker",
@@ -143,12 +129,9 @@ export const featuredProjects = [
     ownership:
       "A Stabile USA product · Conceived, built, and operated by Pamela J. Terrell",
     signature: {
-      problem:
-        "Coverage decisions shaped by urgency and incomplete benefit claims",
-      owned:
-        "Product strategy, insurance-grounded content, and development",
-      operating:
-        "Education, practical guidance, and a website verification tool",
+      problem: "Coverage decisions shaped by urgency and incomplete benefit claims",
+      owned: "Product strategy, insurance-grounded content, and development",
+      operating: "Education, practical guidance, and a website verification tool",
     },
     featuredDecision:
       "Separate educational domain indicators from technical-threat checking so one result never implies what the other cannot prove.",
@@ -168,7 +151,6 @@ export const featuredProjects = [
     ],
     tone: "trust",
   },
-
   {
     featured: true,
     index: "04",
@@ -178,24 +160,19 @@ export const featuredProjects = [
     classification: "Founder-led product",
     status: "Active and publicly available",
     launchYear: 2026,
-    role:
-      "Founder, product owner, product developer, writer, and creative director",
+    role: "Founder, product owner, product developer, writer, and creative director",
     parent: "Stabile USA",
     image: superCleaningLadyPreview,
-    imageAlt:
-      "Super Cleaning Lady character and cleaning mission",
+    imageAlt: "Super Cleaning Lady character and cleaning mission",
     liveUrl: "https://supercleaninglady.com",
     liveLabel: "Visit Super Cleaning Lady",
     caseStudyPath: "/projects/super-cleaning-lady",
     ownership:
       "A Stabile USA product · Conceived, built, and operated by Pamela J. Terrell",
     signature: {
-      problem:
-        "Household work that feels overwhelming or shame-filled",
-      owned:
-        "Product development, writing, characters, and creative direction",
-      operating:
-        "Practical missions, comics, and a connected character universe",
+      problem: "Household work that feels overwhelming or shame-filled",
+      owned: "Product development, writing, characters, and creative direction",
+      operating: "Practical missions, comics, and a connected character universe",
     },
     featuredDecision:
       "Make the mess the problem—not the person dealing with it—and use humor to create a practical starting point.",
@@ -219,27 +196,22 @@ export const featuredProjects = [
     ],
     tone: "playful",
   },
-
   {
     featured: true,
     index: "05",
     name: "I Love You So Much",
     slug: "i-love-you-so-much",
-    category:
-      "Community love-note and private sharing product",
+    category: "Community love-note and private sharing product",
     classification: "Founder-led digital product",
     status: "Active on the web and Apple App Store",
     launchYear: 2026,
-    role:
-      "Founder, product owner, designer, and full-stack product developer",
+    role: "Founder, product owner, designer, and full-stack product developer",
     parent: "Stabile USA",
     image: iLoveYouSoMuchPreview,
-    imageAlt:
-      "I Love You So Much community and private love-note experience",
+    imageAlt: "I Love You So Much community and private love-note experience",
     liveUrl: "https://www.iloveyousomuch.love",
     liveLabel: "Visit I Love You So Much",
-    appStoreUrl:
-      "https://apps.apple.com/us/app/i-love-you-so-much/id6810764631",
+    appStoreUrl: "https://apps.apple.com/us/app/i-love-you-so-much/id6810764631",
     appStoreLabel: "View on the App Store",
     caseStudyPath: "/projects/i-love-you-so-much",
     ownership:
@@ -277,7 +249,6 @@ export const featuredProjects = [
     ],
     tone: "love",
   },
-
   {
     featured: true,
     index: "06",
@@ -287,24 +258,19 @@ export const featuredProjects = [
     classification: "Volunteer community work",
     status: "Active and maintained since 2016",
     launchYear: 2016,
-    role:
-      "Volunteer website developer and long-term maintainer",
+    role: "Volunteer website developer and long-term maintainer",
     organization: "Pinkerton Williams DAV Chapter 18",
     image: pinkertonWilliamsPreview,
-    imageAlt:
-      "Pinkerton Williams DAV Chapter 18 website",
+    imageAlt: "Pinkerton Williams DAV Chapter 18 website",
     liveUrl: "https://pinkertonwilliams.org",
     liveLabel: "Visit PinkertonWilliams.org",
     caseStudyPath: "/projects/pinkerton-williams",
     ownership:
       "Volunteer community commitment · Maintained since 2016",
     signature: {
-      problem:
-        "Chapter information without a dependable online home",
-      owned:
-        "Volunteer website development and long-term maintenance",
-      operating:
-        "Events, meetings, office information, and contact options",
+      problem: "Chapter information without a dependable online home",
+      owned: "Volunteer website development and long-term maintenance",
+      operating: "Events, meetings, office information, and contact options",
     },
     featuredDecision:
       "Modernize the technology while preserving the familiar information and dependable access the chapter relies on.",
@@ -333,27 +299,12 @@ export const supportingProjects = [
   {
     featured: false,
     group: "Story, Reflection, and Human Experience",
-    name: "Life Stories Now",
-    description:
-      "A narrative platform centered on memory, reflection, and shared human experience.",
-    url: "https://lifestoriesnow.com",
-    image: lifeStoriesPreview,
-  },
-
-  {
-    featured: false,
-    group: "Story, Reflection, and Human Experience",
     name: "Psychological Manipulation",
     description:
       "A reference exploring influence, emotional patterns, and behavioral dynamics.",
     url: "https://psychological-manipulation.com",
     image: psychologicalManipulationPreview,
   },
-
- 
-
-  
-
   {
     featured: false,
     group: "Story, Reflection, and Human Experience",
@@ -363,7 +314,6 @@ export const supportingProjects = [
     url: "https://cosmiczodiacastrology.com",
     image: cosmicZodiacPreview,
   },
-
   {
     featured: false,
     group: "Practical and Community Platforms",
@@ -373,11 +323,6 @@ export const supportingProjects = [
     url: "https://getvabuddy.com",
     image: vaBuddyPreview,
   },
-
-  
-
-  
-
   {
     featured: false,
     group: "Practical and Community Platforms",
@@ -387,7 +332,6 @@ export const supportingProjects = [
     url: "https://bigpacebarbershopandbeautysalon2.com",
     image: bigPacePreview,
   },
-
   {
     featured: false,
     group: "Consumer Products and Experiments",
@@ -442,7 +386,6 @@ export const supportingProjects = [
       "AI chatbot integration",
     ],
   },
-
   {
     featured: false,
     group: "Consumer Products and Experiments",
@@ -452,8 +395,7 @@ export const supportingProjects = [
     url: "https://redlipsticks.com",
     liveLabel: "Visit RedLipsticks.com",
     image: redLipsticksPreview,
-    classification:
-      "Founder-led consumer product",
+    classification: "Founder-led consumer product",
   },
 ];
 
@@ -465,84 +407,44 @@ export const supportingGroups = [
 
 export const switchboardFeaturedProjects = [
   ...featuredProjects,
-
   ...supportingProjects
-    .filter(
-      (project) =>
-        project.switchboardFeatured
-    )
+    .filter((project) => project.switchboardFeatured)
     .map((project) => ({
       ...project,
-
       featured: true,
-
-      index:
-        project.switchboardIndex,
-
-      category:
-        project.switchboardCategory ||
-        project.group,
-
-      thesis:
-        project.description,
-
-      signature:
-        project.switchboardSignature,
-
-      featuredDecision:
-        project.switchboardDecision,
+      index: project.switchboardIndex,
+      category: project.switchboardCategory || project.group,
+      thesis: project.description,
+      signature: project.switchboardSignature,
+      featuredDecision: project.switchboardDecision,
     })),
 ];
 
 export const switchboardGroups = [
   {
     name: "Featured Products",
-    projects:
-      switchboardFeaturedProjects,
+    projects: switchboardFeaturedProjects,
   },
-
-  ...supportingGroups.map(
-    (name) => ({
-      name,
-
-      projects:
-        supportingProjects.filter(
-          (project) =>
-            project.group === name &&
-            !project.switchboardFeatured
-        ),
-    })
-  ),
+  ...supportingGroups.map((name) => ({
+    name,
+    projects: supportingProjects.filter(
+      (project) => project.group === name && !project.switchboardFeatured
+    ),
+  })),
 ];
 
-export const portfolioProjects =
-  switchboardGroups.flatMap(
-    (group) => group.projects
-  );
+export const portfolioProjects = switchboardGroups.flatMap(
+  (group) => group.projects
+);
 
-export function getFeaturedProject(
-  slug
-) {
-  return featuredProjects.find(
-    (project) =>
-      project.slug === slug
-  );
+export function getFeaturedProject(slug) {
+  return featuredProjects.find((project) => project.slug === slug);
 }
 
-export function getSupportingProject(
-  name
-) {
-  return supportingProjects.find(
-    (project) =>
-      project.name === name
-  );
+export function getSupportingProject(name) {
+  return supportingProjects.find((project) => project.name === name);
 }
 
-export function getProjectLiveLabel(
-  project
-) {
-  return (
-    project.liveLabel ||
-    `Visit ${project.name}`
-  );
+export function getProjectLiveLabel(project) {
+  return project.liveLabel || `Visit ${project.name}`;
 }
