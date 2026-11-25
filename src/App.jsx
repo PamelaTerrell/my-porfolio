@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 
 import SiteHeader from "./components/SiteHeader";
+import PageMetadata from "./components/PageMetadata";
 import Footer from "./components/Footer";
 import CaseStudyPage from "./components/CaseStudyPage";
 
@@ -17,6 +18,7 @@ import NotFound from "./pages/NotFound";
 const App = () => {
   return (
     <div className="app">
+      <PageMetadata />
       <SiteHeader />
 
       <Routes>
@@ -34,7 +36,9 @@ const App = () => {
       </Routes>
 
       <Footer />
-      <Analytics />
+      {import.meta.env.PROD && /^(www\.)?pamelajterrell\.com$/.test(window.location.hostname) && (
+        <Analytics />
+      )}
     </div>
   );
 };

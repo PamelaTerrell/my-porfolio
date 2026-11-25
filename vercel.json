@@ -1,9 +1,10 @@
 {
+  "framework": "vite",
   "buildCommand": "npm run build",
-  "outputDirectory": "build",
+  "outputDirectory": "dist",
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1" },
     { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
+    { "src": "/(?!api(?:/|$))([a-z0-9-]+(?:/[a-z0-9-]+)*)/?$", "dest": "/$1.html", "check": true },
+    { "src": "/(?!api(?:/|$)).*", "dest": "/404.html", "status": 404 }
   ]
 }

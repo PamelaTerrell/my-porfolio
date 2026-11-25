@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import ExternalLink from "./ExternalLink";
 
 import { externalSites } from "../data/projects";
-import ptlogo from "../assets/ptlogo.png";
+import { projectInquiryUrl } from "../data/contact";
+import ptlogo from "../assets/ptlogo-small.webp";
 
 import "./Footer.css";
 
@@ -22,7 +23,7 @@ const footerNavigation = [
     to: "/stabile-usa",
   },
   {
-    label: "Collaborate",
+    label: "Work With Me",
     to: "/work-with-me",
   },
 ];
@@ -54,8 +55,8 @@ export default function Footer() {
             alt=""
             aria-hidden="true"
             className="footerLogo"
-            width="1024"
-            height="1024"
+            width="128"
+            height="128"
             loading="lazy"
           />
 
@@ -63,7 +64,7 @@ export default function Footer() {
             <strong>Pamela J. Terrell</strong>
 
             <p>
-              Founder &amp; Full-Stack Product Developer
+              Independent Web Developer
             </p>
           </div>
         </div>
@@ -81,7 +82,7 @@ export default function Footer() {
             </Link>
           ))}
 
-          <a href="mailto:agentpamelajterrell@gmail.com">
+          <a href={projectInquiryUrl}>
             Email Pamela
           </a>
         </nav>

@@ -1,27 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { contactEmail, projectInquiryUrl } from "../data/contact";
 import "./Portfolio.css";
 
 const services = [
   {
-    title: "New Small-Business Websites",
+    title: "New business websites",
     text:
-      "A new website designed and built from the ground up around your business, customers, content, and goals — with a polished experience across desktop and mobile.",
+      "Give customers a clear place to learn what you offer, find your details, and take the next step on desktop or mobile.",
   },
   {
-    title: "Website Redesign & Replacement",
+    title: "Website redesign and modernization",
     text:
-      "Replace an outdated or ineffective website with a clean, modern site built on a fresh foundation. The existing site can help identify useful content and requirements without limiting what the new experience can become.",
+      "Refresh an existing site with clearer content, easier navigation, and a better mobile experience. Keep the pages and features that still serve your customers.",
   },
   {
-    title: "Custom Web Applications",
+    title: "Custom web applications",
     text:
-      "Build more advanced digital products with features such as authentication, databases, memberships, payments, private content, forms, dashboards, or AI-powered functionality.",
+      "Build an online tool around the way your business works, with features such as customer accounts, memberships, payments, or dashboards.",
   },
   {
-    title: "Founder & Product Builds",
+    title: "Website maintenance and improvements",
     text:
-      "Turn a useful idea into a focused first product by defining what it needs to do, shaping the experience, and building a working foundation that can grow over time.",
+      "Keep an existing site useful with content updates, accessibility fixes, performance improvements, or support after launch.",
+  },
+  {
+    title: "Interactive features and integrations",
+    text:
+      "Add a form, searchable directory, member area, or a connection to an existing service so customers can do more on your site.",
   },
 ];
 
@@ -37,36 +43,36 @@ const projectSteps = [
       "I review the requirements, existing content when relevant, technical needs, and customer experience to establish a practical scope.",
   },
   {
-    title: "Create a fresh foundation",
+    title: "Agree on a scope and quote",
     text:
-      "Rather than being constrained by an outdated implementation, I build the new experience around what the project needs today.",
+      "I outline the deliverables, timing, and an individual quote so you can decide whether to proceed.",
   },
   {
-    title: "Build, review, and launch",
+    title: "Build, launch, and plan support",
     text:
-      "The project moves through working milestones, focused review, testing, and final preparation for launch.",
+      "We review working milestones before launch and agree on any maintenance or improvements you need afterward.",
   },
 ];
 
 export default function WorkWithMe() {
   return (
-    <main id="main-content" className="portfolioSite collaboratePage">
+    <main id="main-content" tabIndex={-1} className="portfolioSite collaboratePage">
       <header className="pageIntroduction pageShell workWithMeHero">
         <p className="sectionEyebrow">Work With Me</p>
 
         <h1>Let’s build something that works for your business.</h1>
 
         <p className="workWithMeIntro">
-          I design and build new websites and digital products for small
-          businesses, independent professionals, and founders — from
-          straightforward business websites to more advanced applications with
-          custom functionality.
+          I’m an independent web developer working with small businesses,
+          professional organizations, and founders in the Augusta, Georgia
+          area and remotely. I can help with design, development, launch,
+          and ongoing updates.
         </p>
 
         <div className="heroActions">
           <a
             className="primaryAction"
-            href="mailto:agentpamelajterrell@gmail.com?subject=Project%20Inquiry"
+            href={projectInquiryUrl}
           >
             Discuss a project
           </a>
@@ -85,11 +91,6 @@ export default function WorkWithMe() {
           <p className="sectionEyebrow">Services</p>
           <h2 id="services-heading">What I can build</h2>
 
-          <p>
-            Whether you need a professional web presence or a more specialized
-            digital product, I prefer to start with a clear foundation and
-            build intentionally around what the project needs.
-          </p>
         </div>
 
         <div className="engagementGrid serviceGrid">
@@ -106,22 +107,20 @@ export default function WorkWithMe() {
         <div className="pageShell splitSection">
           <div>
             <p className="sectionEyebrow">My approach</p>
-            <h2>Built from the ground up, with the whole experience in mind.</h2>
+            <h2>One point of contact from design to launch</h2>
           </div>
 
           <div>
             <p>
-              I prefer to build on a clean foundation rather than inherit a
-              patchwork of old decisions. That makes it possible to think
-              carefully about the structure, design, customer journey, mobile
-              experience, and technology as one connected system.
+              I look at how customers use your website and where they get
+              stuck. From there, we can decide whether a focused improvement,
+              a redesign, or a new application makes sense.
             </p>
 
             <p>
-              Depending on the project, I can work across interface design,
-              frontend development, backend systems, databases,
-              authentication, payments, third-party services, testing,
-              deployment, and launch preparation.
+              For more involved builds, I work with React, JavaScript,
+              TypeScript, and Next.js, along with APIs, databases, account
+              access, subscriptions, and cloud deployment.
             </p>
           </div>
         </div>
@@ -139,8 +138,7 @@ export default function WorkWithMe() {
           </li>
 
           <li>
-            Your current website feels outdated and you would rather replace
-            it than continue patching it.
+            Your current website needs an update, a redesign, or easier maintenance.
           </li>
 
           <li>
@@ -212,14 +210,17 @@ export default function WorkWithMe() {
         <h2>Have something you’d like to build?</h2>
 
         <p>
-          Send me a short introduction and tell me what you are trying to make
-          possible. You do not need a technical plan before getting in touch.
+          Send a short introduction and tell me what you’d like to improve.
+          The button opens a draft in your email app. You can also copy the
+          address below and use webmail.
         </p>
+
+        <p><a className="textAction" href={projectInquiryUrl}>{contactEmail}</a></p>
 
         <div className="heroActions">
           <a
             className="primaryAction"
-            href="mailto:agentpamelajterrell@gmail.com?subject=Website%20or%20Project%20Inquiry"
+            href={projectInquiryUrl}
           >
             Email Pamela
           </a>

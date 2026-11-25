@@ -16,6 +16,7 @@ export default function Work() {
   return (
     <main
       id="main-content"
+      tabIndex={-1}
       className="portfolioSite selectedWorkPage"
     >
       <header className="pageIntroduction pageShell">
@@ -24,18 +25,14 @@ export default function Work() {
         </p>
 
         <h1>
-          Products I’ve shaped, built, launched, and operated
+          Websites and apps I’ve built and launched
         </h1>
 
         <p>
-          This work includes founder-led digital products
-          created through Stabile USA, web applications,
-          consumer experiences, a published mobile
-          application, and a long-running community platform.
-          The detailed case studies focus on what I owned,
-          the decisions behind each product, how the system
-          was built, how it reached users, and what I learned
-          from operating it.
+          Explore work that ranges from subscription platforms and customer
+          tools to a community website I’ve maintained since 2016. Each case
+          study explains what I built, the decisions behind it, and how the
+          finished site or app works.
         </p>
       </header>
 
@@ -216,12 +213,12 @@ export default function Work() {
         </p>
 
         <h2 id="collaboration-heading">
-          Building something useful?
+          Need a website or a custom web application?
         </h2>
 
         <p>
-          Tell me what the product should make possible, who
-          it is for, and where the work stands today.
+          If something here fits what your business needs, tell me about
+          your project and where you’d like help.
         </p>
 
         <Link

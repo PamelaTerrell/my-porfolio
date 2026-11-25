@@ -99,7 +99,7 @@ export default function ProductSwitchboard({ groups }) {
         </select>
       </div>
 
-      <article
+      <div
         className={`switchboardPanel${activeProject.featured ? " switchboardPanelFeatured" : " switchboardPanelSupporting"}`}
         id="switchboard-panel"
         key={activeProject.slug || activeProject.name}
@@ -153,7 +153,7 @@ export default function ProductSwitchboard({ groups }) {
         <div className={`switchboardMedia${activeProject.image ? "" : " switchboardMediaUnavailable"}`} aria-label={activeProject.image ? undefined : "Preview image not available"}>
           {activeProject.image && <img src={activeProject.image} alt={activeProject.imageAlt || `${activeProject.name} project preview`} loading={activeIndex === 0 ? "eager" : "lazy"} />}
         </div>
-      </article>
+      </div>
     </div>
   );
 }

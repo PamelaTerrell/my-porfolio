@@ -6,14 +6,15 @@
     "@vercel/analytics": "^1.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.30.3",
-    "react-scripts": "^5.0.1"
+    "react-router-dom": "^7.18.7"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "vite",
+    "build": "vite build",
+    "test": "vitest run",
+    "dev": "vite",
+    "preview": "vite preview",
+    "test:watch": "vitest"
   },
   "browserslist": {
     "production": [
@@ -26,5 +27,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": "^22.13.0 || ^24.0.0 || >=26.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.3.0",
+    "autoprefixer": "^10.7.0",
+    "jsdom": "^29.1.1",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.2"
   }
 }

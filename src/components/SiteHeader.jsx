@@ -1,12 +1,12 @@
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Link,
   NavLink,
   useLocation,
 } from "react-router-dom";
 
-import ptlogo from "../assets/ptlogo.png";
+import ptlogo from "../assets/ptlogo-small.webp";
 import "./SiteHeader.css";
 
 const navigation = [
@@ -23,13 +23,14 @@ const navigation = [
     to: "/stabile-usa",
   },
   {
-    label: "Collaborate",
+    label: "Work With Me",
     to: "/work-with-me",
   },
 ];
 
 export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const toggleRef = useRef(null);
   const location = useLocation();
 
   const { pathname, hash } = location;
@@ -38,34 +39,27 @@ export default function SiteHeader() {
     setMenuOpen(false);
   }, [pathname, hash]);
 
-  useEffect(() => {
-    if (!hash) return;
-
-    const targetId = decodeURIComponent(hash.slice(1));
-
-    const frame = window.requestAnimationFrame(() => {
-      document.getElementById(targetId)?.scrollIntoView({
-        behavior: "auto",
-        block: "start",
-      });
-    });
-
-    return () => {
-      window.cancelAnimationFrame(frame);
-    };
-  }, [pathname, hash, location.key]);
-
   function closeMenu() {
     setMenuOpen(false);
   }
 
   return (
-    <header className="siteHeader">
+    <header
+      className="siteHeader"
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && menuOpen) {
+          closeMenu();
+          toggleRef.current?.focus();
+        }
+      }}
+    >
+      <a className="skipLink" href="#main-content" onClick={closeMenu}>
+        Skip to main content
+      </a>
       <div className="siteHeaderInner">
         <Link
           className="siteIdentity"
           to="/"
-          aria-label="Pamela J. Terrell home"
           onClick={closeMenu}
         >
           <img
@@ -73,20 +67,22 @@ export default function SiteHeader() {
             src={ptlogo}
             alt=""
             aria-hidden="true"
-            width="1024"
-            height="1024"
+            width="128"
+            height="128"
           />
 
           <span className="siteIdentityText">
             <span>Pamela J. Terrell</span>
 
             <small>
-              Founder &amp; Full-Stack Product Developer
+              Independent Web Developer
             </small>
           </span>
+          <span className="srOnly"> home</span>
         </Link>
 
         <button
+          ref={toggleRef}
           className="navigationToggle"
           type="button"
           aria-expanded={menuOpen}

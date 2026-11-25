@@ -5,11 +5,13 @@ import ProductSignature from "./ProductSignature";
 import { getProjectLiveLabel } from "../data/projects";
 
 export default function ProjectPreview({ project, flagship = false }) {
+  const Heading = flagship ? "h2" : "h3";
+
   return (
     <article className={`${flagship ? "flagshipProject" : "selectedProject"} projectFrame ${project.tone}`}>
       <div className="projectPreviewContent">
         <div className="projectIdentityLine"><span className="projectIndex" aria-label={`Project ${project.index}`}>{project.index}</span><p className="sectionEyebrow">{project.classification} · {project.launchYear}</p></div>
-        <h3>{project.name}</h3>
+        <Heading>{project.name}</Heading>
         <p className="projectOwnership">{project.ownership}</p>
         <p className="projectCategory">{project.category}</p>
         <p className="projectThesis">{project.thesis}</p>

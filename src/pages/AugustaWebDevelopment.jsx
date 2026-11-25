@@ -1,6 +1,6 @@
 // src/pages/AugustaWebDevelopment.js
 
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./AugustaWebDevelopment.css";
 
@@ -73,159 +73,9 @@ const capabilities = [
   "Ongoing improvements",
 ];
 
-function getOrCreateMeta(attribute, key) {
-  let element = document.head.querySelector(
-    `meta[${attribute}="${key}"]`
-  );
-
-  let created = false;
-
-  if (!element) {
-    element = document.createElement("meta");
-    element.setAttribute(attribute, key);
-    document.head.appendChild(element);
-    created = true;
-  }
-
-  return { element, created };
-}
-
-function setMeta(attribute, key, content) {
-  const { element, created } = getOrCreateMeta(attribute, key);
-  const previousContent = element.getAttribute("content");
-
-  element.setAttribute("content", content);
-
-  return {
-    restore() {
-      if (created) {
-        element.remove();
-      } else if (previousContent !== null) {
-        element.setAttribute("content", previousContent);
-      } else {
-        element.removeAttribute("content");
-      }
-    },
-  };
-}
-
 export default function AugustaWebDevelopment() {
-  useEffect(() => {
-    const previousTitle = document.title;
-
-    document.title =
-      "Augusta GA Web Developer | Pamela J. Terrell";
-
-    const metadataRestorers = [
-      setMeta(
-        "name",
-        "description",
-        "Augusta, Georgia web developer Pamela J. Terrell builds modern business websites, custom web applications, website redesigns, landing pages, and digital products."
-      ),
-      setMeta(
-        "property",
-        "og:title",
-        "Augusta GA Web Development | Pamela J. Terrell"
-      ),
-      setMeta(
-        "property",
-        "og:description",
-        "Thoughtful websites and digital products for Augusta-area businesses, organizations, founders, and independent ventures."
-      ),
-      setMeta(
-        "property",
-        "og:url",
-        "https://pamelajterrell.com/web-development-augusta-ga"
-      ),
-      setMeta(
-        "property",
-        "og:type",
-        "website"
-      ),
-    ];
-
-    let canonical = document.head.querySelector(
-      'link[rel="canonical"]'
-    );
-
-    const canonicalWasCreated = !canonical;
-
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
-    }
-
-    const previousCanonical = canonical.getAttribute("href");
-
-    canonical.setAttribute(
-      "href",
-      "https://pamelajterrell.com/web-development-augusta-ga"
-    );
-
-    const existingSchema = document.getElementById(
-      "augusta-web-development-schema"
-    );
-
-    existingSchema?.remove();
-
-    const schema = document.createElement("script");
-    schema.type = "application/ld+json";
-    schema.id = "augusta-web-development-schema";
-
-    schema.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      name: "Pamela J. Terrell Web Development",
-      url:
-        "https://pamelajterrell.com/web-development-augusta-ga",
-      description:
-        "Web development and digital product development for businesses, organizations, founders, and independent ventures.",
-      founder: {
-        "@type": "Person",
-        name: "Pamela J. Terrell",
-        jobTitle: "Founder & Full-Stack Product Developer",
-        url: "https://pamelajterrell.com/",
-      },
-      areaServed: {
-        "@type": "City",
-        name: "Augusta",
-        addressRegion: "GA",
-        addressCountry: "US",
-      },
-      serviceType: [
-        "Web Development",
-        "Business Websites",
-        "Website Redesign",
-        "Custom Web Applications",
-        "Landing Pages",
-        "Digital Product Development",
-      ],
-    });
-
-    document.head.appendChild(schema);
-
-    return () => {
-      document.title = previousTitle;
-
-      metadataRestorers.forEach(({ restore }) => restore());
-
-      if (canonicalWasCreated) {
-        canonical.remove();
-      } else if (previousCanonical !== null) {
-        canonical.setAttribute("href", previousCanonical);
-      } else {
-        canonical.removeAttribute("href");
-      }
-
-      document
-        .getElementById("augusta-web-development-schema")
-        ?.remove();
-    };
-  }, []);
-
   return (
-    <main id="main-content" className="augustaPage">
+    <main id="main-content" tabIndex={-1} className="augustaPage">
       {/* HERO */}
       <section
         className="augustaHero pageShell"
@@ -245,10 +95,10 @@ export default function AugustaWebDevelopment() {
           </h1>
 
           <p className="augustaHeroLead">
-            I’m Pamela J. Terrell, a founder and full-stack product
-            developer based in the Augusta, Georgia area. I design and
-            build modern websites and digital products for businesses,
-            organizations, founders, and independent ventures.
+            I’m Pamela J. Terrell, an independent web developer based
+            in the Augusta, Georgia area. I design, build, and maintain
+            websites and web applications for local businesses,
+            organizations, and founders.
           </p>
 
           <div className="augustaHeroActions">

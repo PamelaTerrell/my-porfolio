@@ -61,7 +61,7 @@ export default function Home() {
   }
 
   return (
-    <main id="main-content" className="portfolioSite">
+    <main id="main-content" tabIndex={-1} className="portfolioSite">
       {/* HERO */}
 
       <section
@@ -74,24 +74,28 @@ export default function Home() {
           </h1>
 
           <p className="heroRole">
-            Founder &amp; Full-Stack Product Developer
+            Independent Web Developer
+          </p>
+
+          <p className="heroSummary">
+            I build and maintain websites and custom web applications for
+            small businesses, organizations, and founders in the Augusta,
+            Georgia area and remotely.
           </p>
 
           <div className="heroActions">
+            <Link className="primaryAction" to="/work-with-me">
+              Discuss a project
+            </Link>
+
             <a
-              className="primaryAction"
+              className="secondaryAction"
               href="#product-switchboard"
               onClick={focusSwitchboard}
             >
               View My Work
             </a>
 
-            <Link
-              className="secondaryAction"
-              to="/work-with-me"
-            >
-              Collaborate
-            </Link>
           </div>
 
           <ExternalLink
@@ -106,9 +110,10 @@ export default function Home() {
           <img
             src={pjtImage}
             alt="Portrait of Pamela J. Terrell"
-            width="1290"
-            height="1790"
+            width="1122"
+            height="1402"
             decoding="async"
+            fetchpriority="high"
           />
         </div>
       </section>
@@ -212,7 +217,7 @@ export default function Home() {
           </p>
 
           <h2 id="about-heading">
-            Founder, developer, and hands-on product builder
+            Independent web developer and founder of Stabile USA
           </h2>
 
           <p>
@@ -225,13 +230,10 @@ export default function Home() {
           </p>
 
           <p>
-            My strengths include frontend development with
-            React, responsive interface design, and creating
-            experiences that make complex information easier
-            to understand and use. I also work across backend
-            development, databases, authentication, payments,
-            APIs, AI integrations, moderation systems,
-            testing, deployment, and ongoing maintenance.
+            I build responsive interfaces with React, JavaScript, TypeScript,
+            and Next.js. My projects also use APIs, databases, authentication,
+            subscriptions, and cloud deployment to support the work people
+            need to do.
           </p>
 
           <p>
@@ -243,6 +245,11 @@ export default function Home() {
             My work includes publicly available web
             platforms and a consumer application published
             through the Apple App Store.
+          </p>
+          <p>
+            <Link className="textAction" to="/web-development-augusta-ga">
+              Explore web development services in Augusta
+            </Link>
           </p>
         </div>
 
@@ -358,15 +365,12 @@ export default function Home() {
         </p>
 
         <h2 id="collaboration-heading">
-          Have an idea that needs both direction
-          and execution?
+          Need a website that works better for your business?
         </h2>
 
         <p>
-          I welcome thoughtful product-development
-          opportunities, frontend and full-stack projects,
-          and strategic collaborations with people who
-          value useful, well-designed digital experiences.
+          Tell me about the website you want to launch, the site you need
+          to improve, or the custom feature your customers could use.
         </p>
 
         <Link

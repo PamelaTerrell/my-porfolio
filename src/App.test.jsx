@@ -3,11 +3,9 @@ import React, { act } from "react";
 import { createRoot } from "react-dom/client";
 import { MemoryRouter } from "react-router-dom";
 
-jest.mock(
-  "@vercel/analytics/react",
-  () => ({ Analytics: () => null }),
-  { virtual: true }
-);
+import { expect, test, vi } from "vitest";
+
+vi.mock("@vercel/analytics/react", () => ({ Analytics: () => null }));
 
 import App from "./App";
 
@@ -19,7 +17,7 @@ import {
   switchboardGroups,
 } from "./data/projects";
 
-global.IS_REACT_ACT_ENVIRONMENT = true;
+globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 
 function renderRoute(route) {
   const container = document.createElement("div");
@@ -29,13 +27,7 @@ function renderRoute(route) {
 
   act(() => {
     root.render(
-      <MemoryRouter
-        initialEntries={[route]}
-        future={{
-          v7_startTransition: true,
-          v7_relativeSplatPath: true,
-        }}
-      >
+      <MemoryRouter initialEntries={[route]}>
         <App />
       </MemoryRouter>
     );
@@ -88,7 +80,7 @@ test("renders shared navigation and homepage positioning", () => {
   const view = renderRoute("/");
 
   expect(view.container.textContent).toContain(
-    "Founder & Full-Stack Product Developer"
+    "Independent Web Developer"
   );
 
   expect(
@@ -132,8 +124,8 @@ test("renders the Quiet Founder Hero", () => {
   ).toBe("Pamela J. Terrell");
 
   expect(
-    hero.querySelectorAll("p")
-  ).toHaveLength(1);
+    hero.querySelector(".heroSummary").textContent
+  ).toContain("small businesses");
 
   const portrait = hero.querySelector(
     ".quietHeroPortrait img"
@@ -165,7 +157,7 @@ test("renders the Quiet Founder Hero", () => {
     hero.querySelector(
       'a[href="/work-with-me"]'
     ).textContent
-  ).toBe("Collaborate");
+  ).toBe("Discuss a project");
 
   expect(
     hero.querySelector(
@@ -218,7 +210,7 @@ test("renders the product development approach", () => {
 
   expect(
     headerLogo.getAttribute("src")
-  ).toContain("ptlogo.png");
+  ).toContain("ptlogo-small.webp");
 
   view.cleanup();
 });
@@ -231,7 +223,7 @@ test("renders Selected Work from centralized project data", () => {
   const view = renderRoute("/projects");
 
   expect(view.container.textContent).toContain(
-    "Products I’ve shaped, built, launched, and operated"
+    "Websites and apps I’ve built and launched"
   );
 
   featuredProjects.forEach((project) => {
@@ -616,7 +608,7 @@ test("mobile selector displays RedLipsticks.com", () => {
 
   expect(
     image.getAttribute("src")
-  ).toContain("redlipsticks.png");
+  ).toContain("redlipsticks.webp");
 
   expect(
     view.container.querySelector(
@@ -943,6 +935,11 @@ test.each(
       liveLink.getAttribute("rel")
     ).toContain("noreferrer");
 
+    expect(document.title).toContain(`${name} Case Study`);
+    expect(document.head.querySelector('link[rel="canonical"]').href)
+      .toBe(`https://pamelajterrell.com/projects/${slug}`);
+    expect(view.container.querySelector('main a[href="/work-with-me"]')).not.toBeNull();
+
     view.cleanup();
   }
 );
@@ -967,6 +964,12 @@ test("renders collaboration page without package pricing", () => {
   expect(
     view.container.textContent
   ).not.toMatch(/Starting at \$/i);
+
+  const inquiry = new URL(view.container.querySelector(".workWithMeHero .primaryAction").href);
+  expect(inquiry.protocol).toBe("mailto:");
+  expect(inquiry.pathname).toBe("agentpamelajterrell@gmail.com");
+  expect(inquiry.searchParams.get("subject")).toBe("Web development project inquiry");
+  expect(inquiry.searchParams.get("body")).toContain("What I'd like to build or improve:");
 
   view.cleanup();
 });

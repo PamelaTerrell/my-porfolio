@@ -1,15 +1,16 @@
+import nightListenerPreview from "../assets/night-listener-preview.webp";
 
-import crimeRecordingsPreview from "../assets/crime-recordings-preview.png";
-import medicarePreview from "../assets/medicare-before-you-switch.png";
-import superCleaningLadyPreview from "../assets/supercleaninglady.png";
+import crimeRecordingsPreview from "../assets/crime-recordings-preview.jpg";
+import medicarePreview from "../assets/medicare-before-you-switch.jpg";
+import superCleaningLadyPreview from "../assets/supercleaninglady.jpg";
 import pinkertonWilliamsPreview from "../assets/PW.jpg";
-import vinoPairingsPreview from "../assets/pairings.png";
-import redLipsticksPreview from "../assets/redlipsticks.png";
+import vinoPairingsPreview from "../assets/pairings.webp";
+import redLipsticksPreview from "../assets/redlipsticks.webp";
 import psychologicalManipulationPreview from "../assets/psych.png";
-import cosmicZodiacPreview from "../assets/cosmic.png";
-import bigPacePreview from "../assets/pace.png";
+import cosmicZodiacPreview from "../assets/cosmic.webp";
+import bigPacePreview from "../assets/pace.webp";
 import vaBuddyPreview from "../assets/getvabuddy.jpg";
-import iLoveYouSoMuchPreview from "../assets/i-love-you-so-much-preview.png";
+import iLoveYouSoMuchPreview from "../assets/i-love-you-so-much-preview.jpg";
 
 export const externalSites = {
   stabileUSA: "https://stabileusa.com",
@@ -75,7 +76,8 @@ export const featuredProjects = [
     launchYear: 2026,
     role: "Founder, product owner, product developer, writer, and narrator",
     parent: "Stabile USA",
-    image: "/images/night-listener-preview.png",
+    image: nightListenerPreview,
+    socialImage: "/images/night-listener-preview.png",
     imageAlt: "Night Listener listening experience",
     liveUrl: "https://stabileusa.com/listen",
     liveLabel: "Listen to Night Listener",

@@ -14,7 +14,7 @@ export default function CaseStudyPage() {
   const related = featuredProjects.filter((item) => item.slug !== slug).slice(0, 2);
 
   return (
-    <main id="main-content" className={`caseStudyPage caseStudy-${project.tone}`}>
+    <main id="main-content" tabIndex={-1} className={`caseStudyPage caseStudy-${project.tone}`}>
       <header className="caseStudyHeader pageShell">
         <Link className="backLink" to="/projects">← Selected Work</Link>
         <div className="projectIdentityLine"><span className="projectIndex" aria-label={`Project ${project.index}`}>{project.index}</span><p className="sectionEyebrow">{project.classification} · {project.launchYear}</p></div>
@@ -38,6 +38,11 @@ export default function CaseStudyPage() {
         <section className="editorialSection considerationsSection"><h2>{study.considerations.title}</h2>{study.considerations.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</section>
         <div className="outcomesAndLessons"><section><p className="sectionEyebrow">Current outcome</p><h2>What is working now</h2><ul className="checkList">{study.outcomes.map((item) => <li key={item}>{item}</li>)}</ul></section><section><p className="sectionEyebrow">Lessons</p><h2>What the work taught me</h2><ul className="lessonList">{study.lessons.map((item) => <li key={item}>{item}</li>)}</ul></section></div>
         <section className="nextDirection"><p className="sectionEyebrow">Next direction</p><h2>Continuing thoughtfully</h2><p>{study.next}</p></section>
+        <section className="nextDirection" aria-labelledby="case-study-inquiry">
+          <h2 id="case-study-inquiry">Need something similar for your business?</h2>
+          <p>Tell me what you’d like your website or application to do.</p>
+          <Link className="primaryAction" to="/work-with-me">Discuss a project</Link>
+        </section>
         <nav className="relatedWork" aria-label="Related work"><p className="sectionEyebrow">Continue exploring</p><div>{related.map((item) => <Link className={`relatedProject ${item.tone}`} key={item.slug} to={`/projects/${item.slug}`}><span className="projectIndex" aria-hidden="true">{item.index}</span><span>{item.name}</span><span aria-hidden="true">→</span></Link>)}</div></nav>
       </div>
     </main>

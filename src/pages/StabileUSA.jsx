@@ -5,18 +5,18 @@ import "./StabileUSA.css";
 import { externalSites, featuredProjects, getProjectLiveLabel, supportingProjects } from "../data/projects";
 
 /* Assets */
-import stabileUSALogo from "../assets/stabileusalogo.png";
+import stabileUSALogo from "../assets/stabileusalogo.webp";
 import pjtImage from "../assets/PJT.jpg";
 
 const studioProjects = [
   ...featuredProjects.filter((project) => project.parent === "Stabile USA"),
-  ...supportingProjects.filter((project) => ["VinoPairings", "Life Stories Now"].includes(project.name)),
+  ...supportingProjects.filter((project) => project.name === "VinoPairings"),
 ];
 
 export default function StabileUSA() {
   return (
     <div className="stabile-page">
-      <main id="main-content">
+      <main id="main-content" tabIndex={-1}>
         <section className="stabile-hero" aria-labelledby="stabile-title">
           <div className="stabile-logo-wrap">
             <img

@@ -80,7 +80,7 @@
 
 .sectionEyebrow {
   margin: 0 0 0.8rem;
-  color: var(--siteAccent);
+  color: var(--siteAccentStrong);
   font-size: 0.72rem;
   font-weight: 750;
   letter-spacing: 0.15em;
@@ -168,7 +168,7 @@
 
 .projectIdentityLine .sectionEyebrow {
   margin: 0;
-  color: var(--projectAccentText, var(--siteAccent));
+  color: var(--projectAccentText, var(--siteAccentStrong));
 }
 
 .projectIndex {
@@ -370,7 +370,7 @@
   padding: clamp(1.5rem, 4vw, 3.6rem);
 }
 
-.projectPreviewContent h3 {
+.projectPreviewContent :is(h2, h3) {
   margin: 0 0 0.55rem;
   font-size: clamp(1.7rem, 3vw, 2.7rem);
   line-height: 1.08;
@@ -505,7 +505,7 @@
 }
 
 .buildPrinciple span {
-  color: var(--siteAccent);
+  color: var(--siteAccentStrong);
   font-size: 0.8rem;
 }
 
